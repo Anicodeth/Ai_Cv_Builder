@@ -9,6 +9,7 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { PersonaldetailsComponent } from './personaldetails/personaldetails.component';
 import { PreviewDisplayComponent } from './preview-display/preview-display.component';
 import { PersonalSummaryComponent } from './personal-summary/personal-summary.component';
+import { WebsiteLinksComponent } from './website-links/website-links.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PersonalSummaryComponent } from './personal-summary/personal-summary.co
     ProgressBarComponent,
     PersonaldetailsComponent,
     PreviewDisplayComponent,
-    PersonalSummaryComponent
+    PersonalSummaryComponent,
+    WebsiteLinksComponent
   ],
   imports: [
     FormsModule,
