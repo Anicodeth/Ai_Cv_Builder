@@ -1,11 +1,10 @@
 .unit{
     display: inline-block;
-    animation-name: smooth;
-    animation-duration: 2s;
 }
 
 .personal-extension{
-    transition: 5s;
+    animation-name: smooth;
+    animation-duration: 2s;
 }
   
   @keyframes smooth {

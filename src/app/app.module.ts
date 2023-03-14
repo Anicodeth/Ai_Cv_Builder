@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { PersonaldetailsComponent } from './personaldetails/personaldetails.component';
 import { PreviewDisplayComponent } from './preview-display/preview-display.component';
+import { PersonalSummaryComponent } from './personal-summary/personal-summary.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProgressBarComponent,
     PersonaldetailsComponent,
-    PreviewDisplayComponent
+    PreviewDisplayComponent,
+    PersonalSummaryComponent
   ],
   imports: [
     FormsModule,
