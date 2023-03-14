@@ -6,15 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./preview-display.component.css']
 })
 export class PreviewDisplayComponent {
-  public pageLinks = [
-    "https://marketplace.canva.com/EAFRuCp3DcY/1/0/1131w/canva-black-white-minimalist-cv-resume-f5JNR-K5jjw.jpg",
-    "https://resumegenius.com/wp-content/uploads/Minimalist-Professional-Resume-Skin-Blue.png"
+  // I am pages list here to emulate the user having multiple pages
+  public pages = [
+    "http://cdn.shopify.com/s/files/1/0405/8713/products/smooth-white-card-with-border_365702c6-de85-46b3-a4be-147c49f4e858_600x.jpg?v=1470642181",
+    "http://cdn.shopify.com/s/files/1/0405/8713/products/smooth-white-card-with-border_365702c6-de85-46b3-a4be-147c49f4e858_600x.jpg?v=1470642181",
+    "http://cdn.shopify.com/s/files/1/0405/8713/products/smooth-white-card-with-border_365702c6-de85-46b3-a4be-147c49f4e858_600x.jpg?v=1470642181",
   ]
-  public totalPages: number = this.pageLinks.length;
+  public totalPages: number = this.pages.length;
   public currentPage: number = 1;
 
   /**
-   * If the current CV being built by the user has multiple pages, show the next one
+   * If the current CV being built by the user has multiple pages,
+   * show the next one
    * (Returns) void
    */
   displayNextPage(): void {
