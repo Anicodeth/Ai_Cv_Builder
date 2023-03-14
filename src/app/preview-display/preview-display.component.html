@@ -1,0 +1,17 @@
+<div class="wrapper">
+    <h2>Preview Display</h2>
+    <div>
+        <button class="page-navigator-button" (click)="displayPreviousPage()" [disabled]="currentPage == 1"><</button>
+        <p class="page-description">{{currentPage}} / {{totalPages}}</p>
+        <button class="page-navigator-button" (click)="displayNextPage()" [disabled]="currentPage == totalPages">></button>
+    </div>
+    <div>
+        <div class="page" *ngFor="let page of pages; let i = index">
+            <img src="{{page}}" [class]="i + 1 == this.currentPage ? 'page-on-display' : 'page-not-on-display'" alt="resume-place-holder" height="400px"/>
+        </div>        
+    </div>
+    <div>
+        <button>Select Template</button>
+        <button>Download PDF</button>
+    </div>
+</div>
