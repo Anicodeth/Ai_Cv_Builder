@@ -6,11 +6,13 @@
     </div>
 
     <div class='progress-line'>
-        <div [style.width.%] = 'progressPercent' class = 'line'>
-            
-        </div>
+        <div [style.width.%] = 'progressPercent' 
+        [style.background-color] = 'progressColor'
+        class = 'line'></div>
     </div>
 
     </div>
+
+    <button  (click) = 'changeProgressColor()'>Only for checking</button>
 
 

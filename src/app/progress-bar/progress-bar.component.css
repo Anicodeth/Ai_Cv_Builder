@@ -12,7 +12,6 @@
 .line{
     margin-top:-1rem;
     border-radius: 1rem;
-    background-color: red;
     height:0.3rem;
-    width: 5%;
+    transition: 1s;
 }
