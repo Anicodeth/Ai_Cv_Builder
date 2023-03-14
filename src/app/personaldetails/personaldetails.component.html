@@ -60,6 +60,46 @@
                     id="city" ngModel name="city" 
                     #city="ngModel">
             </div>
+
+           <div class = "personal-extension" *ngIf ='expand'>
+                <div class = "unit">
+                    <label for="address">Address</label><br>
+                        <input type="text" class="" 
+                        id="address" ngModel name="address" 
+                        #address="ngModel">
+                 </div>
+                 <div class = "unit">
+                    <label for="postalcode">Postal Code</label><br>
+                        <input type="text" class="" 
+                        id="postalcode" ngModel name="postalcode" 
+                        #postalcode = "ngModel">
+                 </div><br>
+                 <div class = "unit">
+                    <label for="nationality">Nationality</label><br>
+                        <input type="text" class="" 
+                        id="nationality" ngModel name="nationality" 
+                        #nationality="ngModel">
+                 </div>
+                 <div class = "unit">
+                    <label for="pob">Place of birth</label><br>
+                        <input type="text" class="" 
+                        id="pob" ngModel name="pob" 
+                        #pob="ngModel">
+                 </div><br>
+
+                 <div class = "unit">
+                    <label for="dob">Data of birth</label><br>
+                        <input type="text" class="" 
+                        id="dob" ngModel name="dob" 
+                        #dob="ngModel">
+                 </div>
+            </div>
         </div>
+
+        <div  class = "additional">
+            <p (click) = "expandPersonal()" class="add">Additional
+            </p>
+        </div>
+
 </form>
 </div>

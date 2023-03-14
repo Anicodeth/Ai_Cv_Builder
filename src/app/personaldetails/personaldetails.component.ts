@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class PersonaldetailsComponent {
 
+expand:boolean=false;
+
+expandPersonal(){
+  this.expand = !this.expand;
+}
+
+
+
+
 }
