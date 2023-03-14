@@ -1,0 +1,23 @@
+.wrapper {
+    display: inline;
+    position: relative;
+    width: 50%;
+    margin: auto;
+}
+
+.page-description {
+    display: inline;
+    padding: 0 10px 0 10px;
+}
+
+.page-navigator-button {
+    display: inline;
+}
+
+.page-on-display {
+    display: block;
+}
+
+.page-not-on-display {
+    display: none;
+}
