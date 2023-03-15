@@ -12,18 +12,19 @@
 
 }
 .right-segment{
-
     margin: 0.5rem;
     flex: 1 1 auto;
     border: 1px solid black;
-    
-
+    display: flex;
+    justify-content: center;
 }
 
 .left-segment{
     margin: 0.5rem;
     flex: 1 1 1rem;
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
 }
 
 
