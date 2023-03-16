@@ -14,7 +14,7 @@
             <div class = "unit">
                 <label for="jobTitle">Photo</label><br>
                     <input type="file" class="" 
-                    id="jobTitle" ngModel name="jobTitle" 
+                    id="photo" ngModel name="jobTitle"
                     #jobTitle="ngModel">
             </div>
         </div>
@@ -101,8 +101,8 @@
         </div>
 
         <div  class = "additional">
-            <p (click) = "expandPersonal()" class="add">Additional
-            </p>
+            <button (click) = "expandPersonal()" class="add">Additional
+            </button>
         </div>
 
 </form>

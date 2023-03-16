@@ -4,12 +4,17 @@
             <app-progress-bar></app-progress-bar>
             <app-personaldetails></app-personaldetails>
             <app-personal-summary></app-personal-summary>
+            <div *ngFor="let intership of internships">
+                <app-personaldetails></app-personaldetails>
+            </div>
+            <button (click)="onAddInternship()">Add One More Internship +</button>
+            <app-reference></app-reference>
         </div>
     </div>
 
     <div class = "right-segment">
         <div class = "main-preview-window">
-            <app-preview-display></app-preview-display>
+            <app-plain-template></app-plain-template>
         </div>
     </div>
 </div>

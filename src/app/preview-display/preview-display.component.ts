@@ -6,8 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./preview-display.component.css']
 })
 export class PreviewDisplayComponent {
-  // I am pages list here to emulate the user having multiple pages
+  // I am using pages list here to emulate the user having multiple pages
   public pages = [
+    "https://resumegenius.com/wp-content/uploads/Acting-Resume-Example_Custom.png",
     "http://cdn.shopify.com/s/files/1/0405/8713/products/smooth-white-card-with-border_365702c6-de85-46b3-a4be-147c49f4e858_600x.jpg?v=1470642181",
     "http://cdn.shopify.com/s/files/1/0405/8713/products/smooth-white-card-with-border_365702c6-de85-46b3-a4be-147c49f4e858_600x.jpg?v=1470642181",
     "http://cdn.shopify.com/s/files/1/0405/8713/products/smooth-white-card-with-border_365702c6-de85-46b3-a4be-147c49f4e858_600x.jpg?v=1470642181",

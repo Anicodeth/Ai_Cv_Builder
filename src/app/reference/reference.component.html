@@ -1,0 +1,22 @@
+<h2>Add Reference</h2>
+<div class="form-group">
+    <form [formGroup]="referenceForm" (ngSubmit)="onSubmit()">
+        <div class="reference-name">
+            <label for="referenceName">Referent's Name</label>
+            <input type="text" placeholder="Referent's Name" name="referenceName" id="referenceName" formControlName="name">
+        </div>
+        <div class="reference-company">
+            <label for="referenceCompany">Referent's Company</label>
+            <input type="text" placeholder="Referent's Company" name="referenceCompany" id="referenceCompany" formControlName="company">
+        </div>
+        <div class="reference-phone">
+            <label for="referencePhone">Referent's Phone</label>
+            <input type="number" placeholder="Referent's Phone" name="referencePhone" id="referencePhone" formControlName="phone">
+        </div>
+        <div class="reference-email">
+            <label for="referenceEmail">Referent's Email</label>
+            <input type="email" placeholder="Referent's Email" name="referenceEmail" id="referenceEmail" formControlName="email">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>
