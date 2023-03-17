@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule} from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +11,9 @@ import { PersonaldetailsComponent } from './personaldetails/personaldetails.comp
 import { PreviewDisplayComponent } from './preview-display/preview-display.component';
 import { PersonalSummaryComponent } from './personal-summary/personal-summary.component';
 import { WebsiteLinksComponent } from './website-links/website-links.component';
+import { PlainTemplateComponent } from './resume-templates/plain-template/plain-template.component';
+import { ResumeService } from './services/resume.service';
+import { ReferencesComponent } from './references/references.component';
 
 @NgModule({
   declarations: [
@@ -18,15 +22,18 @@ import { WebsiteLinksComponent } from './website-links/website-links.component';
     PersonaldetailsComponent,
     PreviewDisplayComponent,
     PersonalSummaryComponent,
-    WebsiteLinksComponent
+    WebsiteLinksComponent,
+    PlainTemplateComponent,
+    ReferencesComponent
   ],
   imports: [
     FormsModule,
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ResumeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

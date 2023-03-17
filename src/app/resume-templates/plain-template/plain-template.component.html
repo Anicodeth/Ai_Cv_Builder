@@ -1,0 +1,9 @@
+<div>
+    <div class="references-list" *ngIf="references.touched">
+        <h3>References</h3>
+        <p *ngIf="references.value.name">Name: {{ references.value.name }}</p>
+        <p *ngIf="references.value.company">Company: {{ references.value.company }}</p>
+        <p *ngIf="references.value.phone">Phone: {{ references.value.phone }}</p>
+        <p *ngIf="references.value.email">Email: {{ references.value.email }}</p>
+    </div>
+</div>
