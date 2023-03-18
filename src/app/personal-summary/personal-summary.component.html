@@ -1,9 +1,26 @@
-<div class = "personal-summary">
-    <div class = "summary-title">
-        <h4>Personal Summary</h4>
-    </div>
-    <div class = "summary-box">
+    <div class = "personal-summary">
+        <div class = "summary-title">
+            <h4>Personal Summary</h4>
+        </div>
 
-        <textarea rows="5" cols="48"></textarea>
+    <div class = "summary-box">
+        <form [formGroup]="personalAddition">
+        <textarea [(ngModel)] = 'personalAddition.value.aisummary' 
+        formControlName="aisummary"rows="5" cols="48"></textarea>
+        </form>
+
+        <div class="ai-section">
+            <button class="ai-summery" (click)="displayAiChoices()">AI Summary</button>
+                
+            <div class="ai-return" *ngIf = "aiChoicesExpand">
+                <h5>AI Choices</h5>
+                <form class = 'ai-choices' [formGroup]="personalAddition">
+                    <div class = 'ai-choice'   *ngFor = "let aiText of aiSummary">
+                        <input  class = 'ai-selected' formControlName="aisummary"
+                        type="radio" value="{{aiText}}" >{{aiText}}<br>
+                    </div>
+                </form>
+
+            </div>
     </div>
 </div>

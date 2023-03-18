@@ -1,20 +1,25 @@
 <div>
     <form [formGroup]="referencesForm">
-        <div>
-            <label for="refernceName">Referent's Name</label>
-            <input type="text" id="refernceName" placeholder="John Doe" formControlName="name">
-        </div>
-        <div>
-            <label for="refernceCompany">Referent's Company</label>
-            <input type="text" id="refernceCompany" placeholder="ABC Company" formControlName="company">
-        </div>
-        <div>
-            <label for="referncePhone">Referent's Name</label>
+        <div class="personal-row">
+            <div class="unit">
+                <label for="refernceName">Referent's Name</label><br>
+                <input type="text" id="refernceName" placeholder="John Doe" formControlName="name">
+            </div>
+
+            <div class="unit">
+                <label for="refernceCompany">Referent's Company</label><br>
+                <input type="text" id="refernceCompany" placeholder="ABC Company" formControlName="company">
+            </div>
+    </div>
+    <div class="personal-row">
+        <div class="unit">
+            <label for="referncePhone">Referent's Name</label><br>
             <input type="number" id="referncePhone" placeholder="+251932323232" formControlName="phone">
         </div>
-        <div>
-            <label for="refernceEmail">Referent's Name</label>
+        <div class="unit">
+            <label for="refernceEmail">Referent's Name</label><br>
             <input type="email" id="refernceEmail" placeholder="johndoe@example.com" formControlName="email">
         </div>
+    </div>
     </form>
 </div>

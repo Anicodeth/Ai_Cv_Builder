@@ -1,8 +1,4 @@
 
-*{
-
-}
-
 .main-container{
     display: flex;
     margin: 1rem;
@@ -13,13 +9,15 @@
 }
 .right-segment{
     margin: 0.5rem;
-    flex: 1 1 auto;
+    flex: 1 1 1rem;
     border: 1px solid black;
     display: flex;
     justify-content: center;
+    top:0px;
 }
 
 .left-segment{
+
     margin: 0.5rem;
     flex: 1 1 1rem;
     border: 1px solid black;
@@ -27,4 +25,9 @@
     justify-content: center;
 }
 
+@media (max-width: 1200px) {
+    .main-container {
+      flex-direction: column;
+    }
+  }
 

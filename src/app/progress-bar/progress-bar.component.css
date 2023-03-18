@@ -1,6 +1,9 @@
 .progress-container{
-    border:1px solid black;
+    border:0.1rem solid black;
     padding:0.3rem;
+    top:0; 
+    position: sticky;
+    background-color: aliceblue;
  }
 
 .progress-line {
