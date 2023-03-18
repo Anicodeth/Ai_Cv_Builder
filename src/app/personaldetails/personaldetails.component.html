@@ -1,109 +1,83 @@
-<div class = 'personal-details-container'>
+<div class='personal-details-container'>
     <div class="personal-header">
         <h4>Personal Detail</h4>
     </div>
 
-    <form>
-        <div class = "personal-row">
-            <div class = "unit">
+    <form [formGroup]="personalDetailsForm">
+        <div class="personal-row">
+            <div class="unit">
                 <label for="jobTitle">Job Title</label><br>
-                    <input type="text" class="" 
-                    id="jobTitle" ngModel name="jobTitle" 
-                    #jobTitle="ngModel">
+                <input type="text" class="" id="jobTitle" name="jobTitle" formControlName="jobTitle">
             </div>
-            <div class = "unit">
-                <label for="jobTitle">Photo</label><br>
-                    <input type="file" class="" 
-                    id="jobTitle" ngModel name="jobTitle" 
-                    #jobTitle="ngModel">
+            <div class="unit">
+                <label for="photo">Photo</label><br>
+                <input type="file" class="" id="photo" name="photo" formControlName="photo">
             </div>
         </div>
 
 
-        <div class = "personal-row">
-            <div class = "unit">
+        <div class="personal-row">
+            <div class="unit">
                 <label for="firstname">First Name</label><br>
-                    <input type="text" class="" 
-                    id="firstname" ngModel name="firstname" 
-                    #firstname="ngModel">
+                <input type="text" class="" id="firstname" name="firstname" formControlName="firstName">
             </div>
-            <div class = "unit">
+            <div class="unit">
                 <label for="lastname">Last Name</label><br>
-                    <input type="text" class="" 
-                    id="lastname" ngModel name="lastname" 
-                    #jobTitle="ngModel">
+                <input type="text" class="" id="lastname" name="lastname" formControlName="lastName">
             </div>
         </div>
 
 
-        <div class = "personal-row">
-            <div class = "unit">
+        <div class="personal-row">
+            <div class="unit">
                 <label for="email">Email</label><br>
-                    <input type="email" class="" 
-                    id="email" ngModel name="email" 
-                    #email="ngModel">
+                <input type="email" class="" id="email"  formControlName="email">
             </div>
-            <div class = "unit">
+            <div class="unit">
                 <label for="phone">Phone</label><br>
-                    <input type="number" class="" 
-                    id="phone" ngModel name="phone" 
-                    #phone="ngModel">
+                <input type="number" class="" id="phone"  formControlName="phone">
             </div>
         </div>
 
-        <div class = "personal-row">
-            <div class = "unit">
+        <div class="personal-row">
+            <div class="unit">
                 <label for="country">Country</label><br>
-                    <input type="text" class="" 
-                    id="country" ngModel name="country" 
-                    #country="ngModel">
+                <input type="text" class="" id="country"  formControlName="country">
             </div>
-            <div class = "unit">
+            <div class="unit">
                 <label for="city">City</label><br>
-                    <input type="text" class="" 
-                    id="city" ngModel name="city" 
-                    #city="ngModel">
+                <input type="text" class="" id="city"  formControlName="city">
             </div>
 
-           <div class = "personal-extension" *ngIf ='expand'>
-                <div class = "unit">
+            <div class="personal-extension" *ngIf='expand'>
+                <div class="unit">
                     <label for="address">Address</label><br>
-                        <input type="text" class="" 
-                        id="address" ngModel name="address" 
-                        #address="ngModel">
-                 </div>
-                 <div class = "unit">
+                    <input type="text" class="" id="address"  formControlName="address">
+                </div>
+                <div class="unit">
                     <label for="postalcode">Postal Code</label><br>
-                        <input type="number" class="" 
-                        id="postalcode" ngModel name="postalcode" 
-                        #postalcode = "ngModel">
-                 </div><br>
-                 <div class = "unit">
+                    <input type="number" class="" id="postalcode" name="postalcode" formControlName="postalCode">
+                </div><br>
+                <div class="unit">
                     <label for="nationality">Nationality</label><br>
-                        <input type="text" class="" 
-                        id="nationality" ngModel name="nationality" 
-                        #nationality="ngModel">
-                 </div>
-                 <div class = "unit">
+                    <input type="text" class="" id="nationality" name="nationality" formControlName="nationality">
+                </div>
+                <div class="unit">
                     <label for="pob">Place of birth</label><br>
-                        <input type="text" class="" 
-                        id="pob" ngModel name="pob" 
-                        #pob="ngModel">
-                 </div><br>
+                    <input type="text" class="" id="pob" name="pob" formControlName="pob">
+                </div><br>
 
-                 <div class = "unit">
+                <div class="unit">
                     <label for="dob">Data of birth</label><br>
-                        <input type="date" class="" 
-                        id="dob" ngModel name="dob" 
-                        #dob="ngModel">
-                 </div>
+                    <input type="date" class="" id="dob" name="dob" formControlName="dob">
+                </div>
             </div>
         </div>
 
-        <div  class = "additional">
-            <p (click) = "expandPersonal()" class="add">Additional
+        <div class="additional">
+            <p (click)="expandPersonal()" class="add">Additional
             </p>
         </div>
 
-</form>
+    </form>
 </div>

@@ -1,12 +1,27 @@
 <div>
+    <div class="personal-details-list" *ngIf="personalDetailsForm.touched">
+        <div class="name-and-job" *ngIf="personalDetailsForm.value.firstName">
+            <h1>{{ personalDetailsForm.value.firstName }} <span *ngIf="personalDetailsForm.value.lastName">{{ personalDetailsForm.value.lastName }}</span></h1>
+            <h4 *ngIf="personalDetailsForm.value.jobTitle">{{ personalDetailsForm.value.jobTitle }}</h4>
+        </div>
+        <div class="address">
+            <p *ngIf="personalDetailsForm.value.email">{{ personalDetailsForm.value.email }}</p>
+            <p *ngIf="personalDetailsForm.value.phone">{{ personalDetailsForm.value.phone }}</p>
+            <p *ngIf="personalDetailsForm.value.country">{{ personalDetailsForm.value.country }}</p>
+            <p *ngIf="personalDetailsForm.value.city">{{ personalDetailsForm.value.city }}</p>
+        </div>
+    </div>
     <div class="references-list" *ngIf="references.touched">
-        <h4 *ngIf="references.value.name">References</h4>
-        <p *ngIf="references.value.name">Name: {{ references.value.name }}</p>
-        <p *ngIf="references.value.company">Company: {{ references.value.company }}</p>
-        <p *ngIf="references.value.phone">Phone: {{ references.value.phone }}</p>
-        <p *ngIf="references.value.email">Email: {{ references.value.email }}</p>
+        <h4 *ngIf="referencesForm.touched">References</h4>
+        <div *ngFor="let reference of references.controls; let i = index">
+            <p *ngIf="reference.value.name">{{ reference.value.name }}
+            <span *ngIf="reference.value.company">from {{ reference.value.company }}</span>
+            <span *ngIf="reference.value.phone"> Phone: {{ reference.value.phone }}</span>
+            <span *ngIf="reference.value.email"> Email: {{ reference.value.email }}</span>
+            </p>
+        </div>
         <h4>Ai Summary</h4>
-        <p *ngIf="references.value.aisummary">Aisummary: {{ references.value.aisummary }}</p>
+        <!-- <p *ngIf="references.value.aisummary">Aisummary: {{ references.value.aisummary }}</p> -->
 
     </div>
 </div>

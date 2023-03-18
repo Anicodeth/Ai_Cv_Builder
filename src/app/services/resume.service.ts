@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 @Injectable({
   providedIn: 'root'
 })
@@ -7,20 +7,66 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ResumeService {
 
   private referencesForm: FormGroup;
+  private experiencesForm: FormGroup;
+  private extraCurricularActivitiesForm: FormGroup;
+  private personalDetailsForm: FormGroup;
+  // private aiSummaryForm: FormControl;
+
   constructor(
     private fb: FormBuilder
   ) {
-    this.referencesForm = fb.group({
-      name: [null, Validators.required],
-      company: [null, Validators.required],
-      phone: [null, [Validators.minLength(10), Validators.maxLength(10)]],
-      email: [null, Validators.email],
-      aisummary :[null]
-    
-    
-    })}
+    this.personalDetailsForm = this.fb.group({
+      jobTitle: [null, Validators.required],
+      photo: [null, Validators.required],
+      firstName: [null, Validators.required],
+      lastName: [null, Validators.required],
+      email: [null, Validators.required],
+      phone: [null, Validators.required],
+      country: [null, Validators.required],
+      city: [null, Validators.required],
+      address: [null, Validators.required],
+      postalCode: [null, Validators.required],
+      nationality: [null, Validators.required],
+      pob: [null, Validators.required],
+      dob: [null, Validators.required],
+    });
+    this.referencesForm = this.fb.group({
+      references: this.fb.array([])
+    });
+    this.experiencesForm = this.fb.group({
+      experiences: this.fb.array([])
+    });
+    this.extraCurricularActivitiesForm = this.fb.group({
+      extraCurricularActivities: this.fb.array([])
+    });
+  }
 
-  getReferencesForm() {
-    return this.referencesForm;}
+  getPersonalDetailsForm(): FormGroup {
+    return this.personalDetailsForm;
+  }
+
+  getReferencesForm(): FormGroup {
+    return this.referencesForm;
+  }
+
+  get references(): FormArray {
+    return this.referencesForm.get('references') as FormArray;
+  }
+
+  getExperiencesForm(): FormGroup {
+    return this.experiencesForm;
+  }
+
+  get experiences(): FormArray {
+    return this.experiencesForm.get('experiences') as FormArray;
+  }
+
+  getExtraCurricularActivitiesForm(): FormGroup {
+    return this.extraCurricularActivitiesForm;
+  }
+
+  get extraCurricularActivities(): FormArray {
+    return this.extraCurricularActivitiesForm.get('extraCurricularActivities') as FormArray;
+  }
 
 }

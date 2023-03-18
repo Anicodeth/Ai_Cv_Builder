@@ -14,6 +14,10 @@ import { WebsiteLinksComponent } from './website-links/website-links.component';
 import { PlainTemplateComponent } from './resume-templates/plain-template/plain-template.component';
 import { ResumeService } from './services/resume.service';
 import { ReferencesComponent } from './references/references.component';
+import { ExperienceComponent } from './experience/experience.component';
+import { AddSectionsComponent } from './add-sections/add-sections.component';
+import { SectionsService } from './services/sections.service';
+import { ExtraCurricularActivitiesComponent } from './extra-curricular-activities/extra-curricular-activities.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,10 @@ import { ReferencesComponent } from './references/references.component';
     PersonalSummaryComponent,
     WebsiteLinksComponent,
     PlainTemplateComponent,
-    ReferencesComponent
+    ReferencesComponent,
+    ExperienceComponent,
+    AddSectionsComponent,
+    ExtraCurricularActivitiesComponent
   ],
   imports: [
     FormsModule,
@@ -33,7 +40,10 @@ import { ReferencesComponent } from './references/references.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [ResumeService],
+  providers: [
+    ResumeService,
+    SectionsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

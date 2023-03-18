@@ -1,0 +1,39 @@
+<h4>Extra-curricular Activities</h4>
+<div>
+    <form [formGroup]="extraCurricularActivitiesForm">
+        <div formArrayName="extraCurricularActivities">
+            <div *ngFor="let extraCurricularActivities of extraCurricularActivities.controls; let i = index" [formGroupName]="i">
+                <div>
+                    <label for="extraCurricularActivityEmployer">Employer</label>
+                    <input type="text" id="extraCurricularActivityEmployer" placeholder="Extra-curricular Activity Employer" formControlName="employer"/>
+                </div>
+                <div>
+                    <label for="extraCurricularActivityJobTitle">Function</label>
+                    <input type="text" id="extraCurricularActivityJobTitle" placeholder="Extra-curricular Activity Job Title" formControlName="function">
+                </div>
+                <div>
+                    <label for="extraCurricularActivityCity">City</label>
+                    <input type="text" id="extraCurricularActivityCity" placeholder="Extra-curricular Activity City" formControlName="city">
+                </div>
+                <div>
+                    <label for="extraCurricularActivityStartDate">Start Date</label>
+                    <input type="date" id="extraCurricularActivityStartDate" placeholder="Extra-curricular Activity Start Date" formControlName="startDate">
+                </div>
+                <div>
+                    <label for="extraCurricularActivityEndDate">End Date</label>
+                    <input type="date" id="extraCurricularActivityEndDate" placeholder="Extra-curricular Activity End Date" formControlName="endDate">
+                </div>
+                <div>
+                    <label for="extraCurricularActivityDescription">Description</label>
+                    <textarea type="text" id="extraCurricularActivityDescription" placeholder="Extra-curricular Activity Description" formControlName="description"></textarea>
+                </div>
+                <button type="button" (click)="removeExtraCurricularActivity(i)">
+                    Remove Extra-curricular Activity
+                </button>
+            </div>
+        </div>
+        <button type="button" (click)="addExtraCurricularActivity()">
+            Add extra-curricular activity
+        </button>
+    </form>
+</div>
