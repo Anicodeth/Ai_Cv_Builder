@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+.add-experience, .personal-extension{
+    animation-name: smooth;
+    animation-duration: 0.75s;
+}
+
+button{
+    width:100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  @keyframes smooth {
+    0% {opacity: 1%;}
+    100% {opacity: 100%;}
+  }
+

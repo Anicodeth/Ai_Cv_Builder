@@ -20,16 +20,23 @@
 
     margin: 0.5rem;
     flex: 1 1 1rem;
-
     display: flex;
     justify-content: center;
 }
 
+.main-form {
+    width:85%;
+
+}
+
 @media (max-width: 1200px) {
     .main-container {
-        
       flex-direction: column;
-
     }
   }
 
+  @media (max-width: 550px) {
+    .main-form {
+        width:auto;
+    }
+  }

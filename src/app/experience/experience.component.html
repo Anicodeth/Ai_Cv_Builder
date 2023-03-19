@@ -2,37 +2,60 @@
 <div>
     <form [formGroup]="experiencesForm">
         <div formArrayName="experiences">
-            <div *ngFor="let experiences of experiences.controls; let i = index" [formGroupName]="i">
-                <div>
-                    <label for="experienceEmployer">Employer</label>
-                    <input type="text" id="experienceEmployer" placeholder="Experience Employer" formControlName="employer"/>
-                </div>
-                <div>
-                    <label for="experienceJobTitle">Job Title</label>
-                    <input type="text" id="experienceJobTitle" placeholder="Experience Job Title" formControlName="jobTitle">
-                </div>
-                <div>
-                    <label for="experienceCity">City</label>
-                    <input type="text" id="experienceCity" placeholder="Experience City" formControlName="city">
-                </div>
+            <div class = "add-experience" *ngFor="let experiences of experiences.controls; let i = index" [formGroupName]="i">
+                
+                <div class = "personal-row">
+                    <div class = "unit ">
+                        <label for="experienceEmployer">Employer</label>
+                        <input type="text" class = "form-control" 
+                        id="experienceEmployer" placeholder="Experience Employer" 
+                        formControlName="employer"/>
+                    </div>
+                    <div class = "unit">
+                        <label for="experienceJobTitle">Job Title</label>
+                        <input type="text" class = "form-control" 
+                        id="experienceJobTitle" placeholder="Experience Job Title" 
+                        formControlName="jobTitle">
+                    </div>
+            </div>
+
+            <div class = "personal-row">
+
+            <div class = "unit">
                 <div>
                     <label for="experienceStartDate">Start Date</label>
-                    <input type="date" id="experienceStartDate" placeholder="Experience Start Date" formControlName="startDate">
+                    <input type="date" class = "form-control"  
+                    id="experienceStartDate" placeholder="Experience Start Date" 
+                    formControlName="startDate">
                 </div>
                 <div>
                     <label for="experienceEndDate">End Date</label>
-                    <input type="date" id="experienceEndDate" placeholder="Experience End Date" formControlName="endDate">
+                    <input type="date" class = "form-control"  
+                    id="experienceEndDate" placeholder="Experience End Date" formControlName="endDate">
                 </div>
+            </div>
+
+
+                <div class="unit">
+                    <label for="experienceCity">City</label>
+                    <input type="text"  class = "form-control"  
+                    id="experienceCity" placeholder="Experience City" formControlName="city">
+                </div>
+
+            </div>
                 <div>
                     <label for="experienceDescription">Description</label>
-                    <textarea type="text" id="experienceDescription" placeholder="Experience Description" formControlName="description"></textarea>
+                    <textarea  type="text" class = "form-control"
+                      id="experienceDescription" placeholder="Experience Description"
+                       formControlName="description" rows="5"></textarea>
                 </div>
-                <button type="button" (click)="removeExperience(i)">
+                <button class = "btn btn-outline-danger" 
+                type="button" (click)="removeExperience(i)">
                     Remove Experience
                 </button>
             </div>
         </div>
-        <button type="button" (click)="addExperience()">
+        <button type="button" class = "btn btn-outline-primary" (click)="addExperience()">
             Add experience
         </button>
     </form>
