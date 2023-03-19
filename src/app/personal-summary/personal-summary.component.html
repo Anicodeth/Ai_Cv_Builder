@@ -4,18 +4,18 @@
         </div>
 
     <div class = "summary-box">
-        <form [formGroup]="personalAddition">
-        <textarea class = "form-control" [(ngModel)] = 'personalAddition.value.aisummary' 
-        formControlName="aisummary"rows="5" cols="48"></textarea>
+        <form >
+        <textarea class = "form-control"  
+         rows="5" cols="48"></textarea>
         </form>
 
         <div class="ai-section">
             <button class="ai-summery btn btn-outline-primary" (click)="displayAiChoices()">AI Summary</button>
             <div class="ai-return" *ngIf = "aiChoicesExpand">
                 <h5>AI Choices</h5>
-                  <form class = 'ai-choices' [formGroup]="personalAddition">
+                  <form class = 'ai-choices' >
                     <div class = 'ai-choice alert alert-primary'   *ngFor = "let aiText of aiSummary">
-                        <input  class = 'ai-selected ' formControlName="aisummary"
+                        <input  class = 'ai-selected ' 
                            type="radio" value="{{aiText}}" >{{aiText}}<br>
                     </div>
                </form>
