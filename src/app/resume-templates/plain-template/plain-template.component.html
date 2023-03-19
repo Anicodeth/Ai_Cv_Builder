@@ -1,27 +1,59 @@
 <div>
-    <div class="personal-details-list" *ngIf="personalDetailsForm.touched">
-        <div class="name-and-job" *ngIf="personalDetailsForm.value.firstName">
-            <h1>{{ personalDetailsForm.value.firstName }} <span *ngIf="personalDetailsForm.value.lastName">{{ personalDetailsForm.value.lastName }}</span></h1>
-            <h4 *ngIf="personalDetailsForm.value.jobTitle">{{ personalDetailsForm.value.jobTitle }}</h4>
+    <div class="personal-details-list" *ngIf="personalDetails.touched">
+        <div class="name-and-job" *ngIf="personalDetails.value.firstName">
+            <h1>{{ personalDetails.value.firstName }} <span *ngIf="personalDetails.value.lastName">{{
+                    personalDetails.value.lastName }}</span></h1>
+            <h4 *ngIf="personalDetails.value.jobTitle">{{ personalDetails.value.jobTitle }}</h4>
+            <hr>
         </div>
         <div class="address">
-            <p *ngIf="personalDetailsForm.value.email">{{ personalDetailsForm.value.email }}</p>
-            <p *ngIf="personalDetailsForm.value.phone">{{ personalDetailsForm.value.phone }}</p>
-            <p *ngIf="personalDetailsForm.value.country">{{ personalDetailsForm.value.country }}</p>
-            <p *ngIf="personalDetailsForm.value.city">{{ personalDetailsForm.value.city }}</p>
+            <h5 *ngIf="personalDetails.value.email">Details</h5>            
+            <p *ngIf="personalDetails.value.email">{{ personalDetails.value.email }}</p>
+            <p *ngIf="personalDetails.value.phone">{{ personalDetails.value.phone }}</p>
+            <p *ngIf="personalDetails.value.country">{{ personalDetails.value.country }}</p>
+            <p *ngIf="personalDetails.value.city">{{ personalDetails.value.city }}</p>
         </div>
     </div>
+    <div class="personal-summary">
+        <!-- <h4>Ai Summary</h4> -->
+        <!-- <p *ngIf="references.value.aisummary">Aisummary: {{ references.value.aisummary }}</p> -->
+    </div>
+    <div class="experiences-list" *ngIf="experiences.touched">
+        <h4 *ngIf="experiences.touched">Experiences</h4>
+        <div *ngFor="let experience of experiences.controls; let i = index">
+            <div *ngIf="experience.value.jobTitle">{{ experience.value.jobTitle }}
+                <span *ngIf="experience.value.employer"> at {{ experience.value.employer }}</span>
+                <span *ngIf="experience.value.city"> Location: {{ experience.value.city }}</span>
+                <span *ngIf="experience.value.startDate"><br> {{ experience.value.startDate }}</span>
+                <span *ngIf="experience.value.endDate"> - {{ experience.value.endDate }}</span>
+                <p *ngIf="experience.value.description">{{ experience.value.description }}</p>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div class="educations-list" *ngIf="educations.touched">
+        <h4 *ngIf="educations.touched">Educations</h4>
+        <div *ngFor="let education of educations.controls; let i = index">
+            <div *ngIf="education.value.degree">{{ education.value.degree }}
+                <span *ngIf="education.value.school"> at {{ education.value.school }}</span>
+                <span *ngIf="education.value.city"> Location: {{ education.value.city }}</span>
+                <span *ngIf="education.value.startDate"><br> {{ education.value.startDate }}</span>
+                <span *ngIf="education.value.endDate"> - {{ education.value.endDate }}</span>
+                <p *ngIf="education.value.description">{{ education.value.description }}</p>
+            </div>
+        </div>
+        <hr>
+    </div>
     <div class="references-list" *ngIf="references.touched">
-        <h4 *ngIf="referencesForm.touched">References</h4>
+        <h4 *ngIf="references.touched">References</h4>
         <div *ngFor="let reference of references.controls; let i = index">
             <p *ngIf="reference.value.name">{{ reference.value.name }}
-            <span *ngIf="reference.value.company">from {{ reference.value.company }}</span>
-            <span *ngIf="reference.value.phone"> Phone: {{ reference.value.phone }}</span>
-            <span *ngIf="reference.value.email"> Email: {{ reference.value.email }}</span>
+                <span *ngIf="reference.value.company">from {{ reference.value.company }}</span>
+                <span *ngIf="reference.value.phone"> Phone: {{ reference.value.phone }}</span>
+                <span *ngIf="reference.value.email"> Email: {{ reference.value.email }}</span>
             </p>
         </div>
-        <h4>Ai Summary</h4>
-        <!-- <p *ngIf="references.value.aisummary">Aisummary: {{ references.value.aisummary }}</p> -->
+        <hr>
 
     </div>
 </div>

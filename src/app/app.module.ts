@@ -15,9 +15,10 @@ import { PlainTemplateComponent } from './resume-templates/plain-template/plain-
 import { ResumeService } from './services/resume.service';
 import { ReferencesComponent } from './references/references.component';
 import { ExperienceComponent } from './experience/experience.component';
-import { AddSectionsComponent } from './add-sections/add-sections.component';
 import { SectionsService } from './services/sections.service';
 import { ExtraCurricularActivitiesComponent } from './extra-curricular-activities/extra-curricular-activities.component';
+import { AddSectionsComponent } from './add-sections/add-sections.component';
+import { EducationComponent } from './education/education.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ExtraCurricularActivitiesComponent } from './extra-curricular-activitie
     ReferencesComponent,
     ExperienceComponent,
     AddSectionsComponent,
-    ExtraCurricularActivitiesComponent
+    ExtraCurricularActivitiesComponent,
+    EducationComponent
   ],
   imports: [
     FormsModule,

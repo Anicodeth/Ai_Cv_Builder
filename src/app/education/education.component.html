@@ -1,0 +1,39 @@
+<h4>Educations</h4>
+<div>
+    <form [formGroup]="educationsForm">
+        <div formArrayName="educations">
+            <div *ngFor="let educations of educations.controls; let i = index" [formGroupName]="i">
+                <div>
+                    <label for="educationSchool">School</label>
+                    <input type="text" id="educationSchool" placeholder="School" formControlName="school"/>
+                </div>
+                <div>
+                    <label for="educationDegree">Degree</label>
+                    <input type="text" id="educationDegree" placeholder="Education Degree" formControlName="degree">
+                </div>
+                <div>
+                    <label for="educationCity">City</label>
+                    <input type="text" id="educationCity" placeholder="Education City" formControlName="city">
+                </div>
+                <div>
+                    <label for="educationStartDate">Start Date</label>
+                    <input type="date" id="educationStartDate" placeholder="Education Start Date" formControlName="startDate">
+                </div>
+                <div>
+                    <label for="educationEndDate">End Date</label>
+                    <input type="date" id="educationEndDate" placeholder="Education End Date" formControlName="endDate">
+                </div>
+                <div>
+                    <label for="educationDescription">Description</label>
+                    <textarea type="text" id="educationDescription" placeholder="Education Description" formControlName="description"></textarea>
+                </div>
+                <button type="button" (click)="removeEducation(i)">
+                    Remove Education
+                </button>
+            </div>
+        </div>
+        <button type="button" (click)="addEducation()">
+            Add education
+        </button>
+    </form>
+</div>

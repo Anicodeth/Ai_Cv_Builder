@@ -7,28 +7,25 @@ import { ResumeService } from 'src/app/services/resume.service';
   styleUrls: ['./plain-template.component.css']
 })
 export class PlainTemplateComponent implements OnInit, OnChanges {
-  public personalDetailsForm: any;
-  public referencesForm: any;
+  public personalDetails: any;
   public references: any;
+  public experiences: any;
+  public educations: any;
 
   constructor (
     private resumeService: ResumeService,
     ) {
-      this.personalDetailsForm = this.resumeService.getPersonalDetailsForm();
-      this.referencesForm = this.resumeService.getReferencesForm();
+      this.personalDetails = this.resumeService.getPersonalDetailsForm();
       this.references = this.resumeService.references;
+      this.experiences = this.resumeService.experiences;
+      this.educations = this.resumeService.educations;
   }
 
   ngOnInit() {
-    console.log(this.referencesForm.get('references'));
   }
   
   ngOnChanges(changes: SimpleChanges): void {
-    this.referencesForm = this.resumeService.getReferencesForm();
+    // this.referencesForm = this.resumeService.getReferencesForm();
     this.references = this.resumeService.references;
-
-    for (let i = 0; i < this.references.length; i++) {
-      console.log(this.references[i]);
-    }
   }
 }

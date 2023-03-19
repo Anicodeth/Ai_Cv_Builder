@@ -8,9 +8,10 @@ export class ResumeService {
 
   private referencesForm: FormGroup;
   private experiencesForm: FormGroup;
+  private educationsForm: FormGroup;
   private extraCurricularActivitiesForm: FormGroup;
   private personalDetailsForm: FormGroup;
-  // private aiSummaryForm: FormControl;
+  private personalSummaryForm: FormGroup;
 
   constructor(
     private fb: FormBuilder
@@ -30,11 +31,17 @@ export class ResumeService {
       pob: [null, Validators.required],
       dob: [null, Validators.required],
     });
+    this.personalSummaryForm = this.fb.group({
+      personalSummary: [null, Validators.required],
+    });
     this.referencesForm = this.fb.group({
       references: this.fb.array([])
     });
     this.experiencesForm = this.fb.group({
       experiences: this.fb.array([])
+    });
+    this.educationsForm = this.fb.group({
+      educations: this.fb.array([])
     });
     this.extraCurricularActivitiesForm = this.fb.group({
       extraCurricularActivities: this.fb.array([])
@@ -59,6 +66,14 @@ export class ResumeService {
 
   get experiences(): FormArray {
     return this.experiencesForm.get('experiences') as FormArray;
+  }
+
+  getEducationsForm(): FormGroup {
+    return this.educationsForm;
+  }
+
+  get educations(): FormArray {
+    return this.educationsForm.get('educations') as FormArray;
   }
 
   getExtraCurricularActivitiesForm(): FormGroup {
