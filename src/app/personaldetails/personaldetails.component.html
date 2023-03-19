@@ -7,45 +7,45 @@
         <div class = "personal-row">
             <div class = "unit">
                 <label for="jobTitle">Job Title</label><br>
-                    <input type="text" class="" 
+                    <input type="text" class="form-control" 
                     id="jobTitle" ngModel name="jobTitle" 
                     #jobTitle="ngModel">
             </div>
-            <div class = "unit">
-                <label for="jobTitle">Photo</label><br>
-                    <input type="file" class="" 
-                    id="jobTitle" ngModel name="jobTitle" 
-                    #jobTitle="ngModel">
-            </div>
+        </div>
+
+        <div class = "unit">
+            <label for="jobTitle">Photo</label><br>
+                <input type="file" class="" 
+                id="jobTitle" ngModel name="jobTitle" 
+                #jobTitle="ngModel">
         </div>
 
 
         <div class = "personal-row">
             <div class = "unit">
                 <label for="firstname">First Name</label><br>
-                    <input type="text" class="" 
+                    <input type="text" class="form-control" 
                     id="firstname" ngModel name="firstname" 
                     #firstname="ngModel">
             </div>
             <div class = "unit">
                 <label for="lastname">Last Name</label><br>
-                    <input type="text" class="" 
+                    <input type="text" class="form-control" 
                     id="lastname" ngModel name="lastname" 
                     #jobTitle="ngModel">
             </div>
         </div>
 
-
         <div class = "personal-row">
             <div class = "unit">
                 <label for="email">Email</label><br>
-                    <input type="email" class="" 
+                    <input type="email" class="form-control" 
                     id="email" ngModel name="email" 
                     #email="ngModel">
             </div>
             <div class = "unit">
                 <label for="phone">Phone</label><br>
-                    <input type="number" class="" 
+                    <input type="number" class="form-control" 
                     id="phone" ngModel name="phone" 
                     #phone="ngModel">
             </div>
@@ -54,55 +54,66 @@
         <div class = "personal-row">
             <div class = "unit">
                 <label for="country">Country</label><br>
-                    <input type="text" class="" 
+                    <input type="text" class="form-control" 
                     id="country" ngModel name="country" 
                     #country="ngModel">
             </div>
             <div class = "unit">
                 <label for="city">City</label><br>
-                    <input type="text" class="" 
+                    <input type="text" class="form-control" 
                     id="city" ngModel name="city" 
                     #city="ngModel">
             </div>
+            </div>
+
 
            <div class = "personal-extension" *ngIf ='expand'>
-                <div class = "unit">
+                
+            <div class = "personal-row">
+            <div class = "unit">
                     <label for="address">Address</label><br>
-                        <input type="text" class="" 
+                        <input type="text" class="form-control" 
                         id="address" ngModel name="address" 
                         #address="ngModel">
                  </div>
                  <div class = "unit">
                     <label for="postalcode">Postal Code</label><br>
-                        <input type="number" class="" 
+                        <input type="number" class="form-control" 
                         id="postalcode" ngModel name="postalcode" 
                         #postalcode = "ngModel">
-                 </div><br>
+                 </div>
+            </div>
+
+            <div class = "personal-row">
                  <div class = "unit">
                     <label for="nationality">Nationality</label><br>
-                        <input type="text" class="" 
+                        <input type="text" class="form-control" 
                         id="nationality" ngModel name="nationality" 
                         #nationality="ngModel">
                  </div>
                  <div class = "unit">
                     <label for="pob">Place of birth</label><br>
-                        <input type="text" class="" 
+                        <input type="text" class="form-control" 
                         id="pob" ngModel name="pob" 
                         #pob="ngModel">
-                 </div><br>
+                 </div>
+                 </div>
 
+                 <div class = "personal-row">
                  <div class = "unit">
                     <label for="dob">Data of birth</label><br>
-                        <input type="date" class="" 
+                        <input type="date" class="form-control" 
                         id="dob" ngModel name="dob" 
                         #dob="ngModel">
                  </div>
+                 </div>
             </div>
-        </div>
+        
 
         <div  class = "additional">
-            <p (click) = "expandPersonal()" class="add">Additional
-            </p>
+            <button class = "add btn btn-outline-primary" 
+            (click) = "expandPersonal()">Additional
+            </button>
         </div>
 
 </form>

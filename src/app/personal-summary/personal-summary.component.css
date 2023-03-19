@@ -1,7 +1,7 @@
 .ai-return{
 overflow: hidden;
 animation:smooth;
-animation-duration: 4s;
+animation-duration: 0.75s;
 }
 @keyframes smooth{
     0% {height: 0rem; ;opacity: 1%;}

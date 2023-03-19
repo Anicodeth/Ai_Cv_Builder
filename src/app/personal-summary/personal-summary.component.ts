@@ -10,7 +10,7 @@ import { ResumeService } from '../services/resume.service';
 export class PersonalSummaryComponent {
 
      //This will be replaces by the backend received data
-     public aiSummary:string[] = ["1","2","5","sd"];
+     public aiSummary:string[] = ["1","2","5","sd", "i am an ai called davoincni"];
      public personalAddition:FormGroup;
      public aiChoicesExpand:boolean = false;
      public userChoice!: string;

@@ -4,7 +4,7 @@
     margin: 1rem;
     flex-wrap: wrap;
     align-content: stretch;
-    border: 1px solid black;
+
 
 }
 .right-segment{
@@ -20,14 +20,16 @@
 
     margin: 0.5rem;
     flex: 1 1 1rem;
-    border: 1px solid black;
+
     display: flex;
     justify-content: center;
 }
 
 @media (max-width: 1200px) {
     .main-container {
+        
       flex-direction: column;
+
     }
   }
 
