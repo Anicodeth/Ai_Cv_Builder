@@ -1,0 +1,27 @@
+<h4>Skills</h4>
+<p>Choose 5 of the most important skills to show your talents! Make sure they match the keywords of the job listing if applying via an online system.</p>
+<div class="relevant-skills">
+    <button *ngFor="let skill of relevantSkills; let i = index" (click)="addSuggestedSkill(i)">{{ skill }}<svg width="20" height="20" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" class="sc-gVemxE dVJtQt"><path d="M11 5H9v4H5v2h4v4h2v-4h4V9h-4V5z"></path></svg></button>
+</div>
+<div>
+    <form [formGroup]="skillsForm">
+        <div formArrayName="skills">
+            <div *ngFor="let skills of skills.controls; let i = index" [formGroupName]="i">
+                <div>
+                    <label for="skillName">Skill</label>
+                    <input type="text" id="skillName" placeholder="Name of Skil" formControlName="skillName"/>
+                </div>
+                <div>
+                    <label for="experienceLevel">Experience Level</label>
+                    <input type="number" id="experienceLevel" placeholder="Your experience level with the skill" formControlName="experienceLevel">
+                </div>
+                <button type="button" (click)="removeSkill(i)">
+                    Remove skill
+                </button>
+            </div>
+        </div>
+        <button type="button" (click)="addSkill()">
+            Add a new skill
+        </button>
+    </form>
+</div>

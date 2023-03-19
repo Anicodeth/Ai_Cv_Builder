@@ -12,6 +12,8 @@ export class ResumeService {
   private extraCurricularActivitiesForm: FormGroup;
   private personalDetailsForm: FormGroup;
   private personalSummaryForm: FormGroup;
+  private webAndSocialLinksForm: FormGroup;
+  private skillsForm: FormGroup;
 
   constructor(
     private fb: FormBuilder
@@ -45,6 +47,12 @@ export class ResumeService {
     });
     this.extraCurricularActivitiesForm = this.fb.group({
       extraCurricularActivities: this.fb.array([])
+    });
+    this.webAndSocialLinksForm = this.fb.group({
+      webAndSocialLinks: this.fb.array([])
+    });
+    this.skillsForm = this.fb.group({
+      skills: this.fb.array([])
     });
   }
 
@@ -82,6 +90,22 @@ export class ResumeService {
 
   get extraCurricularActivities(): FormArray {
     return this.extraCurricularActivitiesForm.get('extraCurricularActivities') as FormArray;
+  }
+
+  getWebAndSocialLinksForm(): FormGroup {
+    return this.webAndSocialLinksForm;
+  }
+
+  get webAndSocialLinks(): FormArray {
+    return this.webAndSocialLinksForm.get('webAndSocialLinks') as FormArray;
+  }
+
+  getSkillsForm(): FormGroup {
+    return this.skillsForm;
+  }
+
+  get skills(): FormArray {
+    return this.skillsForm.get('skills') as FormArray;
   }
 
 }

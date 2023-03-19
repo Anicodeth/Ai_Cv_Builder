@@ -44,6 +44,24 @@
         </div>
         <hr>
     </div>
+    <div class="links-list" *ngIf="webAndSocialLinks.touched">
+        <h4 *ngIf="webAndSocialLinks.touched">Websites and Social Links</h4>
+        <div *ngFor="let webAndSocialLink of webAndSocialLinks.controls; let i = index">
+            <div *ngIf="webAndSocialLink.value.label">{{ webAndSocialLink.value.label }}
+                <span *ngIf="webAndSocialLink.value.link">: {{ webAndSocialLink.value.link }}</span>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div class="skills-list" *ngIf="skills.touched">
+        <h4 *ngIf="skills.touched">Skills</h4>
+        <div *ngFor="let skill of skills.controls; let i = index">
+            <div *ngIf="skill.value.skillName">{{ skill.value.skillName }}
+                <span *ngIf="skill.value.experienceLevel">: {{ skill.value.experienceLevel }}</span>
+            </div>
+        </div>
+        <hr>
+    </div>
     <div class="references-list" *ngIf="references.touched">
         <h4 *ngIf="references.touched">References</h4>
         <div *ngFor="let reference of references.controls; let i = index">

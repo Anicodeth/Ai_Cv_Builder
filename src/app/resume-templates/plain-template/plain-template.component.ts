@@ -11,6 +11,8 @@ export class PlainTemplateComponent implements OnInit, OnChanges {
   public references: any;
   public experiences: any;
   public educations: any;
+  public webAndSocialLinks: any;
+  public skills: any;
 
   constructor (
     private resumeService: ResumeService,
@@ -19,6 +21,8 @@ export class PlainTemplateComponent implements OnInit, OnChanges {
       this.references = this.resumeService.references;
       this.experiences = this.resumeService.experiences;
       this.educations = this.resumeService.educations;
+      this.webAndSocialLinks = this.resumeService.webAndSocialLinks;
+      this.skills = this.resumeService.skills;
   }
 
   ngOnInit() {

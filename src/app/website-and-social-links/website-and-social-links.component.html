@@ -1,0 +1,24 @@
+<h4>Websites and Social Links</h4>
+<p>You can add links to websites you want hiring managers to see! Perhaps It will be  a link to your portfolio, LinkedIn profile, or personal website</p>
+<div>
+    <form [formGroup]="webAndSocialLinksForm">
+        <div formArrayName="webAndSocialLinks">
+            <div *ngFor="let webAndSocialLink of webAndSocialLinks.controls; let i = index" [formGroupName]="i">
+                <div>
+                    <label for="webAndSocialLinkEmployer">Label</label>
+                    <input type="text" id="webAndSocialLinkEmployer" placeholder="Link Label" formControlName="label">
+                </div>
+                <div>
+                    <label for="webAndSocialLinkJobTitle">Link</label>
+                    <input type="text" id="webAndSocialLinkJobTitle" placeholder="Link Address" formControlName="link">
+                </div>
+                <button type="button" (click)="removeWebAndSocialLink(i)">
+                    Remove Link
+                </button>
+            </div>
+        </div>
+        <button type="button" (click)="addWebAndSocialLink()">
+            Add a Link
+        </button>
+    </form>
+</div>
