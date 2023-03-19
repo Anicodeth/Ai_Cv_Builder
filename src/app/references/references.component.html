@@ -1,25 +1,32 @@
-<div>
+<h4>References</h4>
+<div class="form-group">
     <form [formGroup]="referencesForm">
-        <div class="personal-row">
-            <div class="unit">
-                <label for="refernceName">Referent's Name</label><br>
-                <input type="text" id="refernceName" placeholder="John Doe" formControlName="name">
+        <div formArrayName="references">
+            <div *ngFor="let reference of references.controls; let i = index" [formGroupName]="i"
+                class="notable-people">
+                <div>
+                    <label for="referenceName">Name</label>
+                    <input type="text" id="referenceName" placeholder="Refernece Name" formControlName="name">
+                </div>
+                <div>
+                    <label for="referenceCompany">Company</label>
+                    <input type="text" id="referenceCompany" placeholder="Person Company" formControlName="company">
+                </div>
+                <div>
+                    <label for="referencePhone">Phone</label>
+                    <input type="number" id="referencePhone" placeholder="Refernece Phone" formControlName="phone">
+                </div>
+                <div>
+                    <label for="referenceEmail">Email</label>
+                    <input type="email" id="referenceEmail" placeholder="Refernece Email" formControlName="email">
+                </div>
+                <button type="button" (click)="removeReference(i)">
+                    Remove Refernece
+                </button>
             </div>
-
-            <div class="unit">
-                <label for="refernceCompany">Referent's Company</label><br>
-                <input type="text" id="refernceCompany" placeholder="ABC Company" formControlName="company">
-            </div>
-    </div>
-    <div class="personal-row">
-        <div class="unit">
-            <label for="referncePhone">Referent's Name</label><br>
-            <input type="number" id="referncePhone" placeholder="+251932323232" formControlName="phone">
         </div>
-        <div class="unit">
-            <label for="refernceEmail">Referent's Name</label><br>
-            <input type="email" id="refernceEmail" placeholder="johndoe@example.com" formControlName="email">
-        </div>
-    </div>
+        <button type="button" (click)="addReference()">
+            Add one more reference
+        </button>
     </form>
 </div>

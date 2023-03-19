@@ -1,11 +1,11 @@
-<div class = 'personal-details-container'>
+<div class='personal-details-container'>
     <div class="personal-header">
         <h4>Personal Detail</h4>
     </div>
 
-    <form>
-        <div class = "personal-row">
-            <div class = "unit">
+    <form [formGroup]="personalDetailsForm">
+        <div class="personal-row">
+            <div class="unit">
                 <label for="jobTitle">Job Title</label><br>
                     <input type="text" class="form-control" 
                     id="jobTitle" ngModel name="jobTitle" 
@@ -21,14 +21,14 @@
         </div>
 
 
-        <div class = "personal-row">
-            <div class = "unit">
+        <div class="personal-row">
+            <div class="unit">
                 <label for="firstname">First Name</label><br>
                     <input type="text" class="form-control" 
                     id="firstname" ngModel name="firstname" 
                     #firstname="ngModel">
             </div>
-            <div class = "unit">
+            <div class="unit">
                 <label for="lastname">Last Name</label><br>
                     <input type="text" class="form-control" 
                     id="lastname" ngModel name="lastname" 
@@ -43,7 +43,7 @@
                     id="email" ngModel name="email" 
                     #email="ngModel">
             </div>
-            <div class = "unit">
+            <div class="unit">
                 <label for="phone">Phone</label><br>
                     <input type="number" class="form-control" 
                     id="phone" ngModel name="phone" 
@@ -51,14 +51,14 @@
             </div>
         </div>
 
-        <div class = "personal-row">
-            <div class = "unit">
+        <div class="personal-row">
+            <div class="unit">
                 <label for="country">Country</label><br>
                     <input type="text" class="form-control" 
                     id="country" ngModel name="country" 
                     #country="ngModel">
             </div>
-            <div class = "unit">
+            <div class="unit">
                 <label for="city">City</label><br>
                     <input type="text" class="form-control" 
                     id="city" ngModel name="city" 
@@ -116,5 +116,5 @@
             </button>
         </div>
 
-</form>
+    </form>
 </div>

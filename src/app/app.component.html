@@ -4,8 +4,11 @@
             <app-progress-bar></app-progress-bar>
             <app-personaldetails></app-personaldetails>
             <app-personal-summary></app-personal-summary>
+            <app-experience></app-experience>
             <app-website-links></app-website-links>
-            <app-references></app-references>
+            <app-references *ngIf="referencesSection()"></app-references>
+            <app-extra-curricular-activities *ngIf="extraCurricularActivitiesSection()"></app-extra-curricular-activities>
+            <app-add-sections></app-add-sections>
         </div>
     </div>
     

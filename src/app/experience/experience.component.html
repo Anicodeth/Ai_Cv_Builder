@@ -1,0 +1,39 @@
+<h4>Experiences</h4>
+<div>
+    <form [formGroup]="experiencesForm">
+        <div formArrayName="experiences">
+            <div *ngFor="let experiences of experiences.controls; let i = index" [formGroupName]="i">
+                <div>
+                    <label for="experienceEmployer">Employer</label>
+                    <input type="text" id="experienceEmployer" placeholder="Experience Employer" formControlName="employer"/>
+                </div>
+                <div>
+                    <label for="experienceJobTitle">Job Title</label>
+                    <input type="text" id="experienceJobTitle" placeholder="Experience Job Title" formControlName="jobTitle">
+                </div>
+                <div>
+                    <label for="experienceCity">City</label>
+                    <input type="text" id="experienceCity" placeholder="Experience City" formControlName="city">
+                </div>
+                <div>
+                    <label for="experienceStartDate">Start Date</label>
+                    <input type="date" id="experienceStartDate" placeholder="Experience Start Date" formControlName="startDate">
+                </div>
+                <div>
+                    <label for="experienceEndDate">End Date</label>
+                    <input type="date" id="experienceEndDate" placeholder="Experience End Date" formControlName="endDate">
+                </div>
+                <div>
+                    <label for="experienceDescription">Description</label>
+                    <textarea type="text" id="experienceDescription" placeholder="Experience Description" formControlName="description"></textarea>
+                </div>
+                <button type="button" (click)="removeExperience(i)">
+                    Remove Experience
+                </button>
+            </div>
+        </div>
+        <button type="button" (click)="addExperience()">
+            Add experience
+        </button>
+    </form>
+</div>
