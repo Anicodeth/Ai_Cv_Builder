@@ -2,7 +2,8 @@
 <div>
     <form [formGroup]="experiencesForm">
         <div formArrayName="experiences">
-            <div class = "add-experience" *ngFor="let experiences of experiences.controls; let i = index" [formGroupName]="i">
+            <div class = "add-experience" *ngFor="let experiences of experiences.controls;
+             let i = index" [formGroupName]="i">
                 
                 <div class = "personal-row">
                     <div class = "unit ">
@@ -19,16 +20,17 @@
                     </div>
             </div>
 
+
             <div class = "personal-row">
 
             <div class = "unit">
-                <div>
+                <div >
                     <label for="experienceStartDate">Start Date</label>
                     <input type="date" class = "form-control"  
                     id="experienceStartDate" placeholder="Experience Start Date" 
                     formControlName="startDate">
                 </div>
-                <div>
+                <div  >
                     <label for="experienceEndDate">End Date</label>
                     <input type="date" class = "form-control"  
                     id="experienceEndDate" placeholder="Experience End Date" formControlName="endDate">
@@ -43,6 +45,7 @@
                 </div>
 
             </div>
+            
                 <div>
                     <label for="experienceDescription">Description</label>
                     <textarea  type="text" class = "form-control"

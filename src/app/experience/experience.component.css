@@ -1,17 +1,27 @@
 .unit{
-    width:45%;
-  }  
+  width:45%;
+} 
 
 .personal-row{
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+}
+
+input{
+  background-color: rgb(239, 242, 249);
+  height: calc(2.25em + 0.75rem + 2px);
+}
+
+#experienceDescription{
+  background-color: rgb(239, 242, 249);
+}
+
+@media (max-width: 550px) {
+  .personal-row{
+   flex-direction: column;
+ }
+ .unit {
+   width:auto;
  }
 
- input{
-    background-color: rgb(239, 242, 249);
-    height: calc(2.25em + 0.75rem + 2px);
-  }
-
-  #experienceDescription{
-    background-color: rgb(239, 242, 249);
-  }
+}

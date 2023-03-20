@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ResumeService } from '../services/resume.service';
 
 @Component({
   selector: 'app-website-links',
@@ -6,68 +8,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./website-links.component.css']
 })
 export class WebsiteLinksComponent {
-  linknlabel: string[] = ['Label', 'Link']
-  counter: number = 0
-  
-  addLink(){
-    let formArr: HTMLElement[] = []
-
-    for (let element of this.linknlabel){
-      let labelArr: HTMLElement[] = [];
-
-      const label = this.addLabel(element);
-      labelArr.push(label);
-
-      labelArr.push(document.createElement('br'));
-
-      const input = this.addInput(element, 'site-' + element);
-      labelArr.push(input);
-
-      const div = this.addDiv(labelArr, 'input-control');
-      formArr.push(div);
-    }
-
-    const form = this.addForm(formArr, 'form-web');
-    form.style.setProperty('display', 'flex');
-    form.style.setProperty('justify-content', 'space-between');
-    document.getElementById('here')?.append(form);
-    
+  public linkForm: FormGroup;
+  constructor(
+    private fb: FormBuilder,
+    private resumeService: ResumeService
+  ) {
+    this.linkForm = this.resumeService.getlinkForm();
   }
 
-  addLabel(name: string){
-    const label = document.createElement('label');
-    label.setAttribute('for', 'site-label');
-    label.innerText = name;
-
-    return label;
+  get links(): FormArray {
+    return this.linkForm.get('links') as FormArray;
   }
 
-  addInput(name: string, id: string){
-    const input = document.createElement('input');
-    input.name, input.id, input.type = name, id, 'text';
+  addlink() {
+    this.links.push(
+      this.fb.group({
+        label: [null, Validators.required],
+        link: [null, Validators.required],
+      })
+    );
 
-    return input;
+    console.log(this.resumeService.getlinkForm());
   }
 
-  addDiv(elements: HTMLElement[], divClass: string){
-    const div = document.createElement('div');
-    for (let element of elements){
-      div.append(element);
-    }
-    
-    div.setAttribute('class', divClass);
-    return div
+  removelink(index: number) {
+    this.links.removeAt(index);
   }
-
-  addForm(elements: HTMLElement[], id: string){
-    const form = document.createElement('form');
-    form.id = id
-
-    for (let element of elements){
-      form.append(element);
-    }
-
-    return form
-  }
-
 }

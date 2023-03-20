@@ -1,9 +1,29 @@
-<div class="">
-
-    <h4 class="card-title">Websites & Social Links</h4>
-    <p>Add links to websites you want hiring managers to see.</p>
-    <div id="here" class="links card-body">
-    </div>
-    <button type="button" class="" (click)="addLink()">+ Add a link</button>
-    
+<h4>Websites & Social Links</h4>
+<div >
+    <form [formGroup]="linkForm">
+        <div formArrayName="links">
+            <div class = "add-links" *ngFor="let link of links.controls; 
+             let i = index" [formGroupName]="i" class="link">
+                <div class="input-row">
+                        <div class="unit">
+                            <label for="label">Label</label>
+                            <input class = "form-control" type="text" 
+                            id="label" placeholder="label" formControlName="label">
+                        </div>
+                        <div class="unit">
+                            <label for = "link">Link</label>
+                            <input class = "form-control" type="text" 
+                            id="link" placeholder="link" formControlName="link">
+                        </div>
+                </div>
+                
+                <button class = "btn btn-outline-danger" type="button" (click)="removelink(i)">
+                    Remove Link
+                </button>
+            </div>
+        </div>
+        <button class = "btn btn-outline-primary" type="button" (click)="addlink()">
+            Add one more link
+        </button>
+    </form>
 </div>

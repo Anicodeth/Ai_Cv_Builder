@@ -30,7 +30,6 @@ export class ReferencesComponent {
       })
     );
 
-    console.log(this.resumeService.getReferencesForm());
   }
 
   removeReference(index: number) {

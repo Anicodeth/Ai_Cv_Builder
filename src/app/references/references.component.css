@@ -1,3 +1,25 @@
-.unit {
-    display: inline-block;
-}
+.unit{
+    width:45%;} 
+  
+.input-row{
+    display: flex;
+    justify-content: space-between;}
+
+ input{
+    background-color: rgb(239, 242, 249);
+    height: calc(2.25em + 0.75rem + 2px);
+  }
+
+  #experienceDescription{
+    background-color: rgb(239, 242, 249);
+  }
+  
+  @media (max-width: 550px) {
+    .input-row{
+     flex-direction: column;
+   }
+   
+   .unit {
+     width:auto;
+   }
+ }

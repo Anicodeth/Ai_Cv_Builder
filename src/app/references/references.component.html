@@ -1,31 +1,42 @@
 <h4>References</h4>
-<div class="form-group">
+<div>
     <form [formGroup]="referencesForm">
         <div formArrayName="references">
-            <div *ngFor="let reference of references.controls; let i = index" [formGroupName]="i"
+            <div class = "add-reference" *ngFor="let reference of references.controls;
+             let i = index" [formGroupName]="i"
                 class="notable-people">
-                <div>
-                    <label for="referenceName">Name</label>
-                    <input type="text" id="referenceName" placeholder="Refernece Name" formControlName="name">
+                <div class="input-row">
+                        <div class="unit">
+                            <label for="referenceName">Name</label>
+                            <input class = "form-control" type="text" id="referenceName"
+                             placeholder="Referenece Name" formControlName="name">
+                        </div>
+                        <div class="unit">
+                            <label for = "referenceCompany">Company</label>
+                            <input class = "form-control" type="text" id="referenceCompany"
+                             placeholder="Person Company" formControlName="company">
+                        </div>
                 </div>
-                <div>
-                    <label for="referenceCompany">Company</label>
-                    <input type="text" id="referenceCompany" placeholder="Person Company" formControlName="company">
-                </div>
-                <div>
+                
+            <div class="input-row">
+                <div class="unit">
                     <label for="referencePhone">Phone</label>
-                    <input type="number" id="referencePhone" placeholder="Refernece Phone" formControlName="phone">
+                    <input class = "form-control" type="number" id="referencePhone"
+                     placeholder="Refernece Phone" formControlName="phone">
                 </div>
-                <div>
+
+                <div class="unit">
                     <label for="referenceEmail">Email</label>
-                    <input type="email" id="referenceEmail" placeholder="Refernece Email" formControlName="email">
+                    <input class = "form-control" type="email" id="referenceEmail"
+                     placeholder="Referenece Email" formControlName="email">
                 </div>
-                <button type="button" (click)="removeReference(i)">
-                    Remove Refernece
+            </div>
+                <button class = "btn btn-outline-danger" type="button" (click)="removeReference(i)">
+                    Remove Referenece
                 </button>
             </div>
         </div>
-        <button type="button" (click)="addReference()">
+        <button class = "btn btn-outline-primary" type="button" (click)="addReference()">
             Add one more reference
         </button>
     </form>
