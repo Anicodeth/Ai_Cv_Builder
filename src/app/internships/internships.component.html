@@ -1,22 +1,21 @@
-<h4>Experiences</h4>
-<p>Show your relevant experience (last 10 years). Use bullet points to note your achievements, if possible - use numbers/facts (Achieved X, measured by Y, by doing Z).</p>
+<h4>Internships</h4>
 <div>
-    <form [formGroup]="experiencesForm">
-        <div formArrayName="experiences">
-            <div class = "add-experience" *ngFor="let experiences of experiences.controls;
+    <form [formGroup]="internshipsForm">
+        <div formArrayName="internships">
+            <div class = "add-internship" *ngFor="let internships of internships.controls;
              let i = index" [formGroupName]="i">
                 
                 <div class = "personal-row">
                     <div class = "unit ">
-                        <label for="experienceEmployer">Employer</label>
+                        <label for="internshipEmployer">Employer</label>
                         <input type="text" class = "form-control" 
-                        id="experienceEmployer" placeholder="Experience Employer" 
+                        id="internshipEmployer" placeholder="Experience Employer" 
                         formControlName="employer"/>
                     </div>
                     <div class = "unit">
-                        <label for="experienceJobTitle">Job Title</label>
+                        <label for="internshipJobTitle">Job Title</label>
                         <input type="text" class = "form-control" 
-                        id="experienceJobTitle" placeholder="Experience Job Title" 
+                        id="internshipJobTitle" placeholder="Experience Job Title" 
                         formControlName="jobTitle">
                     </div>
             </div>
@@ -26,31 +25,31 @@
 
             <div class = "unit">
                 <div >
-                    <label for="experienceStartDate">Start Date</label>
+                    <label for="internshipStartDate">Start Date</label>
                     <input type="date" class = "form-control"  
-                    id="experienceStartDate" placeholder="Experience Start Date" 
+                    id="internshipStartDate" placeholder="Experience Start Date" 
                     formControlName="startDate">
                 </div>
                 <div  >
-                    <label for="experienceEndDate">End Date</label>
+                    <label for="internshipEndDate">End Date</label>
                     <input type="date" class = "form-control"  
-                    id="experienceEndDate" placeholder="Experience End Date" formControlName="endDate">
+                    id="internshipEndDate" placeholder="Experience End Date" formControlName="endDate">
                 </div>
             </div>
 
 
                 <div class="unit">
-                    <label for="experienceCity">City</label>
+                    <label for="internshipCity">City</label>
                     <input type="text"  class = "form-control"  
-                    id="experienceCity" placeholder="Experience City" formControlName="city">
+                    id="internshipCity" placeholder="Experience City" formControlName="city">
                 </div>
 
             </div>
             
                 <div>
-                    <label for="experienceDescription">Description</label>
+                    <label for="internshipDescription">Description</label>
                     <textarea  type="text" class = "form-control"
-                      id="experienceDescription" placeholder="Experience Description"
+                      id="internshipDescription" placeholder="Experience Description"
                        formControlName="description" rows="5"></textarea>
                 </div>
                 <button class = "btn btn-outline-danger" 
@@ -60,7 +59,7 @@
             </div>
         </div>
         <button type="button" class = "btn btn-outline-primary" (click)="addExperience()">
-            Add experience
+            Add internship
         </button>
     </form>
 </div>

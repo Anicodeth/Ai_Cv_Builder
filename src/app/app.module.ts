@@ -18,6 +18,12 @@ import { ExperienceComponent } from './experience/experience.component';
 import { AddSectionsComponent } from './add-sections/add-sections.component';
 import { SectionsService } from './services/sections.service';
 import { ExtraCurricularActivitiesComponent } from './extra-curricular-activities/extra-curricular-activities.component';
+import { EducationsComponent } from './educations/educations.component';
+import { CoursesComponent } from './courses/courses.component';
+import { LanguagesComponent } from './languages/languages.component';
+import { InternshipsComponent } from './internships/internships.component';
+import { CustomSectionComponent } from './custom-section/custom-section.component';
+import { HobbiesComponent } from './hobbies/hobbies.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +37,13 @@ import { ExtraCurricularActivitiesComponent } from './extra-curricular-activitie
     ReferencesComponent,
     ExperienceComponent,
     AddSectionsComponent,
-    ExtraCurricularActivitiesComponent
+    ExtraCurricularActivitiesComponent,
+    EducationsComponent,
+    CoursesComponent,
+    LanguagesComponent,
+    InternshipsComponent,
+    CustomSectionComponent,
+    HobbiesComponent
   ],
   imports: [
     FormsModule,

@@ -11,7 +11,7 @@ export class AddSectionsComponent {
     private sectionsService: SectionsService
   ) {}
 
-  onAddReferences() {
+  onAddReferences(): void {
     this.sectionsService.referencesAdded = true;
   }
 
@@ -19,12 +19,52 @@ export class AddSectionsComponent {
     return this.sectionsService.referencesAdded;
   }
 
-  onAddExtraCurricularActivities() {
+  onAddExtraCurricularActivities(): void {
     this.sectionsService.extraCurricularActivitiesAdded = true;
   }
 
   get extraCurricularActivitiesAdded(): boolean {
     return this.sectionsService.extraCurricularActivitiesAdded;
+  }
+
+  onAddHobbies(): void {
+    this.sectionsService.hobbiesAdded = true;
+  }
+
+  get hobbiesAdded(): boolean {
+    return this.sectionsService.getHobbiesAdded();
+  }
+
+  onAddLanguages(): void {
+    this.sectionsService.languagesAdded = true;
+  }
+
+  get languagesAdded(): boolean {
+    return this.sectionsService.getLanguagesAdded();
+  }
+
+  onAddInternships(): void {
+    this.sectionsService.internshipsAdded = true;
+  }
+
+  get internshipsAdded(): boolean {
+    return this.sectionsService.getInternshipsAdded();
+  }
+
+  onAddCourses(): void {
+    this.sectionsService.coursesAdded = true;
+  }
+
+  get coursesAdded(): boolean {
+    return this.sectionsService.getCoursesAdded();
+  }
+
+  onAddCustomSections(): void {
+    this.sectionsService.customSectionsAdded = true;
+  }
+
+  get customSections(): boolean {
+    return this.sectionsService.getCustomSectionsAdded();
   }
 
 }

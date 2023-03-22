@@ -1,12 +1,12 @@
 <div class="add-sections-container">
     <h4>Add Sections</h4>
-    <ul>
-        <li><button>Custom Section</button></li>
-        <li><button (click)="onAddExtraCurricularActivities()" [disabled]="extraCurricularActivitiesAdded">Extra Curricular Activities</button></li>
-        <li><button>Hobbies</button></li>
-        <li><button (click)="onAddReferences()" [disabled]="referencesAdded">References</button></li>
-        <li><button>Courses</button></li>
-        <li><button>Internships</button></li>
-        <li><button>Languages</button></li>
-    </ul>
+    <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action btn btn-primary" (click)="onAddCustomSections()">Custom Section</button>
+        <button type="button" class="list-group-item list-group-item-action btn btn-primary" (click)="onAddExtraCurricularActivities()">Extra Curricular Activities</button>
+        <button type="button" class="list-group-item list-group-item-action btn btn-primary" (click)="onAddHobbies()">Hobbies</button>
+        <button type="button" class="list-group-item list-group-item-action btn btn-primary" (click)="onAddReferences()" [disabled]="referencesAdded">References</button>
+        <button type="button" class="list-group-item list-group-item-action btn btn-primary" (click)="onAddCourses()">Courses</button>
+        <button type="button" class="list-group-item list-group-item-action btn btn-primary" (click)="onAddInternships()">Internships</button>
+        <button type="button" class="list-group-item list-group-item-action btn btn-primary" (click)="onAddLanguages()">Languages</button>
+    </div>
 </div>

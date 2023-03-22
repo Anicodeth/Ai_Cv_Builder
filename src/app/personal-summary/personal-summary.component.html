@@ -1,27 +1,31 @@
-    <div class = "personal-summary">
-        <div class = "summary-title">
-            <h4 class = "personal-summary-header">Personal Summary</h4>
-        </div>
-        <div class = "section-description">
-            <p>Write 2-4 short & energetic sentences to interest the reader! Mention your role, experience & most importantly - your biggest achievements, best qualities and skills.</p>
-        </div>
+ <div class="personal-summary">
+    <div class="summary-title">
+        <h4 class="personal-summary-header">Personal Summary</h4>
+    </div>
+    <div class="section-description">
+        <p>Write 2-4 short & energetic sentences to interest the reader! Mention
+            your role, experience & most importantly - your biggest
+            achievements, best qualities and skills.</p>
+    </div>
 
-    <div class = "summary-box">
-        <form >
-        <textarea class = "personal-space form-control"  
-         rows="5" cols="48"></textarea>
+    <div class="summary-box">
+        <form>
+            <textarea class="personal-space form-control"
+                rows="5" cols="48"></textarea>
         </form>
 
         <div class="ai-section">
-            <button class="ai-summery btn btn-outline-primary" (click)="displayAiChoices()">AI Summary</button>
-            <div class="ai-return" *ngIf = "aiChoicesExpand">
+            <button class="ai-summery btn btn-outline-primary"
+                (click)="displayAiChoices()">AI Summary</button>
+            <div class="ai-return" *ngIf="aiChoicesExpand">
                 <h5 class="choice-header">AI Choices</h5>
-                  <form class = 'ai-choices' >
-                    <div class = 'ai-choice alert alert-primary'   *ngFor = "let aiText of aiSummary">
-                        <input  class = 'ai-selected ' 
-                           type="radio" value="{{aiText}}" >{{aiText}}<br>
+                <form class= 'ai-choices'>
+                    <div class= 'ai-choice alert alert-primary' *ngFor="let
+                        aiText of aiSummary">
+                        <input class= 'ai-selected '
+                            type="radio" value="{{aiText}}">{{aiText}}<br>
                     </div>
-               </form>
-          </div>
+                </form>
+            </div>
+        </div>
     </div>
-</div>

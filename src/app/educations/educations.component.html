@@ -1,0 +1,96 @@
+<h4>Education</h4>
+<p>A varied education on your resume sums up the value that your learnings and background will bring to job.</p>
+<div>
+  <form [formGroup]="educationsForm">
+    <div formArrayName="educations">
+      <div
+        class="add-education"
+        *ngFor="let educations of educations.controls; let i = index"
+        [formGroupName]="i"
+      >
+        <div class="personal-row">
+          <div class="unit">
+            <label for="educationSchool">School</label>
+            <input
+              type="text"
+              class="form-control"
+              id="educationSchool"
+              placeholder="Education School"
+              formControlName="school"
+            />
+          </div>
+          <div class="unit">
+            <label for="educationJobTitle">Degree</label>
+            <input
+              type="text"
+              class="form-control"
+              id="educationJobTitle"
+              placeholder="Degree"
+              formControlName="degree"
+            />
+          </div>
+        </div>
+
+        <div class="personal-row">
+          <div class="unit">
+            <div>
+              <label for="educationStartDate">Start Date</label>
+              <input
+                type="date"
+                class="form-control"
+                id="educationStartDate"
+                formControlName="startDate"
+              />
+            </div>
+            <div>
+              <label for="educationEndDate">End Date</label>
+              <input
+                type="date"
+                class="form-control"
+                id="educationEndDate"
+                formControlName="endDate"
+              />
+            </div>
+          </div>
+
+          <div class="unit">
+            <label for="educationCity">City</label>
+            <input
+              type="text"
+              class="form-control"
+              id="educationCity"
+              placeholder="Education City"
+              formControlName="city"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label for="educationDescription">Description</label>
+          <textarea
+            type="text"
+            class="form-control"
+            id="educationDescription"
+            placeholder="Education Description"
+            formControlName="description"
+            rows="5"
+          ></textarea>
+        </div>
+        <button
+          class="btn btn-outline-danger"
+          type="button"
+          (click)="removeEducation(i)"
+        >
+          Remove Education
+        </button>
+      </div>
+    </div>
+    <button
+      type="button"
+      class="btn btn-outline-primary"
+      (click)="addEducation()"
+    >
+      Add education
+    </button>
+  </form>
+</div>

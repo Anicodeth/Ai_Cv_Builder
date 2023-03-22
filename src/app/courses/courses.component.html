@@ -1,0 +1,41 @@
+<h4>Courses</h4>
+<div>
+    <form [formGroup]="coursesForm">
+        <div formArrayName="courses">
+            <div class="add-course" *ngFor="let courses of courses.controls;
+                let i= index" [formGroupName]="i">
+
+                <div class="personal-row">
+                    <div class="unit ">
+                        <label for="courseTitle">Title</label>
+                        <input type="text" class="form-control" id="courseTitle" placeholder="Title"
+                            formControlName="course">
+                    </div>
+                    <div class="unit">
+                        <label for="courseInstitution">Institution</label>
+                        <input type="text" class="form-control" id="courseInstitution" placeholder="Institution"
+                            formControlName="institution">
+                    </div>
+                </div>
+
+
+                <div class="personal-row">
+                    <div class="unit">
+                        <label for="courseStartDate">Start Date</label>
+                        <input type="date" class="form-control" id="courseStartDate" formControlName="startDate">
+                    </div>
+                    <div class="unit">
+                        <label for="courseEndDate">End Date</label>
+                        <input type="date" class="form-control" id="courseEndDate" formControlName="endDate">
+                    </div>
+                </div>
+                <button class="btn btn-outline-danger" type="button" (click)="removeCourse(i)">
+                    Remove Course
+                </button>
+            </div>
+        </div>
+        <button type="button" class="btn btn-outline-primary" (click)="addCourse()">
+            Add course
+        </button>
+    </form>
+</div>
