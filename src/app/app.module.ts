@@ -24,6 +24,7 @@ import { LanguagesComponent } from './languages/languages.component';
 import { InternshipsComponent } from './internships/internships.component';
 import { CustomSectionComponent } from './custom-section/custom-section.component';
 import { HobbiesComponent } from './hobbies/hobbies.component';
+import { SkillsComponent } from './skills/skills.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { HobbiesComponent } from './hobbies/hobbies.component';
     LanguagesComponent,
     InternshipsComponent,
     CustomSectionComponent,
-    HobbiesComponent
+    HobbiesComponent,
+    SkillsComponent
   ],
   imports: [
     FormsModule,
