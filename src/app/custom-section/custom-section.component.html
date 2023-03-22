@@ -1,1 +1,11 @@
-<p>Working on custom section to make it behave like it does.</p>
+<div class="form-group">
+    <label for="text-area">Enter Text:</label>
+    <textarea class="form-control" id="text-area" rows="5"></textarea>
+  </div>
+  <div class="btn-group" role="group" aria-label="Text formatting options">
+    <button type="button" class="btn btn-secondary" onclick="document.execCommand('bold', false, '');"><b>B</b></button>
+    <button type="button" class="btn btn-secondary" onclick="document.execCommand('italic', false, '');"><i>I</i></button>
+    <button type="button" class="btn btn-secondary" onclick="document.execCommand('underline', false, '');"><u>U</u></button>
+    <button type="button" class="btn btn-secondary" onclick="document.execCommand('insertUnorderedList', false, '');"><i class="fas fa-list-ul"></i></button>
+  </div>
+  

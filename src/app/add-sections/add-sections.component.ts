@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { SectionsService } from '../services/sections.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { SectionsService } from '../services/sections.service';
   templateUrl: './add-sections.component.html',
   styleUrls: ['./add-sections.component.css']
 })
-export class AddSectionsComponent {
+export class AddSectionsComponent {  
   constructor(
     private sectionsService: SectionsService
   ) {}

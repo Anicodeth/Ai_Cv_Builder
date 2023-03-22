@@ -133,7 +133,7 @@ export class ResumeService {
   }
 
   get links(): FormArray {
-    return this.webAndSocialLinks.get('links') as FormArray;
+    return this.webAndSocialLinksForm.get('webAndSocialLinks') as FormArray;
   }
 
   getInternshipsForm(): FormGroup {

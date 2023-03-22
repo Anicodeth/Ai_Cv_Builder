@@ -17,7 +17,7 @@ export class WebsiteLinksComponent {
   }
 
   get links(): FormArray {
-    return this.linkForm.get('links') as FormArray;
+    return this.linkForm.get('webAndSocialLinks') as FormArray;
   }
 
   addlink() {

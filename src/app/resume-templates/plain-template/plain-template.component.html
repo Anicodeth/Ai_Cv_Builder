@@ -1,5 +1,4 @@
 <div>
-    {{ personalDetails | json }}
     <div class="personal-details-list" *ngIf="personalDetails.touched">
         <div class="name-and-job" *ngIf="personalDetails.value.firstName">
             <h1>{{ personalDetails.value.firstName }} <span *ngIf="personalDetails.value.lastName">{{
