@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-preview-display',
   templateUrl: './preview-display.component.html',
@@ -36,5 +37,7 @@ export class PreviewDisplayComponent {
       this.currentPage -= 1;
     }
   }
+  
+
 
 }

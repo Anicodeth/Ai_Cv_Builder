@@ -26,3 +26,25 @@ input {
     width: auto;
   }
 }
+
+.hoover-feature{
+  background-color: rgb(239, 242, 249);
+  border: none;
+  margin: 0px 12px 12px 0px;
+  padding: 6px 6px 6px 10px;
+  color: rgb(30, 37, 50);
+  font-size: 0.9rem;
+  line-height: 20px;
+  transition: 0.1s;
+  border-radius: 0.3rem;
+  font-weight:bolder;
+  color: rgb(130, 139, 162);
+   
+}
+
+
+.hoover-feature:hover{
+background-color: #e6f1ff;
+color:   #1a91f0;
+text-shadow: none;
+}

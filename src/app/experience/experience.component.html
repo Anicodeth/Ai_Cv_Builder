@@ -2,7 +2,7 @@
 <p>Show your relevant experience (last 10 years). Use bullet points to note your achievements, if possible - use numbers/facts (Achieved X, measured by Y, by doing Z).</p>
 <div>
     <form [formGroup]="experiencesForm">
-        <div formArrayName="experiences">
+        <div  formArrayName="experiences">
             <div class = "add-experience" *ngFor="let experiences of experiences.controls;
              let i = index" [formGroupName]="i">
                 

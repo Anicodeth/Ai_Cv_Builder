@@ -28,6 +28,9 @@
     width:85%;
 
 }
+.main-preview-window{
+    width:100%;
+}
 
 @media (max-width: 1200px) {
     .main-container {

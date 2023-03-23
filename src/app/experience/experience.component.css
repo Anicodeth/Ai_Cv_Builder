@@ -25,3 +25,15 @@ input{
  }
 
 }
+
+
+.add-experience{
+  animation-name: smooth;
+  animation-duration: 0.75s;
+}
+
+@keyframes smooth {
+  0% {opacity: 1%;}
+  100% {opacity: 100%;}
+}
+

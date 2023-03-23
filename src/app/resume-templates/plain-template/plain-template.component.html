@@ -1,4 +1,4 @@
-<div>
+<div id = preview-window>
     <div class="personal-details-list" *ngIf="personalDetails.touched">
         <div class="name-and-job" *ngIf="personalDetails.value.firstName">
             <h1>{{ personalDetails.value.firstName }} <span *ngIf="personalDetails.value.lastName">{{
@@ -74,3 +74,5 @@
         <hr>
     </div>
 </div>
+
+<button (click) = 'toPdf()'>Download</button>

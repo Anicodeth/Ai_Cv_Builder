@@ -3,7 +3,7 @@
     match the keywords of the job listing if applying via an online system. Choose from the following curated for you by the AI based on the job title you picked or add your own skills.</p>
 <div class="relevant-skills row">
     <div class="col-4" *ngFor="let skill of relevantSkills; let i = index">
-        <button type="button" class="btn btn-outline-primary" (click)="addSuggestedSkill(i)">{{ skill }}</button>
+        <button type="button" class=" hoover-feature" (click)="addSuggestedSkill(i)">{{ skill }} +</button>
     </div>
 </div>
 <div>
