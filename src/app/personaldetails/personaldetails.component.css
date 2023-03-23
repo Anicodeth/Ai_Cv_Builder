@@ -1,14 +1,18 @@
+*{
+  font-weight:500;
+}
+
 .unit{
   color:rgb(130, 139, 162) ;
   width:45%;
 }  
+
 input{
   background-color: rgb(239, 242, 249);
   height: calc(2.25em + 0.75rem + 2px); 
 }
 
 .personal-row{
-
    display: flex;
    justify-content: space-between;
 }
@@ -19,17 +23,33 @@ input{
   margin-bottom: 2rem;
 }
 
-  @media (max-width: 550px) {
-     .personal-row{
-      flex-direction: column;
-    }
-    .unit {
-      width:auto;
-    }
+.photo-upload{
+  margin-bottom: -2rem;
+  height:8rem;
+  width:4.5rem;
 
-  }
+}
+.photo-upload input{
+  display:none;
+}
 
-  
+.photo-upload:hover{
+  color:   #1a91f0;
+}
 
-  
-  
+
+@media (max-width: 550px) {
+  .personal-row{
+   flex-direction: column;
+ }
+ .unit {
+   width:auto;
+ }
+
+ .photo-upload{
+  margin-top: 1rem;
+  width:6rem;
+  margin-bottom: 0.3rem;
+
+ }
+}

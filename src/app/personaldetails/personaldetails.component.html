@@ -7,28 +7,37 @@
         <div class="personal-row">
             <div class="unit">
                 <label for="jobTitle">Job Title</label><br>
-                    <input type="text" class="form-control" 
+                    <input type="text" placeholder="e.g. Computer Scientist"class="form-control" 
                     id="jobTitle" formControlName = "jobTitle">
             </div>
+            <div class = "unit">
+            <div class="photo-upload ">
+                <label class = "photo-label" for="photo-input">Photo
+                  <img class ="img-fluid" src="../../assets/PhotoUploadButton.png"  />
+                </label>
+                <input id="photo-input" type="file"
+                accept="image/x-png,image/jpeg" 
+                formControlName = "photo" />
+                
+              </div>
+             
+            </div>
+
         </div>
     
-    <div class = "personal-row">
-        <div class = "unit">
-            <label for="Photo">Photo</label><br>
-                <input type="file" class="" 
-                formControlName = "photo">
-        </div>
-    </div>
+
 
         <div class="personal-row">
             <div class="unit">
                 <label for="firstname">First Name</label><br>
                     <input type="text" class="form-control" 
+                    placeholder="e.g. John"
                     formControlName = "firstName">
             </div>
             <div class="unit">
                 <label for="lastname">Last Name</label><br>
                     <input type="text" class="form-control" 
+                    placeholder="e.g. Doe"
                     formControlName = "lastName">
             </div>
         </div>
@@ -37,11 +46,12 @@
             <div class = "unit">
                 <label for="email">Email</label><br>
                     <input type="email" class="form-control" 
-                    formControlName = "email">
+                    placeholder="e.g. Johndoe@gmail.com" formControlName = "email">
             </div>
             <div class="unit">
                 <label for="phone">Phone</label><br>
                     <input type="number" class="form-control" 
+                    placeholder="e.g. +251911555555"
                     formControlName = "phone">
             </div>
         </div>
@@ -50,11 +60,13 @@
             <div class="unit">
                 <label for="country">Country</label><br>
                     <input type="text" class="form-control" 
+                    placeholder="e.g. Ethiopia"
                     formControlName = "country">
             </div>
             <div class="unit">
                 <label for="city">City</label><br>
                     <input type="text" class="form-control" 
+                    placeholder="e.g. Addis Ababa"
                     formControlName = "city">
             </div>
             </div>
@@ -65,11 +77,13 @@
             <div class = "unit">
                     <label for="address">Address</label><br>
                         <input type="text" class="form-control" 
+                        placeholder="e.g. Arada Subcity, W09, 644"
                         formControlName = "address">
                  </div>
                  <div class = "unit">
                     <label for="postalcode">Postal Code</label><br>
                         <input type="number" class="form-control" 
+                        placeholder="e.g. 00000"
                         formControlName = "postalCode">
                  </div>
             </div>
@@ -78,11 +92,13 @@
                  <div class = "unit">
                     <label for="nationality">Nationality</label><br>
                         <input type="text" class="form-control" 
+                        placeholder="e.g. Ethiopian"
                         formControlName = "nationality">
                  </div>
                  <div class = "unit">
                     <label for="pob">Place of birth</label><br>
-                        <input type="text" class="form-control" 
+                        <input type="text" class="form-control"    
+                        placeholder="e.g. Hawassa"
                         formControlName = "pob">
                  </div>
                  </div>

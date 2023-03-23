@@ -2,9 +2,15 @@
   width: 45%;
 }
 
-.relevant-skills .btn {
-  margin: 0px;
-  margin-bottom: 5px;
+.relevant-skills {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+
+}
+
+.skill {
+  margin-right: 0.5rem;
 }
 
 .input-row {
