@@ -25,6 +25,7 @@ import { InternshipsComponent } from './internships/internships.component';
 import { CustomSectionComponent } from './custom-section/custom-section.component';
 import { HobbiesComponent } from './hobbies/hobbies.component';
 import { SkillsComponent } from './skills/skills.component';
+import { SessionStorageService } from 'ngx-webstorage';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { SkillsComponent } from './skills/skills.component';
   ],
   providers: [
     ResumeService,
-    SectionsService
+    SectionsService,
+    SessionStorageService
   ],
   bootstrap: [AppComponent]
 })

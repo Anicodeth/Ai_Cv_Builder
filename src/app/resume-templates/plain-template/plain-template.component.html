@@ -1,78 +1,69 @@
-<div id = preview-window>
-    <div class="personal-details-list" *ngIf="personalDetails.touched">
-        <div class="name-and-job" *ngIf="personalDetails.value.firstName">
-            <h1>{{ personalDetails.value.firstName }} <span *ngIf="personalDetails.value.lastName">{{
-                    personalDetails.value.lastName }}</span></h1>
-            <h4 *ngIf="personalDetails.value.jobTitle">{{ personalDetails.value.jobTitle }}</h4>
-            <hr>
+<div id="preview-window" class="container mt-5">
+    <div class="row">
+        <div class="col-md-4" *ngIf="personalDetails.touched">
+            <!-- <img src="img/profile.jpg" alt="Profile Picture" class="img-fluid"> -->
+            <h3>{{ personalDetails.value.firstName }} {{ personalDetails.value.lastName }}</h3>
+            <p>{{ personalDetails.value.jobTitle }}</p>
+            <ul class="list-unstyled">
+                <li><strong>Email:</strong> {{ personalDetails.value.email }}</li>
+                <li><strong>Phone:</strong> (251) {{ personalDetails.value.phone }}</li>
+                <li><strong>Location:</strong> {{ personalDetails.value.city }}, {{ personalDetails.value.country }} </li>
+                <li><strong>Address:</strong> {{ personalDetails.value.address }}</li>
+                <li><strong>Place of birth:</strong> {{ personalDetails.value.pob }}</li>
+                <li><strong>Date of birth:</strong> {{ personalDetails.value.dob }}</li>
+                <li><strong>Nationality:</strong> {{ personalDetails.value.nationality }}</li>
+                <li><strong>Postal Code:</strong> {{ personalDetails.value.postalCode }}</li>
+            </ul>
         </div>
-        <div class="address">
-            <h5 *ngIf="personalDetails.value.email">Details</h5>            
-            <p *ngIf="personalDetails.value.email">{{ personalDetails.value.email }}</p>
-            <p *ngIf="personalDetails.value.phone">{{ personalDetails.value.phone }}</p>
-            <p *ngIf="personalDetails.value.country">{{ personalDetails.value.country }}</p>
-            <p *ngIf="personalDetails.value.city">{{ personalDetails.value.city }}</p>
+        <div class="col-md-8">
+            <h2>Summary</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis non
+                augue eu risus tristique suscipit. Nulla facilisi. Aliquam erat
+                volutpat.</p>
+
+            <h2>Experience</h2>
+            <h4>Software Developer</h4>
+            <p><strong>ABC Company</strong> | New York City, NY | 2018 - Present</p>
+            <ul>
+                <li>Developed and maintained various software applications using
+                    Java and AngularJS.</li>
+                <li>Collaborated with cross-functional teams to identify and
+                    solve technical problems.</li>
+                <li>Implemented new features and optimized existing code to
+                    improve application performance.</li>
+            </ul>
+
+            <h4>Web Developer</h4>
+            <p><strong>XYZ Agency</strong> | Los Angeles, CA | 2015 - 2018</p>
+            <ul>
+                <li>Designed and developed responsive websites and web
+                    applications using HTML, CSS, and JavaScript.</li>
+                <li>Worked closely with clients to understand their needs and
+                    ensure project milestones were met on time.</li>
+            </ul>
+
+            <h2>Education</h2>
+            <h4>Bachelor of Science in Computer Science</h4>
+            <p><strong>University of California, Los Angeles</strong> | Los
+                Angeles, CA | 2011 - 2015</p>
+
+            <h2>Skills</h2>
+            <ul>
+                <li><strong>Programming Languages:</strong> Java, Python,
+                    JavaScript</li>
+                <li><strong>Web Technologies:</strong> HTML, CSS, jQuery,
+                    AngularJS, Bootstrap</li>
+                <li><strong>Database:</strong> SQL, MySQL, PostgreSQL</li>
+            </ul>
+
+            <h2>Languages</h2>
+            <ul>
+                <li>English (Fluent)</li>
+                <li>Spanish (Intermediate)</li>
+                <li>Mandarin (Basic)</li>
+            </ul>
         </div>
-    </div>
-    <div class="personal-summary">
-        <!-- <h4>Ai Summary</h4> -->
-        <!-- <p *ngIf="references.value.aisummary">Aisummary: {{ references.value.aisummary }}</p> -->
-    </div>
-    <div class="experiences-list" *ngIf="experiences.touched">
-        <h4 *ngIf="experiences.touched">Experiences</h4>
-        <div *ngFor="let experience of experiences.controls; let i = index">
-            <div *ngIf="experience.value.jobTitle">{{ experience.value.jobTitle }}
-                <span *ngIf="experience.value.employer"> at {{ experience.value.employer }}</span>
-                <span *ngIf="experience.value.city"> Location: {{ experience.value.city }}</span>
-                <span *ngIf="experience.value.startDate"><br> {{ experience.value.startDate }}</span>
-                <span *ngIf="experience.value.endDate"> - {{ experience.value.endDate }}</span>
-                <p *ngIf="experience.value.description">{{ experience.value.description }}</p>
-            </div>
-        </div>
-        <hr>
-    </div>
-    <div class="educations-list" *ngIf="educations.touched">
-        <h4 *ngIf="educations.touched">Educations</h4>
-        <div *ngFor="let education of educations.controls; let i = index">
-            <div *ngIf="education.value.degree">{{ education.value.degree }}
-                <span *ngIf="education.value.school"> at {{ education.value.school }}</span>
-                <span *ngIf="education.value.city"> Location: {{ education.value.city }}</span>
-                <span *ngIf="education.value.startDate"><br> {{ education.value.startDate }}</span>
-                <span *ngIf="education.value.endDate"> - {{ education.value.endDate }}</span>
-                <p *ngIf="education.value.description">{{ education.value.description }}</p>
-            </div>
-        </div>
-        <hr>
-    </div>
-    <div class="links-list" *ngIf="webAndSocialLinks.touched">
-        <h4 *ngIf="webAndSocialLinks.touched">Websites and Social Links</h4>
-        <div *ngFor="let webAndSocialLink of webAndSocialLinks.controls; let i = index">
-            <div *ngIf="webAndSocialLink.value.label">{{ webAndSocialLink.value.label }}
-                <span *ngIf="webAndSocialLink.value.link">: {{ webAndSocialLink.value.link }}</span>
-            </div>
-        </div>
-        <hr>
-    </div>
-    <div class="skills-list" *ngIf="skills.touched">
-        <h4 *ngIf="skills.touched">Skills</h4>
-        <div *ngFor="let skill of skills.controls; let i = index">
-            <div *ngIf="skill.value.skillName">{{ skill.value.skillName }}
-                <span *ngIf="skill.value.experienceLevel">: {{ skill.value.experienceLevel }}</span>
-            </div>
-        </div>
-        <hr>
-    </div>
-    <div class="references-list" *ngIf="references.touched">
-        <h4 *ngIf="references.touched">References</h4>
-        <div *ngFor="let reference of references.controls; let i = index">
-            <p *ngIf="reference.value.name">{{ reference.value.name }}
-                <span *ngIf="reference.value.company">from {{ reference.value.company }}</span>
-                <span *ngIf="reference.value.phone"> Phone: {{ reference.value.phone }}</span>
-                <span *ngIf="reference.value.email"> Email: {{ reference.value.email }}</span>
-            </p>
-        </div>
-        <hr>
     </div>
 </div>
 
-<button (click) = 'toPdf()'>Download</button>
+<button class="btn btn-primary" (click)= 'toPdf()'>Download</button>

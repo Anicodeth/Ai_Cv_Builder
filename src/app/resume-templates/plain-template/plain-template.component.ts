@@ -2,7 +2,6 @@ import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ResumeService } from 'src/app/services/resume.service';
 import  jsPDF  from 'jspdf';
 import domtoimage from 'dom-to-image';
-
 @Component({
   selector: 'app-plain-template',
   templateUrl: './plain-template.component.html',
@@ -20,7 +19,6 @@ export class PlainTemplateComponent implements OnInit, OnChanges {
     private resumeService: ResumeService,
     ) {
       this.personalDetails = this.resumeService.getPersonalDetailsForm();
-      console.log(this.personalDetails);
       this.references = this.resumeService.references;
       this.experiences = this.resumeService.experiences;
       this.educations = this.resumeService.educations;
@@ -29,6 +27,7 @@ export class PlainTemplateComponent implements OnInit, OnChanges {
   }
 
   toPdf() {
+    console.log("here!");
     const dashboard:any = document.getElementById("preview-window");
   
     const dashboardHeight = dashboard.clientHeight;
@@ -51,6 +50,7 @@ export class PlainTemplateComponent implements OnInit, OnChanges {
   }
   
   ngOnChanges(changes: SimpleChanges): void {
+    this.personalDetails = this.resumeService.getPersonalDetailsForm();
     // this.referencesForm = this.resumeService.getReferencesForm();
     this.references = this.resumeService.references;
     console.log(this.personalDetails);

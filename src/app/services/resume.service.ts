@@ -1,5 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { SessionStorageService } from 'ngx-webstorage';
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -21,7 +24,8 @@ export class ResumeService {
   private customSectionsForm: FormGroup;
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private sessionStorageService: SessionStorageService
   ) {
     this.personalDetailsForm = this.fb.group({
       jobTitle: [null, Validators.required],

@@ -25,7 +25,7 @@ export class PersonaldetailsComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     try {
-      this.personalDetailsForm = this.sessionStorageService.getItem("personalDetails");
+      this.personalDetailsForm = this.sessionStorageService.retrieve("personalDetails");
     } catch {
       this.personalDetailsForm = this.resumeService.getPersonalDetailsForm();
     }
