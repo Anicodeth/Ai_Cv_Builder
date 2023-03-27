@@ -1,6 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+  font-weight:500;
+  color:rgb(130, 139, 162) ;
+}
 
-.add-experience, .personal-extension, .add-links, .add-reference{
+h4{
+  color:black;
+}
+
+::placeholder {
+  font-weight: 100;
+}
+
+.add-experience, .personal-extension,
+ .add-links, .add-reference, .add-education {
     animation-name: smooth;
     animation-duration: 0.75s;
 }

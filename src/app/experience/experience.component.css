@@ -16,17 +16,6 @@ input{
   background-color: rgb(239, 242, 249);
 }
 
-@media (max-width: 550px) {
-  .personal-row{
-   flex-direction: column;
- }
- .unit {
-   width:auto;
- }
-
-}
-
-
 .add-experience{
   animation-name: smooth;
   animation-duration: 0.75s;
@@ -37,3 +26,12 @@ input{
   100% {opacity: 100%;}
 }
 
+@media (max-width: 550px) {
+  .personal-row{
+   flex-direction: column;
+ }
+ .unit {
+   width:auto;
+ }
+
+}

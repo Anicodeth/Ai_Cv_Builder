@@ -1,3 +1,20 @@
+*{
+    font-weight:500;
+}
+
+
+h4{
+    color:black;
+}
+
+.section-description{
+    color:rgb(130, 139, 162) ;
+  }
+
+::placeholder {
+    font-weight: 100;
+  }
+
 .ai-return{
 overflow: hidden;
 animation:smooth;

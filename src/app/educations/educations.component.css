@@ -1,17 +1,20 @@
 .unit{
-    width:45%;
-  } 
+  width:45%;
+} 
+
+.personal-row{
+  display: flex;
+  justify-content: space-between;
+}
   
-  .personal-row{
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  input{
+input{
     background-color: rgb(239, 242, 249);
     height: calc(2.25em + 0.75rem + 2px);
-  }
-  
+}
+
+textarea{
+    background-color: rgb(239, 242, 249);
+}
   #experienceDescription{
     background-color: rgb(239, 242, 249);
   }

@@ -2,6 +2,10 @@
   font-weight:500;
 }
 
+::placeholder {
+  font-weight: 100;
+}
+
 .unit{
   color:rgb(130, 139, 162) ;
   width:45%;
@@ -27,6 +31,7 @@ input{
   margin-bottom: -2rem;
   height:8rem;
   width:4.5rem;
+  transition: 0.5s;
 
 }
 .photo-upload input{
