@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ResumeService } from '../services/resume.service';
 
@@ -7,7 +7,7 @@ import { ResumeService } from '../services/resume.service';
   templateUrl: './personaldetails.component.html',
   styleUrls: ['./personaldetails.component.css']
 })
-export class PersonaldetailsComponent implements OnInit {
+export class PersonaldetailsComponent { //implements  OnInit, OnChanges {
 
   public personalDetailsForm: any;
   public expand: boolean = false;
@@ -20,9 +20,20 @@ export class PersonaldetailsComponent implements OnInit {
     this.expand = !this.expand;
   }
 
-  ngOnInit(): void {
-    this.personalDetailsForm = this.resumeService.getPersonalDetailsForm();
-  }
+  // ngOnInit(): void {
+  //   console.log(this.personalDetailsForm.touched);
+  //   this.personalDetailsForm = this.resumeService.getPersonalDetailsForm();
+  //   // const storedName = localStorage.getItem("name");
+
+  //   // if (storedName) {
+  //   //   this.personalDetailsForm.value.firstName = storedName;
+  //   // }
+  // }
+
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   console.log(this.personalDetailsForm.touched);
+  //   // localStorage.setItem("name", this.personalDetailsForm.value.firstName);
+  // }
 
 
 }
