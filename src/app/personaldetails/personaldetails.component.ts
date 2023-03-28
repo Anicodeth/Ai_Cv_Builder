@@ -20,20 +20,20 @@ export class PersonaldetailsComponent { //implements  OnInit, OnChanges {
     this.expand = !this.expand;
   }
 
-  // ngOnInit(): void {
-  //   console.log(this.personalDetailsForm.touched);
-  //   this.personalDetailsForm = this.resumeService.getPersonalDetailsForm();
-  //   // const storedName = localStorage.getItem("name");
+  ngOnInit(): void {
+    console.log(this.personalDetailsForm.touched);
+    this.personalDetailsForm = this.resumeService.getPersonalDetailsForm();
+    // const storedName = localStorage.getItem("name");
 
-  //   // if (storedName) {
-  //   //   this.personalDetailsForm.value.firstName = storedName;
-  //   // }
-  // }
+    // if (storedName) {
+    //   this.personalDetailsForm.value.firstName = storedName;
+    // }
+  }
 
-  // ngOnChanges(changes: SimpleChanges): void {
-  //   console.log(this.personalDetailsForm.touched);
-  //   // localStorage.setItem("name", this.personalDetailsForm.value.firstName);
-  // }
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(this.personalDetailsForm.touched);
+    // localStorage.setItem("name", this.personalDetailsForm.value.firstName);
+  }
 
 
 }

@@ -8,7 +8,7 @@ import { ResumeService } from '../services/resume.service';
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent implements OnInit {
-  public relevantSkills: String[] = [];
+  public relevantSkills: string[] = [];
   public skillsForm: FormGroup;
   
   constructor(
@@ -51,6 +51,7 @@ export class SkillsComponent implements OnInit {
 
   addSuggestedSkill(skillIndex: number): void {
     this.addSkill(this.relevantSkills[skillIndex]);
+    this.relevantSkills[skillIndex] = "";
   }
 
   removeSkill(index: number) {
