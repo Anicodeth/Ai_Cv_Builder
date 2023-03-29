@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, Validators } from '@angular/forms';
+import { CompletenessService } from '../services/completeness.service';
 import { ResumeService } from '../services/resume.service';
 import { SessionService } from '../services/session.service';
 
@@ -10,11 +11,13 @@ import { SessionService } from '../services/session.service';
 })
 export class EducationsComponent implements OnInit {
   public educationsForm: FormGroup | any;
+  private WEIGHTOFEDUCATION: number = 5;
 
   constructor(
     private fb: FormBuilder,
     private resumeService: ResumeService,
-    private sessionService: SessionService
+    private sessionService: SessionService,
+    private completenessService: CompletenessService
   ) {
   }
   
@@ -50,9 +53,13 @@ export class EducationsComponent implements OnInit {
         endDate: [null, Validators.required],
       })
     );
+
+    this.completenessService.increasePercentageCompleteness(this.WEIGHTOFEDUCATION);
   }
 
   removeEducation(index: number) {
     this.educations.removeAt(index);
+
+    this.completenessService.decreasePercentageCompleteness(this.WEIGHTOFEDUCATION);
   }
 }

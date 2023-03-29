@@ -1,18 +1,14 @@
-<div class = 'progress-container'>
-    <div class = 'summary'>
-        <div class = 'profile-completeness'>
-           <p>{{progressPercent}} % Profile completeness</p>      
+<div class='progress-container'>
+    <div class='summary'>
+        <div class='profile-completeness'>
+            <p>{{progressPercent}}% Profile completeness</p>
         </div>
     </div>
 
     <div class='progress-line'>
-        <div [style.width.%] = 'progressPercent' 
-        [style.background-color] = 'progressColor'
-        class = 'line'></div>
+        <div [style.width.%]='progressPercent' [style.background-color]='progressColor' class='line'></div>
     </div>
 
-    </div>
+</div>
 
-    <button  class = "btn btn-outline-primary" (click) = 'changeProgressColor()'>Only for checking</button>
-
-
+<!-- <button  class = "btn btn-outline-primary" (click) = 'changeProgressColor()'>Only for checking</button> -->

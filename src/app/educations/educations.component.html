@@ -3,31 +3,17 @@
 <div>
   <form [formGroup]="educationsForm">
     <div formArrayName="educations">
-      <div
-        class="add-education"
-        *ngFor="let educations of educations.controls; let i = index"
-        [formGroupName]="i"
-      >
+      <div class="add-education" *ngFor="let educations of educations.controls; let i = index" [formGroupName]="i">
         <div class="personal-row">
           <div class="unit">
             <label for="educationSchool">School</label>
-            <input
-              type="text"
-              class="form-control"
-              id="educationSchool"
-              placeholder="e.g. University of Gondar"
-              formControlName="school"
-            />
+            <input type="text" class="form-control" id="educationSchool" placeholder="e.g. University of Gondar"
+              formControlName="school" />
           </div>
           <div class="unit">
             <label for="educationDegree">Degree</label>
-            <input
-              type="text"
-              class="form-control"
-              id="educationDegree"
-              placeholder="e.g. M.Sc. in Computer Science"
-              formControlName="degree"
-            />
+            <input type="text" class="form-control" id="educationDegree" placeholder="e.g. M.Sc. in Computer Science"
+              formControlName="degree" />
           </div>
         </div>
 
@@ -35,61 +21,32 @@
           <div class="unit">
             <div>
               <label for="educationStartDate">Start Date</label>
-              <input
-                type="date"
-                class="form-control"
-                id="educationStartDate"
-                formControlName="startDate"
-              />
+              <input type="date" class="form-control" id="educationStartDate" formControlName="startDate" />
             </div>
             <div>
               <label for="educationEndDate">End Date</label>
-              <input
-                type="date"
-                class="form-control"
-                id="educationEndDate"
-                formControlName="endDate"
-              />
+              <input type="date" class="form-control" id="educationEndDate" formControlName="endDate" />
             </div>
           </div>
 
           <div class="unit">
             <label for="educationCity">City</label>
-            <input
-              type="text"
-              class="form-control"
-              id="educationCity"
-              placeholder="e.g. Jimma"
-              formControlName="city"
-            />
+            <input type="text" class="form-control" id="educationCity" placeholder="e.g. Jimma"
+              formControlName="city" />
           </div>
         </div>
 
         <div>
           <label for="educationDescription">Description</label>
-          <textarea
-            type="text"
-            class="form-control"
-            id="educationDescription"
-            placeholder="Write a short description here."
-            formControlName="description"
-            rows="5"
-          ></textarea>
+          <textarea type="text" class="form-control" id="educationDescription"
+            placeholder="Write a short description here." formControlName="description" rows="5"></textarea>
         </div>
-        <button
-          class="btn btn-outline-danger"
-          type="button"
-          (click)="removeEducation(i)"
-        >
+        <button class="btn btn-outline-danger" type="button" (click)="removeEducation(i)">
           Remove Education
         </button>
       </div>
     </div>
-    <button
-      type="button"
-      class="btn btn-outline-primary"
-      (click)="addEducation()"
-    >
+    <button type="button" class="btn btn-outline-primary" (click)="addEducation()">
       Add education
     </button>
   </form>
