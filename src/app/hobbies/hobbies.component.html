@@ -1,10 +1,8 @@
 <h4>Hobbies</h4>
-<p>What do you like?</p>
-<textarea
-  type="text"
-  class="form-control"
-  id="internshipDescription"
-  placeholder="List your hobies here..."
-  formControlName="description"
-  rows="3"
-></textarea>
+<form [formGroup]="hobbiesForm">
+  <div class="unit">
+    <label for="hobbies">What do you like?</label>
+    <textarea type="text" placeholder="e.g. Reading Spaceopera Novels" class="form-control" id="hobbies"
+      formControlName="hobbies"></textarea>
+  </div>
+</form>

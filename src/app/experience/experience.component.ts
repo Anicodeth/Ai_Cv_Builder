@@ -1,20 +1,38 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, Validators } from '@angular/forms';
 import { ResumeService } from '../services/resume.service';
+import { SessionService } from '../services/session.service';
 
 @Component({
   selector: 'app-experience',
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.css']
 })
-export class ExperienceComponent {
-  public experiencesForm: FormGroup;
+export class ExperienceComponent implements OnInit {
+  public experiencesForm: FormGroup | any;
 
   constructor(
     private fb: FormBuilder,
-    private resumeService: ResumeService
+    private resumeService: ResumeService,
+    private sessionService: SessionService
   ) {
+  }
+  
+  ngOnInit(): void {
     this.experiencesForm = this.resumeService.getExperiencesForm();
+    
+    const storedOnSession = this.sessionService.getItem('experiences');
+    if (storedOnSession) {
+      storedOnSession.forEach((item: any) => {
+        this.experiences.push(
+          this.fb.group(item)
+        )
+      });
+    }
+
+    this.experiencesForm.valueChanges.subscribe(() => {
+      this.sessionService.setItem('experiences', this.experiences.value);
+    });
   }
 
   get experiences(): FormArray {

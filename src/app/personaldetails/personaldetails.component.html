@@ -7,115 +7,94 @@
         <div class="personal-row">
             <div class="unit">
                 <label for="jobTitle">Job Title</label><br>
-                    <input type="text" placeholder="e.g. Computer Scientist"class="form-control" 
-                    id="jobTitle" formControlName = "jobTitle">
+                <input type="text" placeholder="e.g. Computer Scientist" class="form-control" id="jobTitle"
+                    formControlName="jobTitle">
             </div>
-            <div class = "unit">
-            <div class="photo-upload ">
-                <label class = "photo-label" for="photo-input">Photo
-                  <!-- <img class ="img-fluid" src="../../assets/PhotoUploadButton.png"  /> -->
-                </label>
-                <input id="photo-input" type="file"
-                accept="image/x-png,image/jpeg" 
-                formControlName = "photo" />
-                
-              </div>
-             
+            <div class="unit">
+                <div class="photo-upload ">
+                    <label class="photo-label" for="photo-input">Photo
+                        <!-- <img class ="img-fluid" src="../../assets/PhotoUploadButton.png"  /> -->
+                    </label>
+                    <input id="photo-input" type="file" accept="image/x-png,image/jpeg" formControlName="photo" />
+
+                </div>
+
             </div>
 
         </div>
-    
+
 
 
         <div class="personal-row">
             <div class="unit">
                 <label for="firstname">First Name</label><br>
-                    <input type="text" class="form-control" 
-                    placeholder="e.g. Abebe"
-                    formControlName = "firstName">
+                <input type="text" class="form-control" placeholder="e.g. Abebe" formControlName="firstName">
             </div>
             <div class="unit">
                 <label for="lastname">Last Name</label><br>
-                    <input type="text" class="form-control" 
-                    placeholder="e.g. Kebede"
-                    formControlName = "lastName">
+                <input type="text" class="form-control" placeholder="e.g. Kebede" formControlName="lastName">
             </div>
         </div>
 
-        <div class = "personal-row">
-            <div class = "unit">
+        <div class="personal-row">
+            <div class="unit">
                 <label for="email">Email</label><br>
-                    <input type="email" class="form-control" 
-                    placeholder="e.g. Abebekebede@gmail.com" formControlName = "email">
+                <input type="email" class="form-control" placeholder="e.g. Abebekebede@gmail.com"
+                    formControlName="email">
             </div>
             <div class="unit">
                 <label for="phone">Phone</label><br>
-                    <input type="number" class="form-control" 
-                    placeholder="e.g. +251911555555"
-                    formControlName = "phone">
+                <input type="number" class="form-control" placeholder="e.g. +251911555555" formControlName="phone">
             </div>
         </div>
 
         <div class="personal-row">
             <div class="unit">
                 <label for="country">Country</label><br>
-                    <input type="text" class="form-control" 
-                    placeholder="e.g. Ethiopia"
-                    formControlName = "country">
+                <input type="text" class="form-control" placeholder="e.g. Ethiopia" formControlName="country">
             </div>
             <div class="unit">
                 <label for="city">City</label><br>
-                    <input type="text" class="form-control" 
-                    placeholder="e.g. Addis Ababa"
-                    formControlName = "city">
+                <input type="text" class="form-control" placeholder="e.g. Addis Ababa" formControlName="city">
             </div>
-            </div>
+        </div>
 
-           <div class = "personal-extension" *ngIf ='expand'>
-                
-            <div class = "personal-row">
-            <div class = "unit">
+        <div class="personal-extension" *ngIf='expand'>
+
+            <div class="personal-row">
+                <div class="unit">
                     <label for="address">Address</label><br>
-                        <input type="text" class="form-control" 
-                        placeholder="e.g. Arada Subcity, W09, 644"
-                        formControlName = "address">
-                 </div>
-                 <div class = "unit">
+                    <input type="text" class="form-control" placeholder="e.g. Arada Subcity, W09, 644"
+                        formControlName="address">
+                </div>
+                <div class="unit">
                     <label for="postalcode">Postal Code</label><br>
-                        <input type="number" class="form-control" 
-                        placeholder="e.g. 00000"
-                        formControlName = "postalCode">
-                 </div>
+                    <input type="number" class="form-control" placeholder="e.g. 00000" formControlName="postalCode">
+                </div>
             </div>
 
-            <div class = "personal-row">
-                 <div class = "unit">
+            <div class="personal-row">
+                <div class="unit">
                     <label for="nationality">Nationality</label><br>
-                        <input type="text" class="form-control" 
-                        placeholder="e.g. Ethiopian"
-                        formControlName = "nationality">
-                 </div>
-                 <div class = "unit">
+                    <input type="text" class="form-control" placeholder="e.g. Ethiopian" formControlName="nationality">
+                </div>
+                <div class="unit">
                     <label for="pob">Place of birth</label><br>
-                        <input type="text" class="form-control"    
-                        placeholder="e.g. Hawassa"
-                        formControlName = "pob">
-                 </div>
-                 </div>
-
-                 <div class = "personal-row">
-                 <div class = "unit">
-                    <label for="dob">Data of birth</label><br>
-                        <input type="date" class="form-control" 
-                        formControlName = "dob">
-                 </div>
-                 </div>
+                    <input type="text" class="form-control" placeholder="e.g. Hawassa" formControlName="pob">
+                </div>
             </div>
-        
 
-        <div  class = "additional">
-            <button class = "add btn btn-outline-primary" 
-            (click) = "expandPersonal()">Additional
+            <div class="personal-row">
+                <div class="unit">
+                    <label for="dob">Data of birth</label><br>
+                    <input type="date" class="form-control" formControlName="dob">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="additional">
+            <button class="add btn btn-outline-primary" (click)="expandPersonal()">Additional
             </button>
         </div>
 

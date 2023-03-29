@@ -4,6 +4,7 @@
 <div class="relevant-skills">
     <div class = "skill" *ngFor="let skill of relevantSkills; let i = index">
         <button
+        *ngIf="skill != ''"
         type = "button" class = "hoover-feature" 
         (click) = "addSuggestedSkill(i)">{{ skill }} +</button>
     </div>
