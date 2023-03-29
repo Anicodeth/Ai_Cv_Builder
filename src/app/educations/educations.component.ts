@@ -1,20 +1,38 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, Validators } from '@angular/forms';
 import { ResumeService } from '../services/resume.service';
+import { SessionService } from '../services/session.service';
 
 @Component({
   selector: 'app-education',
   templateUrl: './educations.component.html',
   styleUrls: ['./educations.component.css']
 })
-export class EducationsComponent {
-  public educationsForm: FormGroup;
+export class EducationsComponent implements OnInit {
+  public educationsForm: FormGroup | any;
 
   constructor(
     private fb: FormBuilder,
-    private resumeService: ResumeService
+    private resumeService: ResumeService,
+    private sessionService: SessionService
   ) {
+  }
+  
+  ngOnInit(): void {
     this.educationsForm = this.resumeService.getEducationsForm();
+    
+    const storedOnSession = this.sessionService.getItem('educations');
+    if (storedOnSession) {
+      storedOnSession.forEach((item: any) => {
+        this.educations.push(
+          this.fb.group(item)
+        )
+      });
+    }
+
+    this.educationsForm.valueChanges.subscribe(() => {
+      this.sessionService.setItem('educations', this.educations.value);
+    });
   }
 
   get educations(): FormArray {

@@ -1,17 +1,17 @@
 <h4>Languages</h4>
 <div>
   <form [formGroup]="languagesForm">
-    <div formArrayName="links">
+    <div formArrayName="languages">
       <div class="add-links" *ngFor="let language of languages.controls; let i = index" [formGroupName]="i"
         class="language">
         <div class="input-row">
           <div class="unit">
             <label for="label">Language Name</label>
-            <input class="form-control" type="text" id="label" placeholder="e.g. English" formControlName="languageName" />
+            <input class="form-control" type="text" id="label" placeholder="e.g. English" formControlName="languageName">
           </div>
           <div class="unit">
             <label for="proficiency">Proficiency Level</label>
-            <select class="form-control form-selec" id="proficiency" formControlName="proficiency" required>
+            <select class="form-control" id="proficiency" formControlName="proficiency" required>
               <option selected value='"Native speaker"'>Native speaker</option>
               <option value='"Highly proficient"'>Highly proficient</option>
               <option value='"Very good command"'>Very good command</option>
