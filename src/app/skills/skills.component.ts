@@ -31,7 +31,8 @@ export class SkillsComponent implements OnInit {
       storedOnSession.forEach((item: any) => {
         this.skills.push(
           this.fb.group(item)
-        )
+        );
+        this.increasePercentage();
       });
     }
 
@@ -68,12 +69,8 @@ export class SkillsComponent implements OnInit {
         skillName: [newSkillName, Validators.required],
         experienceLevel: [experienceLevel, [Validators.required, Validators.min(1), Validators.max(5)]],
       })
-    );
-
-    if (this.skills.length <= 5) {
-      this.completenessService.increasePercentageCompleteness(this.WEIGHTOFSKILL);
-      console.log(this.completenessService.getPercentageCompleteness());
-    } 
+    ); 
+    this.increasePercentage();
   }
 
   addSuggestedSkill(skillIndex: number): void {
@@ -81,12 +78,22 @@ export class SkillsComponent implements OnInit {
     this.relevantSkills[skillIndex] = "";
   }
 
-  removeSkill(index: number) {
+  removeSkill(index: number): void {
     this.skills.removeAt(index);
-
+    this.decreasePercentage();
+  }
+  
+  increasePercentage(): void {
+    if (this.skills.length <= 5) {
+      this.completenessService.increasePercentageCompleteness(this.WEIGHTOFSKILL);
+      console.log(this.completenessService.getPercentageCompleteness());
+    }
+  }
+  
+  decreasePercentage(): void {
     if (this.skills.length < 5) {
       this.completenessService.decreasePercentageCompleteness(this.WEIGHTOFSKILL);
       console.log(this.completenessService.getPercentageCompleteness());
-    } 
+    }
   }
 }

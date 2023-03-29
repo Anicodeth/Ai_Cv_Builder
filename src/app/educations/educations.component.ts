@@ -29,7 +29,9 @@ export class EducationsComponent implements OnInit {
       storedOnSession.forEach((item: any) => {
         this.educations.push(
           this.fb.group(item)
-        )
+        );
+        
+        this.completenessService.increasePercentageCompleteness(this.WEIGHTOFEDUCATION);
       });
     }
 
