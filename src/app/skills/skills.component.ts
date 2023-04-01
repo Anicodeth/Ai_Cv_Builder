@@ -1,5 +1,6 @@
 import { Component, OnChanges, OnInit, SimpleChange, SimpleChanges } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, Validators } from '@angular/forms';
+import { CompletenessService } from '../services/completeness.service';
 import { ResumeService } from '../services/resume.service';
 import { SessionService } from '../services/session.service';
 
@@ -8,14 +9,17 @@ import { SessionService } from '../services/session.service';
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.css']
 })
-export class SkillsComponent implements OnInit, OnChanges {
+export class SkillsComponent implements OnInit {
   public relevantSkills: string[] = [];
   public skillsForm: any;
+  private prevPercentageIncrease: number = 0;
+  private WEIGHTOFSKILL = 2;
 
   constructor(
     private fb: FormBuilder,
     private resumeService: ResumeService,
-    private sessionService: SessionService
+    private sessionService: SessionService,
+    private completenessService: CompletenessService
   ) {
   }
 
@@ -27,7 +31,8 @@ export class SkillsComponent implements OnInit, OnChanges {
       storedOnSession.forEach((item: any) => {
         this.skills.push(
           this.fb.group(item)
-        )
+        );
+        this.increasePercentage();
       });
     }
 
@@ -54,10 +59,6 @@ export class SkillsComponent implements OnInit, OnChanges {
 
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    sessionStorage.setItem('relevantSkills', JSON.stringify(this.relevantSkills));
-  }
-
   get skills(): FormArray {
     return this.skillsForm.get('skills') as FormArray;
   }
@@ -68,7 +69,8 @@ export class SkillsComponent implements OnInit, OnChanges {
         skillName: [newSkillName, Validators.required],
         experienceLevel: [experienceLevel, [Validators.required, Validators.min(1), Validators.max(5)]],
       })
-    );
+    ); 
+    this.increasePercentage();
   }
 
   addSuggestedSkill(skillIndex: number): void {
@@ -76,7 +78,22 @@ export class SkillsComponent implements OnInit, OnChanges {
     this.relevantSkills[skillIndex] = "";
   }
 
-  removeSkill(index: number) {
+  removeSkill(index: number): void {
     this.skills.removeAt(index);
+    this.decreasePercentage();
+  }
+  
+  increasePercentage(): void {
+    if (this.skills.length <= 5) {
+      this.completenessService.increasePercentageCompleteness(this.WEIGHTOFSKILL);
+      console.log(this.completenessService.getPercentageCompleteness());
+    }
+  }
+  
+  decreasePercentage(): void {
+    if (this.skills.length < 5) {
+      this.completenessService.decreasePercentageCompleteness(this.WEIGHTOFSKILL);
+      console.log(this.completenessService.getPercentageCompleteness());
+    }
   }
 }

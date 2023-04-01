@@ -26,6 +26,8 @@ import { CustomSectionComponent } from './custom-section/custom-section.componen
 import { HobbiesComponent } from './hobbies/hobbies.component';
 import { SkillsComponent } from './skills/skills.component';
 import { SessionService } from './services/session.service';
+import { CompletenessService } from './services/completeness.service';
+import { GenericTemplateComponent } from './resume-templates/generic-template/generic-template.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ import { SessionService } from './services/session.service';
     InternshipsComponent,
     CustomSectionComponent,
     HobbiesComponent,
-    SkillsComponent
+    SkillsComponent,
+    GenericTemplateComponent
   ],
   imports: [
     FormsModule,
@@ -58,7 +61,8 @@ import { SessionService } from './services/session.service';
   providers: [
     ResumeService,
     SectionsService,
-    SessionService
+    SessionService,
+    CompletenessService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CompletenessService } from '../services/completeness.service';
 
 
 @Component({
@@ -7,26 +8,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./progress-bar.component.css']
 })
 export class ProgressBarComponent {
+  constructor(
+    private completenessService: CompletenessService
+  ) { }
 
-progressPercent:number = 0;
-progressColor:String = 'red';
+  get progressPercent(): number {
+    return this.completenessService.getPercentageCompleteness();
+  }
 
-//responsible for changing progress color
-changeProgressColor(){
+  get progressColor(): string {
+    let color: string;
+    if (this.progressPercent == 100) {
+      color = "blue";
+    } else if (this.progressPercent >= 70) {
+      color = "green";
+    } else if (this.progressPercent >= 30) {
+      color = "yellow";
+    } else {
+      color = "red";
+    }
 
-  //Just to tryout the progress bar
-  //bind it with inserted forms
-  this.progressPercent= this.progressPercent + 20;
-
-
-  //basic if based color change
-if(this.progressPercent >= 100){
-   this.progressPercent=100;
-   this.progressColor = "blue";}
-else if(this.progressPercent < 30) this.progressColor = "red";
-else if(this.progressPercent < 70) this.progressColor = "yellow";
-else if(this.progressPercent < 100) this.progressColor = "green";
+    return color;
+  }
 }
-
-}
-
