@@ -1,0 +1,90 @@
+<div id="preview-window" class="bg-light m-3 rounded">
+  <div class="container p-3">
+    <div class="row">
+      <div class="col-md-8">
+        <h1>{{ personalDetails.value.firstName }} {{
+          personalDetails.value.lastName }}</h1>
+        <p>{{ personalDetails.value.address }}, {{ personalDetails.value.city}}, {{ personalDetails.value.country }}</p>
+        <p>(+251) {{ personalDetails.value.phone }}</p>
+        <p>{{ personalDetails.value.email }}</p>
+      </div>
+      <div class="col-md-4">
+        <img src="https://via.placeholder.com/150" alt="John Doe">
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col-md-4">
+        <h3>Summary</h3>
+      </div>
+      <div class="col-md-8">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+          condimentum enim id quam malesuada, quis sagittis nibh faucibus. Proin
+          a est et tellus feugiat commodo.</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col-md-4">
+        <h3>Education</h3>
+      </div>
+      <div class="col-md-8">
+        <div *ngFor="let education of educations.controls; let i= index">
+          <h4>{{ education.value.degree}}, {{ education.value.school }}, {{
+            education.value.city }}</h4>
+          <p>Graduated: {{ education.value.endDate }}</p>
+          <p>{{ education.value.description }}</p>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col-md-4">
+        <h3>Experience</h3>
+      </div>
+      <div class="col-md-8">
+        <h4>Software Engineer, ABC Company</h4>
+        <p>June 2019 - Present</p>
+        <ul>
+          <li>Developed new features for a web-based application using React,
+            Node.js, and MongoDB</li>
+          <li>Improved performance and scalability of the application by
+            implementing caching and optimizing database queries</li>
+          <li>Collaborated with product managers and designers to prioritize and
+            plan development tasks</li>
+        </ul>
+        <h4>Intern, DEF Company</h4>
+        <p>May 2018 - August 2018</p>
+        <ul>
+          <li>Assisted with testing and debugging of a mobile application using
+            Java and Android Studio</li>
+          <li>Contributed to the development of new features for the application</li>
+          <li>Participated in code reviews and team meetings</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col-md-4">
+        <h3>Skills</h3>
+      </div>
+      <div class="col-md-8">
+        <ul>
+          <li *ngFor="let skill of skills.controls">
+            {{ skill.value.skillName }} {{ skill.value.experienceLevel }}
+            <span *ngFor="let i of range(skill.value.experienceLevel).fill('')">٭</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<button class="btn btn-outline-primary" (click)="toPdf()">Download</button>

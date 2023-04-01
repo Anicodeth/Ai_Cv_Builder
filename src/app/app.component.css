@@ -1,23 +1,24 @@
 
 .main-container{
     display: flex;
-    margin: 1rem;
+    /* margin: 1rem; */
     flex-wrap: wrap;
     align-content: stretch;
 
 
 }
 .right-segment{
-    margin: 0.5rem;
+    /* margin: 0.5rem; */
     flex: 1 1 1rem;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     top:0px;
+    background-color: #0c264c;
+    position: sticky;
 }
 
 .left-segment{
-
     margin: 0.5rem;
     flex: 1 1 1rem;
     display: flex;
@@ -30,6 +31,8 @@
 }
 .main-preview-window{
     width:100%;
+    position: sticky;
+    top: 0px;
 }
 
 @media (max-width: 1200px) {
