@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
+import { PdfService } from 'src/app/services/pdf.service';
 import { ResumeService } from 'src/app/services/resume.service';
-import  jsPDF  from 'jspdf';
-import domtoimage from 'dom-to-image';
 
 @Component({
   selector: 'app-generic-template',
@@ -10,6 +9,7 @@ import domtoimage from 'dom-to-image';
 })
 export class GenericTemplateComponent {
   public personalDetails: any;
+  public professionalSummary: any;
   public references: any;
   public experiences: any;
   public educations: any;
@@ -19,9 +19,10 @@ export class GenericTemplateComponent {
 
   constructor (
     private resumeService: ResumeService,
+    private pdfService: PdfService
     ) {
       this.personalDetails = this.resumeService.getPersonalDetailsForm();
-      console.log(this.personalDetails);
+      this.professionalSummary = this.resumeService.getPersonalSummaryForm();
       this.references = this.resumeService.references;
       this.experiences = this.resumeService.experiences;
       this.educations = this.resumeService.educations;
@@ -32,19 +33,7 @@ export class GenericTemplateComponent {
 
   toPdf() {
     const dashboard:any = document.getElementById("preview-window");
-  
-    const dashboardHeight = dashboard.clientHeight;
-    const dashboardWidth = dashboard.clientWidth;
-    const options = { background: 'white', width: dashboardWidth, height: dashboardHeight };
-  
-    domtoimage.toPng(dashboard, options).then((imgData: any) => {
-         const doc = new jsPDF(dashboardWidth > dashboardHeight ? 'l' : 'p', 'mm', [dashboardWidth, dashboardHeight]);
-         const imgProps = doc.getImageProperties(imgData);
-         const pdfWidth = doc.internal.pageSize.getWidth();
-         const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-  
-         doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-         doc.save('preview.pdf');
-    });
+
+    this.pdfService.toPdf(dashboard);
   }
 }

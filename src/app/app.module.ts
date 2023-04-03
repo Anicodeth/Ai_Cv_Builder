@@ -28,6 +28,7 @@ import { SkillsComponent } from './skills/skills.component';
 import { SessionService } from './services/session.service';
 import { CompletenessService } from './services/completeness.service';
 import { GenericTemplateComponent } from './resume-templates/generic-template/generic-template.component';
+import { PdfService } from './services/pdf.service';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { GenericTemplateComponent } from './resume-templates/generic-template/ge
     ResumeService,
     SectionsService,
     SessionService,
-    CompletenessService
+    CompletenessService,
+    PdfService
   ],
   bootstrap: [AppComponent]
 })

@@ -9,10 +9,10 @@
     </div>
 
     <div class="summary-box">
-        <form>
+        <form [formGroup]="personalSummaryForm">
             <textarea class="personal-space form-control"
             placeholder = "You can select an AI generated summary from below."
-                rows="5" cols="48"></textarea>
+                rows="5" cols="48" formControlName="personalSummary"></textarea>
         </form>
 
         <div class="ai-section">
