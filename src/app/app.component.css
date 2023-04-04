@@ -13,9 +13,9 @@
     /* border: 1px solid black; */
     display: flex;
     justify-content: center;
-    top:0px;
+
     background-color: #0c264c;
-    position: sticky;
+
 }
 
 .left-segment{
@@ -31,8 +31,7 @@
 }
 .main-preview-window{
     width:100%;
-    position: sticky;
-    top: 0px;
+
 }
 
 @media (max-width: 1200px) {
