@@ -6,6 +6,7 @@
 #preview-window {
   height:45rem;
   overflow-y: scroll;
+  position: relative;
 }
 
 #preview-window::-webkit-scrollbar {
