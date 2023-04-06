@@ -1,5 +1,5 @@
 <div class="container preview-container m-0 p-0">
-  <div id="preview-window" class="bg-light mt-4 mx-4 rounded">
+  <div id="preview-window" class="bg-white mt-4 mx-4 rounded">
     <div class="p-4">
       <div class="row mb-5">
         <div class="col-md-9">
@@ -11,8 +11,8 @@
           <p class="m-0 text-secondary">(+251) {{ personalDetails.value.phone }}</p>
         </div>
         <div class="col-md-3 m-auto">
-          <!-- <img src="https://via.placeholder.com/150" alt="John Doe" class="img-fluid rounded"> -->
-          <img *ngIf="imageData" [src]="imageData" alt="Uploaded image" class="img-fluid rounded" width="150px">
+          <img *ngIf="!imageData" src="https://via.placeholder.com/150" alt="John Doe" class="img-fluid rounded">
+          <img *ngIf="imageData" [src]="imageData" alt="Uploaded image" class="img-fluid rounded" height="150px">
         </div>
       </div>
 
@@ -116,7 +116,7 @@
 
     </div>
   </div>
-  <div class="w-50 m-auto">
-    <button class="btn btn-light" (click)="toPdf()">Download</button>
-  </div>
+</div>
+<div class="w-50 m-auto">
+  <button class="btn btn-light" (click)="toPdf()">Download</button>
 </div>
