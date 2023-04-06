@@ -28,6 +28,7 @@ import { SkillsComponent } from './skills/skills.component';
 import { SessionService } from './services/session.service';
 import { CompletenessService } from './services/completeness.service';
 import { GenericTemplateComponent } from './resume-templates/generic-template/generic-template.component';
+import {  HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { GenericTemplateComponent } from './resume-templates/generic-template/ge
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     ResumeService,

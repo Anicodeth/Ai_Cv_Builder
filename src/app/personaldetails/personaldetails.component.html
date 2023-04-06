@@ -8,12 +8,12 @@
             <div class="unit">
                 <label for="jobTitle">Job Title</label><br>
                 <input type="text" placeholder="e.g. Computer Scientist" class="form-control" id="jobTitle"
-                    formControlName="jobTitle">
+                    formControlName="jobTitle" (blur) = 'requestData()'>
             </div>
             <div class="unit">
-                <div class="photo-upload ">
+                <div class="photo-upload "> 
                     <label class="photo-label" for="photo-input">Photo
-                        <img class ="img-fluid" src="../../assets/PhotoUploadButton.png"  />
+                        <img class ="img-fluid" src="../../assets/photo.png"  />
                     </label>
                     <input id="photo-input" type="file" accept="image/x-png,image/jpeg" formControlName="photo">
                 </div>

@@ -1,5 +1,6 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { AiService } from '../ai.service';
 import { CompletenessService } from '../services/completeness.service';
 import { ResumeService } from '../services/resume.service';
 import { SessionService } from '../services/session.service';
@@ -20,11 +21,17 @@ export class PersonaldetailsComponent implements OnInit, OnChanges {
   constructor(
     private resumeService: ResumeService,
     private sessionService: SessionService,
-    private completenessService: CompletenessService
+    private completenessService: CompletenessService,
+    private aiService: AiService
   ) { }
 
   expandPersonal() {
     this.expand = !this.expand;
+  }
+//Ai request
+  requestData(){
+   const value = this.personalDetailsForm.get('jobTitle').value;
+   this.aiService.sendRequest(value);
   }
 
   ngOnInit(): void {

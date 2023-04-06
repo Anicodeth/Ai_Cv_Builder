@@ -2,6 +2,7 @@
 <p>Choose 5 of the most important skills to show your talents! Make sure they
     match the keywords of the job listing if applying via an online system. Choose from the following curated for you by the AI based on the job title you picked or add your own skills.</p>
 <div class="relevant-skills">
+    <button class = "btn btn-outline-primary" (click)="refresh()">Ai skills</button>
     <div class = "skill" *ngFor="let skill of relevantSkills; let i = index">
         <button
         *ngIf="skill != ''"
