@@ -13,7 +13,7 @@ export class WebsiteLinksComponent {
     private fb: FormBuilder,
     private resumeService: ResumeService
   ) {
-    this.linkForm = this.resumeService.getlinkForm();
+    this.linkForm = this.resumeService.getWebAndSocialLinksForm();
   }
 
   get links(): FormArray {
@@ -28,7 +28,7 @@ export class WebsiteLinksComponent {
       })
     );
 
-    console.log(this.resumeService.getlinkForm());
+    console.log(this.resumeService.getWebAndSocialLinksForm());
   }
 
   removelink(index: number) {

@@ -5,18 +5,20 @@ import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@ang
 })
 
 export class ResumeService {
-
-  private referencesForm: FormGroup;
-  private experiencesForm: FormGroup;
-  private educationsForm: FormGroup;
-  private extraCurricularActivitiesForm: FormGroup;
+  
   private personalDetailsForm: FormGroup;
   private personalSummaryForm: FormGroup;
+  private experiencesForm: FormGroup;
+  private educationsForm: FormGroup;
+
   private webAndSocialLinksForm: FormGroup;
   private skillsForm: FormGroup;
+  
+  private extraCurricularActivitiesForm: FormGroup;
   private internshipsForm: FormGroup;
   private languagesForm: FormGroup;
   private coursesForm: FormGroup;
+  private referencesForm: FormGroup;
   private hobbiesForm: FormGroup;
   private customSectionsForm: FormGroup;
 
@@ -126,14 +128,6 @@ export class ResumeService {
 
   get skills(): FormArray {
     return this.skillsForm.get('skills') as FormArray;
-  }
-
-  getlinkForm(): FormGroup {
-    return this.webAndSocialLinksForm;
-  }
-
-  get links(): FormArray {
-    return this.webAndSocialLinksForm.get('webAndSocialLinks') as FormArray;
   }
 
   getInternshipsForm(): FormGroup {

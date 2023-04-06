@@ -3,6 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { CompletenessService } from '../services/completeness.service';
 import { ResumeService } from '../services/resume.service';
 import { SessionService } from '../services/session.service';
+import { ImageService } from '../services/image.service';
 
 @Component({
   selector: 'app-personaldetails',
@@ -16,16 +17,12 @@ export class PersonaldetailsComponent implements OnInit, OnChanges {
   private DETAIL_PROGRESS_VALUE = 2;
   private reader: FileReader = new FileReader();
 
-
   constructor(
     private resumeService: ResumeService,
     private sessionService: SessionService,
-    private completenessService: CompletenessService
-  ) { }
-
-  expandPersonal() {
-    this.expand = !this.expand;
-  }
+    private completenessService: CompletenessService,
+    private imageService: ImageService
+  ) {}
 
   ngOnInit(): void {
     this.personalDetailsForm = this.resumeService.getPersonalDetailsForm();
@@ -44,20 +41,26 @@ export class PersonaldetailsComponent implements OnInit, OnChanges {
       this.updateProgress();
     });
 
-    this.personalDetailsForm.get('photo').valueChanges.subscribe((file: File) => {
-      this.reader.readAsDataURL(file);
-      this.reader.onload = () => {
-        // Code to save the photo to your application's storage goes here
+    this.personalDetailsForm
+      .get('photo')
+      .valueChanges.subscribe((file: File) => {
+        this.reader.readAsDataURL(file);
         this.reader.onload = () => {
-          const photoDataUrl: string = this.reader.result as string;
-          sessionStorage.setItem('photo', photoDataUrl);
+          // Code to save the photo to your application's storage goes here
+          this.reader.onload = () => {
+            const photoDataUrl: string = this.reader.result as string;
+            sessionStorage.setItem('photo', photoDataUrl);
+          };
         };
-      };
-    });
+      });
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('here');
+  }
+
+  expandPersonal() {
+    this.expand = !this.expand;
   }
 
   updateProgress(): void {
@@ -78,5 +81,17 @@ export class PersonaldetailsComponent implements OnInit, OnChanges {
     this.completenessService.increasePercentageCompleteness(
       this.DETAIL_PROGRESS_VALUE * this.currProgress
     );
+  }
+
+  onFileSelected(event: any) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = () => {
+      const imageData = reader.result;
+      if (imageData) {
+        this.imageService.setImageData(imageData.toString());
+      }
+    };
+    reader.readAsDataURL(file);
   }
 }

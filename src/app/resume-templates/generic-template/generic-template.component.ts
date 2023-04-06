@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { ImageService } from 'src/app/services/image.service';
 import { PdfService } from 'src/app/services/pdf.service';
 import { ResumeService } from 'src/app/services/resume.service';
 
@@ -7,28 +9,49 @@ import { ResumeService } from 'src/app/services/resume.service';
   templateUrl: './generic-template.component.html',
   styleUrls: ['./generic-template.component.css']
 })
-export class GenericTemplateComponent {
-  public personalDetails: any;
-  public professionalSummary: any;
-  public references: any;
-  public experiences: any;
-  public educations: any;
-  public webAndSocialLinks: any;
-  public skills: any;
-  public range: any;
+export class GenericTemplateComponent implements OnInit {
+  public personalDetails: any | FormGroup;
+  public professionalSummary: any | FormGroup;
+  public experiences: any | FormGroup;
+  public educations: any | FormGroup;
+
+  public webAndSocialLinks: any | FormGroup;
+  public skills: any | FormGroup;
+
+  public extraCurricularActivities: any | FormGroup;
+  public references: any | FormGroup;
+  public languages: any | FormGroup;
+  public hobbies: any | FormGroup;
+  public internships: any | FormGroup;
+  public courses: any | FormGroup;
+
+  public imageData: string | undefined;
 
   constructor (
     private resumeService: ResumeService,
-    private pdfService: PdfService
+    private pdfService: PdfService,
+    private imageService: ImageService
     ) {
       this.personalDetails = this.resumeService.getPersonalDetailsForm();
       this.professionalSummary = this.resumeService.getPersonalSummaryForm();
-      this.references = this.resumeService.references;
       this.experiences = this.resumeService.experiences;
       this.educations = this.resumeService.educations;
+
       this.webAndSocialLinks = this.resumeService.webAndSocialLinks;
       this.skills = this.resumeService.skills;
-      this.range = Array;
+
+      this.extraCurricularActivities = this.resumeService.extraCurricularActivities;
+      this.references = this.resumeService.references;
+      this.languages = this.resumeService.languages;
+      this.hobbies = this.resumeService.hobbies;
+      this.internships = this.resumeService.internships;
+      this.courses = this.resumeService.courses;
+  }
+
+  ngOnInit(): void {
+    this.imageService.getImageData().subscribe((data) => {
+      this.imageData = data;
+    });
   }
 
   toPdf() {

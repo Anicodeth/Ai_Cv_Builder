@@ -1,12 +1,11 @@
-.preview-container{
-  position: sticky;
-  top:0px;
+#preview-window {
+  max-height:86vh;
+  overflow-y: scroll;
 }
 
-#preview-window {
-  height:45rem;
-  overflow-y: scroll;
-  position: relative;
+.preview-container {
+  position: sticky;
+  top:0px;
 }
 
 #preview-window::-webkit-scrollbar {

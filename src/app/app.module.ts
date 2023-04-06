@@ -29,6 +29,7 @@ import { SessionService } from './services/session.service';
 import { CompletenessService } from './services/completeness.service';
 import { GenericTemplateComponent } from './resume-templates/generic-template/generic-template.component';
 import { PdfService } from './services/pdf.service';
+import { ImageService } from './services/image.service';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { PdfService } from './services/pdf.service';
     SectionsService,
     SessionService,
     CompletenessService,
-    PdfService
+    PdfService,
+    ImageService,
   ],
   bootstrap: [AppComponent]
 })
