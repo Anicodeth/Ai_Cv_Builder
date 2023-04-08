@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ImageService } from 'src/app/services/image.service';
-import { PdfService } from 'src/app/services/pdf.service';
+import { TemplateService } from 'src/app/services/template.service';
 import { ResumeService } from 'src/app/services/resume.service';
-import html2pdf from 'html2pdf.js';
+import { PdfService } from 'src/app/services/pdf.service';
 
 @Component({
   selector: 'app-generic-template',
@@ -30,8 +30,9 @@ export class GenericTemplateComponent implements OnInit {
 
   constructor (
     private resumeService: ResumeService,
-    private pdfService: PdfService,
-    private imageService: ImageService
+    private templateService: TemplateService,
+    private imageService: ImageService,
+    private pdfService: PdfService
     ) {
       this.personalDetails = this.resumeService.getPersonalDetailsForm();
       this.professionalSummary = this.resumeService.getPersonalSummaryForm();
@@ -56,55 +57,8 @@ export class GenericTemplateComponent implements OnInit {
   }
 
   toPdf() {
-    const options = {
-      margin: [0, 0],
-      filename: 'my-document.pdf',
-      image: { type: 'jpeg', quality: 1.0 },
-      html2canvas: { scale: 4, dpi: 300, letterRendering: true },
-      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-      pagebreak: { mode: 'avoid-all', after: '.page-break' },
-    };
+    const dashboard:any = document.getElementById("preview-window");
 
-    const htmlContent = document.getElementById('preview-window');
-
-    // Get the height of the HTML content
-    const htmlHeight: any = htmlContent?.offsetHeight;
-
-    // Calculate the height of an A4 page in pixels
-    const a4Width = 8.27 * 72; // A4 width in pixels
-    const a4Height = 11.69 * 72; // A4 height in pixels
-
-    // Calculate the number of A4 pages needed to display the content
-    const numPages = Math.ceil(htmlHeight / a4Height);
-
-    // Log the number of pages needed to the console
-    console.log(`HTML content requires ${numPages} A4 pages to display`);
-
-    // Convert the HTML content to PDF using html2pdf
-    html2pdf().from(htmlContent).set(options).outputPdf().then((pdf: any) => {
-      // Do something with the PDF
-    });
-
-    html2pdf().set(options).from(htmlContent).save();
-
-    // html2pdf()
-    //   .from(this.html)
-    //   .set(options)
-    //   .outputPdf()
-    //   .then((pdf: any) => {
-    //     // Do something with the PDF file, e.g. save it to disk or display it in the browser
-    //     const blob = new Blob([pdf], { type: 'application/pdf' });
-    //     const url = URL.createObjectURL(blob);
-    //     window.open(url);
-    //   })
-    //   .catch((error: any) => {
-    //     console.error(error);
-    //   });
+    this.pdfService.toPdf(dashboard);
   }
-
-  // toPdf() {
-  //   const dashboard:any = document.getElementById("preview-window");
-
-  //   this.pdfService.toPdf(dashboard);
-  // }
 }

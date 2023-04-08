@@ -28,8 +28,11 @@ import { SkillsComponent } from './skills/skills.component';
 import { SessionService } from './services/session.service';
 import { CompletenessService } from './services/completeness.service';
 import { GenericTemplateComponent } from './resume-templates/generic-template/generic-template.component';
-import { PdfService } from './services/pdf.service';
+import { TemplateService } from './services/template.service';
 import { ImageService } from './services/image.service';
+import { TemplatesChooserComponent } from './templates-chooser/templates-chooser.component';
+import { PdfService } from './services/pdf.service';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -51,22 +54,26 @@ import { ImageService } from './services/image.service';
     CustomSectionComponent,
     HobbiesComponent,
     SkillsComponent,
-    GenericTemplateComponent
+    GenericTemplateComponent,
+    TemplatesChooserComponent,
   ],
   imports: [
     FormsModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule
   ],
   providers: [
     ResumeService,
     SectionsService,
     SessionService,
     CompletenessService,
-    PdfService,
+    TemplateService,
     ImageService,
+    PdfService,
+    MatDialog
   ],
   bootstrap: [AppComponent]
 })

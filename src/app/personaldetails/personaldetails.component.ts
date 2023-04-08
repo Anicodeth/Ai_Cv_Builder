@@ -16,6 +16,7 @@ export class PersonaldetailsComponent implements OnInit, OnChanges {
   private currProgress: number = 0;
   private DETAIL_PROGRESS_VALUE = 2;
   private reader: FileReader = new FileReader();
+  public imageData: any;
 
   constructor(
     private resumeService: ResumeService,
@@ -23,8 +24,12 @@ export class PersonaldetailsComponent implements OnInit, OnChanges {
     private completenessService: CompletenessService,
     private imageService: ImageService
   ) {}
-
+  
   ngOnInit(): void {
+    this.imageService.getImageData().subscribe((data) => {
+      this.imageData = data;
+    });
+    
     this.personalDetailsForm = this.resumeService.getPersonalDetailsForm();
 
     const storedOnSession = this.sessionService.getItem('personalDetails');

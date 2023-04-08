@@ -1,122 +1,124 @@
-<div class="container preview-container m-0 p-0">
-  <div id="preview-window" class="bg-white mt-4 mx-4 rounded">
-    <div class="p-4">
-      <div class="row mb-5">
-        <div class="col-md-9">
-          <h1 class="text-dark">{{ personalDetails.value.firstName }} {{
-            personalDetails.value.lastName }}</h1>
-          <p class="m-0 text-secondary">{{ personalDetails.value.address }},
-            {{personalDetails.value.city}}, {{ personalDetails.value.country }}</p>
-          <p class="m-0 text-secondary">{{ personalDetails.value.email }}</p>
-          <p class="m-0 text-secondary">(+251) {{ personalDetails.value.phone }}</p>
-        </div>
-        <div class="col-md-3 m-auto">
-          <img *ngIf="!imageData" src="https://via.placeholder.com/150" alt="John Doe" class="img-fluid rounded">
-          <img *ngIf="imageData" [src]="imageData" alt="Uploaded image" class="img-fluid rounded" height="150px">
-        </div>
-      </div>
-
-      <!-- <hr class="my-4"> -->
-
-      <div class="row mt-2 mb-2">
-        <div class="col-md-3">
-          <h2 class="text-dark">Summary</h2>
-        </div>
-        <div class="col-md-9 pl-5 m-auto">
-          <p class="text-secondary text-justify">{{ this.professionalSummary.value.personalSummary }}</p>
-        </div>
-      </div>
-
-      <!-- <hr class="my-2"> -->
-
-      <div class="row mb-2">
-        <div class="col-md-3">
-          <h2 class="text-dark">Education</h2>
-        </div>
-        <div class="col-md-9 pl-5 m-auto">
-          <div *ngFor="let education of educations.controls; let i= index">
-            <h4 class="text-secondary">{{ education.value.degree}} at {{
-              education.value.school }}, {{ education.value.city }}</h4>
-            <p class="text-secondary">Graduated: {{ education.value.endDate }}</p>
-            <p class="text-secondary text-justify">{{ education.value.description
-              }}</p>
+<div class="container p-0 m-0">
+  <div class="preview-container m-0 p-0">
+    <div id="preview-window" class="bg-white mt-4 mx-4 rounded">
+      <div class="p-4">
+        <div class="row mb-5">
+          <div class="col-md-9">
+            <h1 class="text-dark">{{ personalDetails.value.firstName }} {{
+              personalDetails.value.lastName }}</h1>
+            <p class="m-0 text-secondary">{{ personalDetails.value.address }},
+              {{personalDetails.value.city}}, {{ personalDetails.value.country }}</p>
+            <p class="m-0 text-secondary">{{ personalDetails.value.email }}</p>
+            <p class="m-0 text-secondary">(+251) {{ personalDetails.value.phone }}</p>
+          </div>
+          <div class="col-md-3 m-auto">
+            <img *ngIf="!imageData" src="https://via.placeholder.com/150" alt="John Doe" class="img-fluid rounded">
+            <img *ngIf="imageData" [src]="imageData" alt="Uploaded image" class="img-fluid rounded" height="150px">
           </div>
         </div>
-      </div>
-
-      <!-- <hr class="my-2"> -->
-
-      <div class="row mb-2" id="experiences-section">
-        <div class="col-md-3">
-          <h2 class="text-dark">Experience</h2>
-        </div>
-        <div class="col-md-9 pl-5 m-auto">
-          <div *ngFor="let experience of experiences.controls">
-            <h4 class="text-secondary">{{ experience.value.jobTitle }}, {{
-              experience.value.employer }}</h4>
-            <p class="text-secondary">{{ experience.value.startDate }} - 
-              <span *ngIf="experience.value.enddate == null">Present</span>
-              <span *ngIf="experience.value.enddate">{{ experience.value.enddate }}</span>
-            </p>
-            <p class="justify-content text-justify"> {{ experience.value.description }} </p>
+  
+        <!-- <hr class="my-4"> -->
+  
+        <div class="row mt-2 my-2">
+          <div class="col-md-3">
+            <h2 class="text-dark">Summary</h2>
+          </div>
+          <div class="col-md-9 pl-5 m-auto">
+            <p class="text-secondary text-justify">{{ this.professionalSummary.value.personalSummary }}</p>
           </div>
         </div>
-      </div>
-
-      <!-- <hr class="my-2"> -->
-
-      <div class="row mb-2" id="experiences-section">
-        <div class="col-md-3">
-          <h2 class="text-dark">Extra-curricular Activities</h2>
-        </div>
-        <div class="col-md-9 pl-5 m-auto">
-          <div *ngFor="let extraCurricularActivity of extraCurricularActivities.controls">
-            <h4 class="text-secondary">{{ extraCurricularActivity.value.function }}, {{
-              extraCurricularActivity.value.employer }}</h4>
-            <p class="text-secondary">{{ extraCurricularActivity.value.startDate }} - 
-              <span *ngIf="extraCurricularActivity.value.enddate == null">Present</span>
-              <span *ngIf="extraCurricularActivity.value.enddate">{{ extraCurricularActivity.value.enddate }}</span>
-            </p>
-            <p class="justify-content text-justify"> {{ extraCurricularActivity.value.description }} </p>
+  
+        <!-- <hr class="my-2"> -->
+  
+        <div class="row my-2">
+          <div class="col-md-3">
+            <h2 class="text-dark">Education</h2>
+          </div>
+          <div class="col-md-9 pl-5 m-auto">
+            <div *ngFor="let education of educations.controls; let i= index">
+              <h4 class="text-secondary">{{ education.value.degree}} at {{
+                education.value.school }}, {{ education.value.city }}</h4>
+              <p class="text-secondary">Graduated: {{ education.value.endDate }}</p>
+              <p class="text-secondary text-justify">{{ education.value.description
+                }}</p>
+            </div>
           </div>
         </div>
+  
+        <!-- <hr class="my-2"> -->
+  
+        <div class="row my-2" id="experiences-section">
+          <div class="col-md-3">
+            <h2 class="text-dark">Experience</h2>
+          </div>
+          <div class="col-md-9 pl-5 m-auto">
+            <div *ngFor="let experience of experiences.controls">
+              <h4 class="text-secondary">{{ experience.value.jobTitle }}, {{
+                experience.value.employer }}</h4>
+              <p class="text-secondary">{{ experience.value.startDate }} - 
+                <span *ngIf="experience.value.enddate == null">Present</span>
+                <span *ngIf="experience.value.enddate">{{ experience.value.enddate }}</span>
+              </p>
+              <p class="justify-content text-justify"> {{ experience.value.description }} </p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- <hr class="my-2"> -->
+  
+        <div class="row my-2" id="experiences-section">
+          <div class="col-md-3">
+            <h2 class="text-dark">Extra-curricular Activities</h2>
+          </div>
+          <div class="col-md-9 pl-5 m-auto">
+            <div *ngFor="let extraCurricularActivity of extraCurricularActivities.controls">
+              <h4 class="text-secondary">{{ extraCurricularActivity.value.function }}, {{
+                extraCurricularActivity.value.employer }}</h4>
+              <p class="text-secondary">{{ extraCurricularActivity.value.startDate }} - 
+                <span *ngIf="extraCurricularActivity.value.enddate == null">Present</span>
+                <span *ngIf="extraCurricularActivity.value.enddate">{{ extraCurricularActivity.value.enddate }}</span>
+              </p>
+              <p class="justify-content text-justify"> {{ extraCurricularActivity.value.description }} </p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- <hr class="my-2"> -->
+  
+        <div class="row my-2">
+          <div class="col-md-3">
+            <h2 class="text-dark">Skills</h2>
+          </div>
+          <div class="col-md-9 pl-5 m-auto">
+            <ul>
+              <li *ngFor="let skill of skills.controls">
+                {{ skill.value.skillName }} {{ skill.value.experienceLevel }}
+              </li>
+            </ul>
+          </div>
+        </div>
+  
+        <!-- <hr class="my-2"> -->
+  
+        <div class="row my-2">
+          <div class="col-md-3">
+            <h2 class="text-dark">Web and Social Links</h2>
+          </div>
+          <div class="col-md-9 pl-5 m-auto">
+            <ul>
+              <li *ngFor="let webAndSocialLink of webAndSocialLinks.controls">
+                {{ webAndSocialLink.value.label }} {{ webAndSocialLink.value.link }}
+              </li>
+            </ul>
+          </div>
+        </div>
+  
+        <!-- <hr class="my-2"> -->
+  
       </div>
-
-      <!-- <hr class="my-2"> -->
-
-      <div class="row mb-2">
-        <div class="col-md-3">
-          <h2 class="text-dark">Skills</h2>
-        </div>
-        <div class="col-md-9 pl-5 m-auto">
-          <ul>
-            <li *ngFor="let skill of skills.controls">
-              {{ skill.value.skillName }} {{ skill.value.experienceLevel }}
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- <hr class="my-2"> -->
-
-      <div class="row mb-2">
-        <div class="col-md-3">
-          <h2 class="text-dark">Web and Social Links</h2>
-        </div>
-        <div class="col-md-9 pl-5 m-auto">
-          <ul>
-            <li *ngFor="let webAndSocialLink of webAndSocialLinks.controls">
-              {{ webAndSocialLink.value.label }} {{ webAndSocialLink.value.link }}
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- <hr class="my-2"> -->
-
     </div>
   </div>
-</div>
-<div class="w-50 m-auto">
-  <button class="btn btn-light" (click)="toPdf()">Download</button>
+  <div class="w-50 my-0 mx-auto p-0">
+    <button class="btn btn-light" (click)="toPdf()">Download</button>
+  </div>
 </div>

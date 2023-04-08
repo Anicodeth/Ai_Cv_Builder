@@ -1,8 +1,10 @@
-#preview-window {
+.container {
+  position: sticky;
+  top: 0px;
 }
 
 .preview-container {
-  max-height:86vh;
+  max-height:87vh;
   overflow-y: scroll;
   position: sticky;
   top:0px;
