@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+
 import html2pdf from 'html2pdf.js';
 
 @Injectable({
