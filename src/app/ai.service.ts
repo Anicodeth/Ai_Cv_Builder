@@ -12,15 +12,18 @@ export class AiService {
 
 
   sendRequest(value: string) {
-    const skillUrl = `http://localhost:4000/api/skills/${value}`;
-    const paragraphUrl = `http://localhost:4000/api/paragraph/${value}`;
-    this.http.get(skillUrl).subscribe(response => {
-      this.skills = response;
-    });
+    const skillUrl = `https://airesponseparser-production.up.railway.app/api/skills/${value}`;
+    const paragraphUrl = `http:////airesponseparser-production.up.railway.app/api/paragraph/${value}`;
+
 
     this.http.get(paragraphUrl).subscribe(response => {
       this.paragraphs = response;
     });
+    this.http.get(skillUrl).subscribe(response => {
+      this.skills = response;
+    });
+
+
 
   }
 }

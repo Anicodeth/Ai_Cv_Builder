@@ -4,8 +4,9 @@
       <div class="p-4">
         <div class="row mb-5">
           <div class="col-md-9">
-            <h1 class="text-dark">{{ personalDetails.value.firstName }} {{
-              personalDetails.value.lastName }}</h1>
+            <h2 class="text-dark">{{ personalDetails.value.firstName }} {{
+              personalDetails.value.lastName }}</h2>
+            <h4>{{personalDetails.value.jobTitle}}</h4>
             <p class="m-0 text-secondary">{{ personalDetails.value.address }},
               {{personalDetails.value.city}}, {{ personalDetails.value.country }}</p>
             <p class="m-0 text-secondary">{{ personalDetails.value.email }}</p>
@@ -21,7 +22,7 @@
   
         <div class="row mt-2 my-2">
           <div class="col-md-3">
-            <h2 class="text-dark">Summary</h2>
+            <h3 class="text-dark">Summary</h3>
           </div>
           <div class="col-md-9 pl-5 m-auto">
             <p class="text-secondary text-justify">{{ this.professionalSummary.value.personalSummary }}</p>
@@ -32,7 +33,7 @@
   
         <div class="row my-2">
           <div class="col-md-3">
-            <h2 class="text-dark">Education</h2>
+            <h3 class="text-dark">Education</h3>
           </div>
           <div class="col-md-9 pl-5 m-auto">
             <div *ngFor="let education of educations.controls; let i= index">
@@ -49,7 +50,7 @@
   
         <div class="row my-2" id="experiences-section">
           <div class="col-md-3">
-            <h2 class="text-dark">Experience</h2>
+            <h3 class="text-dark">Experience</h3>
           </div>
           <div class="col-md-9 pl-5 m-auto">
             <div *ngFor="let experience of experiences.controls">
@@ -68,7 +69,7 @@
   
         <div class="row my-2" id="experiences-section">
           <div class="col-md-3">
-            <h2 class="text-dark">Extra-curricular Activities</h2>
+            <h3 class="text-dark">Extra-curricular Activities</h3>
           </div>
           <div class="col-md-9 pl-5 m-auto">
             <div *ngFor="let extraCurricularActivity of extraCurricularActivities.controls">
@@ -87,7 +88,7 @@
   
         <div class="row my-2">
           <div class="col-md-3">
-            <h2 class="text-dark">Skills</h2>
+            <h3 class="text-dark">Skills</h3>
           </div>
           <div class="col-md-9 pl-5 m-auto">
             <ul>
@@ -102,7 +103,7 @@
   
         <div class="row my-2">
           <div class="col-md-3">
-            <h2 class="text-dark">Web and Social Links</h2>
+            <h3 class="text-dark">Web and Social Links</h3>
           </div>
           <div class="col-md-9 pl-5 m-auto">
             <ul>
@@ -118,7 +119,7 @@
       </div>
     </div>
   </div>
-  <div class="w-50 my-0 mx-auto p-0">
+  <div class=" button w-50 my-0 mx-auto p-0">
     <button class="btn btn-primary" (click)="toPdf()">Download</button>
   </div>
 

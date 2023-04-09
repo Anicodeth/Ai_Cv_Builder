@@ -4,6 +4,7 @@
     position: sticky;
     background-color: white;
     margin-bottom: 0.5rem;
+    z-index:100;
  }
 
 .progress-line {
