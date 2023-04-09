@@ -13,7 +13,7 @@ export class AiService {
 
   sendRequest(value: string) {
     const skillUrl = `https://airesponseparser-production.up.railway.app/api/skills/${value}`;
-    const paragraphUrl = `http:////airesponseparser-production.up.railway.app/api/paragraph/${value}`;
+    const paragraphUrl = `https://airesponseparser-production.up.railway.app/api/paragraph/${value}`;
 
 
     this.http.get(paragraphUrl).subscribe(response => {
