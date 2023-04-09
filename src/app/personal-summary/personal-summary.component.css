@@ -44,9 +44,12 @@ animation-duration: 0.75s;
 }
 .ai-choice {
     background-color: aliceblue;
-    z-index: -1;
+    z-index: 0;
 }
+.ai-selected {
+    z-index :-1;
 
+}
 
 @keyframes smooth{
     0% {opacity: 1%;}

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "airesumebuilder-ae4e5": {
+      "hosting": {
+        "aicvbuilder": [
+          "airesumebuilder-ae4e5"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "airesumebuilder-ae4e5"
+  }
+}

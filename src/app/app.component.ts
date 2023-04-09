@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
 import { SectionsService } from './services/sections.service';
+import { Component, ViewChild, ViewContainerRef } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { TemplatesChooserComponent } from './templates-chooser/templates-chooser.component';
+
 
 @Component({
   selector: 'app-root',
@@ -12,8 +15,23 @@ export class AppComponent {
   title = 'aicvbuilder';
 
   constructor(
-    private sectionsService: SectionsService
+    private sectionsService: SectionsService,
+    private dialog: MatDialog,
   ) {
+  }
+
+  chooseTemplate(): void {
+    const dialogConfig = new MatDialogConfig();
+    
+    dialogConfig.data = {
+      dialogRef: this.dialog
+    };
+
+    const dialogRef = this.dialog.open(TemplatesChooserComponent, dialogConfig);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
   referencesSection(): boolean {

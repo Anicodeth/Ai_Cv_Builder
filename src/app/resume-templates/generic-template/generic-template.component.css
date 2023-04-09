@@ -1,27 +1,57 @@
-.preview-container{
-    position: sticky;
-    top:0px;
-}
 
 #preview-window {
     height:45rem;
-    overflow-y: scroll;
+  overflow-y: scroll;
+   }
+
+  
+
+.container {
+  position: sticky;
+  top: 0px;
+  width:100%;
+
+
 }
 
-#preview-window::-webkit-scrollbar {
+.preview-container {
+  max-height:87vh;
+  overflow-y: scroll;
+  position: sticky;
+  top:0px;
+  margin-left: auto;
+
+}
+
+.preview-container::-webkit-scrollbar  {
     width: 0.35rem;
   }
   
 
-#preview-window::-webkit-scrollbar-track {
+.preview-container::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey; 
     border-radius: 0.25rem;
   }
    
   
-#preview-window::-webkit-scrollbar-thumb {
+.preview-container::-webkit-scrollbar-thumb{
     background: var(--primary); 
     border-radius: 0.25rem;
   }
   
   
+  #preview-window::-webkit-scrollbar  {
+    width: 0.35rem;
+  }
+  
+
+  #preview-window::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px White; 
+    border-radius: 0.25rem;
+  }
+   
+  
+  #preview-window::-webkit-scrollbar-thumb{
+    background: white; 
+    border-radius: 0.25rem;
+  }

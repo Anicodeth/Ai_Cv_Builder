@@ -29,7 +29,13 @@ import { SessionService } from './services/session.service';
 import { CompletenessService } from './services/completeness.service';
 import { GenericTemplateComponent } from './resume-templates/generic-template/generic-template.component';
 import {  HttpClientModule } from '@angular/common/http';
-
+import { TemplateService } from './services/template.service';
+import { ImageService } from './services/image.service';
+import { PdfService } from './services/pdf.service';
+import { TemplatesChooserComponent } from './templates-chooser/templates-chooser.component';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { AiService } from './ai.service';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +56,9 @@ import {  HttpClientModule } from '@angular/common/http';
     CustomSectionComponent,
     HobbiesComponent,
     SkillsComponent,
-    GenericTemplateComponent
+    GenericTemplateComponent,
+    TemplatesChooserComponent,
+
   ],
   imports: [
     FormsModule,
@@ -58,13 +66,20 @@ import {  HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule,
+    NoopAnimationsModule
   ],
   providers: [
     ResumeService,
     SectionsService,
     SessionService,
-    CompletenessService
+    CompletenessService,
+    TemplateService,
+    ImageService,
+    PdfService,
+    MatDialog,
+    AiService
   ],
   bootstrap: [AppComponent]
 })

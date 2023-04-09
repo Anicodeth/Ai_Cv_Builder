@@ -4,7 +4,7 @@ import { AiService } from '../ai.service';
 import { CompletenessService } from '../services/completeness.service';
 import { ResumeService } from '../services/resume.service';
 import { SessionService } from '../services/session.service';
-
+import { ImageService } from '../services/image.service';
 @Component({
   selector: 'app-personaldetails',
   templateUrl: './personaldetails.component.html',
@@ -16,13 +16,16 @@ export class PersonaldetailsComponent implements OnInit, OnChanges {
   private currProgress: number = 0;
   private DETAIL_PROGRESS_VALUE = 2;
   private reader: FileReader = new FileReader();
+  public imageData: any;
 
 
   constructor(
     private resumeService: ResumeService,
     private sessionService: SessionService,
     private completenessService: CompletenessService,
-    private aiService: AiService
+    private aiService: AiService,
+    private imageService: ImageService
+
   ) { }
 
   expandPersonal() {
@@ -35,6 +38,10 @@ export class PersonaldetailsComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
+    this.imageService.getImageData().subscribe((data) => {
+      this.imageData = data;
+    });
+    
     this.personalDetailsForm = this.resumeService.getPersonalDetailsForm();
 
     const storedOnSession = this.sessionService.getItem('personalDetails');
@@ -64,7 +71,6 @@ export class PersonaldetailsComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('here');
   }
 
   updateProgress(): void {
@@ -86,4 +92,16 @@ export class PersonaldetailsComponent implements OnInit, OnChanges {
       this.DETAIL_PROGRESS_VALUE * this.currProgress
     );
   }
+  onFileSelected(event: any) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = () => {
+      const imageData = reader.result;
+      if (imageData) {
+        this.imageService.setImageData(imageData.toString());
+      }
+    };
+    reader.readAsDataURL(file);
+  }
+
 }

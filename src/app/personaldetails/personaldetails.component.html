@@ -7,15 +7,22 @@
         <div class="personal-row">
             <div class="unit">
                 <label for="jobTitle">Job Title</label><br>
-                <input type="text" placeholder="e.g. Computer Scientist" class="form-control" id="jobTitle"
-                    formControlName="jobTitle" (blur) = 'requestData()'>
+                <input type="text" placeholder="e.g. Computer Scientist"
+                    class="form-control" id="jobTitle"
+                    formControlName="jobTitle" (blur)="requestData()">
             </div>
             <div class="unit">
                 <div class="photo-upload "> 
                     <label class="photo-label" for="photo-input">Photo
-                        <img class ="img-fluid" src="../../assets/photo.png"  />
+                        <img *ngIf="!imageData" class="img-fluid"
+                            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgHBxILBwoIBwYHBw8ICggWIBEWIiARHxMYHSggGBolGxMTITEhJSkrLi4uFx8zODMsNygtLisBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAMgAyAMBIgACEQEDEQH/xAAaAAEAAwEBAQAAAAAAAAAAAAAAAwQFAgcB/8QALRABAAIBAwEGBQQDAAAAAAAAAAECAwQREiIhMTJCUmIFE1FxclNzgYIzQZL/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/APVAFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACZiImZnbZn6nVTeeGKdo81vUC1l1GPHHbaJn9OviVMmtyW7KbY/t4lYBJ8/L+pk/6d01eavfaLfnVAAuU19t+vHE+6i3iy0yxvSd/VXzVZDqlrUtFqTtsDYEWDLGanKOzbptX0ylAAAAAAAAAAAAAAAABS+IZJiIxxPf1XUneov8zNe3u41+zgABQAAABPo8nDNEb9lumzTYu+3a2azvWJ+tUH0AAAAAAAAAAAAABzedq2n6VtZ04zf4cn4WBkAKAAAAAADYpO9Kz7asdrYP8ADT9uqCQAAAAAAAAAAAAABBqslaY5i2/VW1a8U6l8S8k/kCkAoAAAAAANPS5KXxxFd+mta25Mxd+Hd2SfxQXQAAAAAAAAAAAAAFbX05YOXptyWXN6RelqW/3XjYGOJdRgnBaI333ryrbiiUAAAAAAGjoKccHL1W5KenwTntMb7bV5WtxadKRSlaV/1XjVB0AAAAAAAAAAAAAAACvrcfPDvHl6v4ZraZeqw/Jv2d1uqoIQFAAAE2lw/OydvdXqt7gXNFj4Yd583V/CwCAAAAAAAAAAAAAAAAAp/EfBj/cssZMtMdd72iPTXzWUNVqIzTERXaK/XzAgAUAAF74d4Mn7lVFPpdR8mbRNZmLenyoNMR48tMld6WifVXzVSAAAAAAAAAAAAADi+XHj8d4j2+ZWya6kdmOk391ukFxHlz48fivH416rM7Jqct++23tp0ogS6nLGbJziJjp49SIFAAAAAAEumyxhyc5iZ6ePS0cWfHk8N4/G3TZkiDaGVj1OWndbf236lnHrqT2ZKTT3V6gXBxTLjyeC8T7fM7AAAAAABHmy0w15W/rX1KGXVZL9kT8uPTRzqck5c1p37umv2RAAKAAAAAAAAAAAAAACfFqslOyZ+ZHpugAa2HLTNXlX+1fSkZWmyTjzVnfv6bfZqoAADm88aWn6VtYAY4CgAAAAAAAAAAAAAAAAAA2KTypWfrWtgQdAA//Z"
+                            />
+                        <img *ngIf="imageData" [src]="imageData" alt="Uploaded
+                            image" class="img-fluid rounded" width="50px">
                     </label>
-                    <input id="photo-input" type="file" accept="image/x-png,image/jpeg" formControlName="photo">
+                    <input id="photo-input" type="file"
+                        accept="image/x-png,image/jpeg" formControlName="photo"
+                        (change) = "onFileSelected($event)">
                 </div>
 
             </div>
@@ -27,11 +34,13 @@
         <div class="personal-row">
             <div class="unit">
                 <label for="firstname">First Name</label><br>
-                <input type="text" class="form-control" placeholder="e.g. Abebe" formControlName="firstName">
+                <input type="text" class="form-control" placeholder="e.g. Abebe"
+                    formControlName="firstName">
             </div>
             <div class="unit">
                 <label for="lastname">Last Name</label><br>
-                <input type="text" class="form-control" placeholder="e.g. Kebede" formControlName="lastName">
+                <input type="text" class="form-control" placeholder="e.g.
+                    Kebede" formControlName="lastName">
             </div>
         </div>
 
@@ -86,14 +95,16 @@
             <div class="personal-row">
                 <div class="unit">
                     <label for="dob">Data of birth</label><br>
-                    <input type="date" class="form-control" formControlName="dob">
+                    <input type="date" class="form-control"
+                        formControlName="dob">
                 </div>
             </div>
         </div>
 
 
         <div class="additional">
-            <button class="add btn btn-outline-primary" (click)="expandPersonal()">Additional
+            <button class="add btn btn-outline-primary"
+                (click)="expandPersonal()">Additional
             </button>
         </div>
 
