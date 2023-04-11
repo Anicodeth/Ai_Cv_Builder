@@ -21,13 +21,7 @@ export class AppComponent {
   }
 
   chooseTemplate(): void {
-    const dialogConfig = new MatDialogConfig();
-    
-    dialogConfig.data = {
-      dialogRef: this.dialog
-    };
-
-    const dialogRef = this.dialog.open(TemplatesChooserComponent, dialogConfig);
+    const dialogRef = this.dialog.open(TemplatesChooserComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);

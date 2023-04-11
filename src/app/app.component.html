@@ -7,7 +7,7 @@
             <app-experience></app-experience>
             <app-education></app-education>
             <app-skills></app-skills>
-            <app-website-links></app-website-links>
+            <!-- <app-website-links></app-website-links> -->
             <app-hobbies *ngIf="hobbiesSection()"></app-hobbies>
             <app-languages *ngIf="languagesSection()"></app-languages>
             <app-internships *ngIf="internshipsSection()"></app-internships>
@@ -25,4 +25,8 @@
                 <app-generic-template></app-generic-template>
             </div>
         </div>
+    </div>
+
+    <div class="choose-template">
+        <button class="floating-button btn btn-primary" (click)="chooseTemplate()" >Change Template</button>
     </div>

@@ -1,2 +1,4 @@
-show something here
-<button (click)="closeDialog()" ></button>
+<div class="overlay">
+    <img *ngFor="let template of templates; let i = index" [src]="template">
+    <button (click)="closeDialog()">Choose</button>
+</div>

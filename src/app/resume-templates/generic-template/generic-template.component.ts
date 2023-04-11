@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormArray, FormControl, FormGroup } from '@angular/forms';
 import { ImageService } from 'src/app/services/image.service';
 import { TemplateService } from 'src/app/services/template.service';
 import { ResumeService } from 'src/app/services/resume.service';
@@ -11,20 +11,20 @@ import { PdfService } from 'src/app/services/pdf.service';
   styleUrls: ['./generic-template.component.css']
 })
 export class GenericTemplateComponent implements OnInit {
-  public personalDetails: any | FormGroup;
-  public professionalSummary: any | FormGroup;
-  public experiences: any | FormGroup;
-  public educations: any | FormGroup;
+  public personalDetails: FormGroup<any>;
+  public professionalSummary: FormGroup<any>;
+  public experiences: FormArray<any>;
+  public educations: FormArray<any>;
 
-  public webAndSocialLinks: any | FormGroup;
-  public skills: any | FormGroup;
+  public webAndSocialLinks: FormArray<any>;
+  public skills: FormArray<any>;
 
-  public extraCurricularActivities: any | FormGroup;
-  public references: any | FormGroup;
-  public languages: any | FormGroup;
-  public hobbies: any | FormGroup;
-  public internships: any | FormGroup;
-  public courses: any | FormGroup;
+  public extraCurricularActivities: FormArray<any>;
+  public references: FormArray<any>;
+  public languages: FormArray<any>;
+  public hobbies: FormControl<any>;
+  public internships: FormArray<any>;
+  public courses: FormArray<any>;
 
   public imageData: string | undefined;
 
@@ -57,7 +57,7 @@ export class GenericTemplateComponent implements OnInit {
   }
 
   toPdf() {
-    const dashboard:any = document.getElementById("preview-window");
+    const dashboard: any = document.getElementById("preview-window");
 
     this.pdfService.toPdf(dashboard);
   }

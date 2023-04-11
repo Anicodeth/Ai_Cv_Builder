@@ -103,6 +103,7 @@
         <div class="row my-2">
           <div class="col-md-3">
             <h2 class="text-dark">Web and Social Links</h2>
+            {{ webAndSocialLinks }}
           </div>
           <div class="col-md-9 pl-5 m-auto">
             <ul>
@@ -118,7 +119,8 @@
       </div>
     </div>
   </div>
-  <div class="w-50 my-0 mx-auto p-0">
-    <button class="btn btn-light" (click)="toPdf()">Download</button>
+  <div class="my-0 mx-auto p-0">
+    <button class="w-25 btn btn-light" (click)="toPdf()">Download</button>
+    <button class="w-25 btn btn-light" (click)="toPdf()">Change Template</button>
   </div>
 </div>

@@ -13,7 +13,7 @@
     <form [formGroup]="skillsForm">
         <div formArrayName="skills">
             <div *ngFor="let skills of skills.controls; 
-            let i= index" [formGroupName]="i">
+            let i = index" [formGroupName]="i">
                 <div class="input-row">
                     <div class="unit">
                         <label for="skillName">Skill</label>

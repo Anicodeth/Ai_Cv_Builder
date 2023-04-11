@@ -12,7 +12,6 @@ import { SessionService } from '../services/session.service';
 export class SkillsComponent implements OnInit {
   public relevantSkills: string[] = [];
   public skillsForm: any;
-  private prevPercentageIncrease: number = 0;
   private WEIGHTOFSKILL = 2;
 
   constructor(
