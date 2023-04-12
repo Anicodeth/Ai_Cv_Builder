@@ -39,7 +39,7 @@
             <div *ngFor="let education of educations.controls; let i= index">
               <h4 class="text-secondary">{{ education.value.degree}} at {{
                 education.value.school }}, {{ education.value.city }}</h4>
-              <p class="text-secondary">Graduated: {{ education.value.endDate }}</p>
+              <p class="text-secondary">Graduated: {{ education.value | date:'MMMM, y' }}</p>
               <p class="text-secondary text-justify">{{ education.value.description
                 }}</p>
             </div>
@@ -76,8 +76,8 @@
               <h4 class="text-secondary">{{ extraCurricularActivity.value.function }}, {{
                 extraCurricularActivity.value.employer }}</h4>
               <p class="text-secondary">{{ extraCurricularActivity.value.startDate }} -
-                <span *ngIf="extraCurricularActivity.value.enddate == null">Present</span>
-                <span *ngIf="extraCurricularActivity.value.enddate">{{ extraCurricularActivity.value.enddate }}</span>
+                <span *ngIf="extraCurricularActivity.value.endDate == null">Present</span>
+                <span *ngIf="extraCurricularActivity.value.endDate">{{ extraCurricularActivity.value | date:'MMMM, y' }}</span>
               </p>
               <p class="justify-content text-justify"> {{ extraCurricularActivity.value.description }} </p>
             </div>
