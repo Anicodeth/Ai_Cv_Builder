@@ -12,7 +12,7 @@ export class PdfService {
   toPdf(htmlContent: any) {
     const options = {
       margin: [0, 0],
-      filename: 'my-document.pdf',
+      filename: 'my-resume.pdf',
       image: { type: 'jpeg', quality: 1.0 },
       html2canvas: { scale: 4, dpi: 300, letterRendering: true },
       jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
