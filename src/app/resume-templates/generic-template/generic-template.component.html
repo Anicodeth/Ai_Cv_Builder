@@ -76,8 +76,8 @@
               <h4 class="text-secondary">{{ extraCurricularActivity.value.function }}, {{
                 extraCurricularActivity.value.employer }}</h4>
               <p class="text-secondary">{{ extraCurricularActivity.value.startDate }} -
-                <span *ngIf="extraCurricularActivity.value.enddate == null">Present</span>
-                <span *ngIf="extraCurricularActivity.value.enddate">{{ extraCurricularActivity.value.enddate }}</span>
+                <span *ngIf="!extraCurricularActivity.value.endDate">Present</span>
+                <span *ngIf="extraCurricularActivity.value.endDate">{{ extraCurricularActivity.value.endDate }}</span>
               </p>
               <p class="justify-content text-justify"> {{ extraCurricularActivity.value.description }} </p>
             </div>
