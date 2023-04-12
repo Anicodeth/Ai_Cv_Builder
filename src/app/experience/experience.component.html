@@ -1,65 +1,59 @@
 <h4>Experiences</h4>
-<p>Show your relevant experience (last 10 years). Use bullet points to note your achievements, if possible - use numbers/facts (Achieved X, measured by Y, by doing Z).</p>
+<p>
+    Show your relevant experience (last 10 years). Use bullet points to note your
+    achievements, if possible - use numbers/facts (Achieved X, measured by Y, by
+    doing Z).
+</p>
 <div>
     <form [formGroup]="experiencesForm">
-        <div  formArrayName="experiences">
-            <div class = "add-experience" *ngFor="let experiences of experiences.controls;
-             let i = index" [formGroupName]="i">
-                
-                <div class = "personal-row">
-                    <div class = "unit ">
+        <div formArrayName="experiences">
+            <div class="add-experience" *ngFor="let experiences of experiences.controls; let i = index"
+                [formGroupName]="i">
+                <div class="personal-row">
+                    <div class="unit">
                         <label for="experienceEmployer">Employer</label>
-                        <input type="text" class = "form-control" 
-                        id="experienceEmployer" placeholder="e.g Yenetta Code" 
-                        formControlName="employer"/>
+                        <input type="text" class="form-control" id="experienceEmployer" placeholder="e.g Yenetta Code"
+                            formControlName="employer" />
                     </div>
-                    <div class = "unit">
+                    <div class="unit">
                         <label for="experienceJobTitle">Job Title</label>
-                        <input type="text" class = "form-control" 
-                        id="experienceJobTitle" placeholder="e.g. Software Engineer"
-                        formControlName="jobTitle">
+                        <input type="text" class="form-control" id="experienceJobTitle"
+                            placeholder="e.g. Software Engineer" formControlName="jobTitle" />
                     </div>
-            </div>
-
-
-            <div class = "personal-row">
-
-            <div class = "unit">
-                <div >
-                    <label for="experienceStartDate">Start Date</label>
-                    <input type="date" class = "form-control"  
-                    id="experienceStartDate" placeholder="Experience Start Date" 
-                    formControlName="startDate">
-                </div>
-                <div  >
-                    <label for="experienceEndDate">End Date</label>
-                    <input type="date" class = "form-control"  
-                    id="experienceEndDate" placeholder="Experience End Date" formControlName="endDate">
-                </div>
-            </div>
-
-
-                <div class="unit">
-                    <label for="experienceCity">City</label>
-                    <input type="text"  class = "form-control"  
-                    id="experienceCity" placeholder="e.g. Addis Ababa" formControlName="city">
                 </div>
 
-            </div>
-            
-                <div class = "description-box" >
+                <div class="personal-row">
+                    <div class="unit">
+                        <div>
+                            <label for="experienceStartDate">Start Date</label>
+                            <input type="date" class="form-control" id="experienceStartDate"
+                                placeholder="Experience Start Date" formControlName="startDate" />
+                        </div>
+                        <div>
+                            <label for="experienceEndDate">End Date</label>
+                            <input type="date" class="form-control" id="experienceEndDate"
+                                placeholder="Experience End Date" formControlName="endDate" />
+                        </div>
+                    </div>
+
+                    <div class="unit">
+                        <label for="experienceCity">City</label>
+                        <input type="text" class="form-control" id="experienceCity" placeholder="e.g. Addis Ababa"
+                            formControlName="city" />
+                    </div>
+                </div>
+                <div class="description-box">
                     <label for="experienceDescription">Description</label>
-                    <textarea  type="text" class = "form-control"
-                      id="experienceDescription" placeholder="Add a detailed description of the Job."
-                       formControlName="description" rows="5"></textarea>
+                    <textarea type="text" class="form-control" id="experienceDescription"
+                        placeholder="Add a detailed description of the Job." formControlName="description"
+                        rows="5"></textarea>
                 </div>
-                <button class = "btn btn-outline-danger" 
-                type="button" (click)="removeExperience(i)">
+                <button class="btn btn-outline-danger" type="button" (click)="removeExperience(i)">
                     Remove Experience
                 </button>
             </div>
         </div>
-        <button type="button" class = "btn btn-outline-primary" (click)="addExperience()">
+        <button type="button" class="btn btn-outline-primary" (click)="addExperience()">
             Add experience
         </button>
     </form>

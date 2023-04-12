@@ -56,9 +56,9 @@
             <div *ngFor="let experience of experiences.controls">
               <h4 class="text-secondary">{{ experience.value.jobTitle }}, {{
                 experience.value.employer }}</h4>
-              <p class="text-secondary">{{ experience.value.startDate }} -
-                <span *ngIf="experience.value.enddate == null">Present</span>
-                <span *ngIf="experience.value.enddate">{{ experience.value.enddate }}</span>
+              <p class="text-secondary">{{ experience.value.startDate | date:'MMMM, y' }} -
+                <span *ngIf="!experience.value.endDate">Present</span>
+                <span *ngIf="experience.value.endDate"  class="text-secondary">{{ experience.value.endDate | date:'MMMM, y' }}</span>
               </p>
               <p class="justify-content text-justify"> {{ experience.value.description }} </p>
             </div>

@@ -4,6 +4,7 @@ import { ImageService } from 'src/app/services/image.service';
 import { TemplateService } from 'src/app/services/template.service';
 import { ResumeService } from 'src/app/services/resume.service';
 import { PdfService } from 'src/app/services/pdf.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-generic-template',
