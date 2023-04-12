@@ -1,6 +1,6 @@
 <div class="container p-0 m-0">
-  <div id="preview-window" class="preview-container m-0 p-0">
-    <div class="bg-white mt-4 mx-4 rounded">
+  <div id="preview-area" class="bg-white mt-4 mx-4 rounded">
+    <div id="preview-window" class="preview-container m-0 p-0">
       <div class="p-4">
         <div class="row mb-5">
           <div class="col-md-9">
@@ -17,9 +17,9 @@
             <img *ngIf="imageData" [src]="imageData" alt="Uploaded image" class="img-fluid rounded" height="150px">
           </div>
         </div>
-  
+
         <!-- <hr class="my-4"> -->
-  
+
         <div class="row mt-2 my-2">
           <div class="col-md-3">
             <h3 class="text-dark">Summary</h3>
@@ -28,9 +28,9 @@
             <p class="text-secondary text-justify">{{ this.professionalSummary.value.personalSummary }}</p>
           </div>
         </div>
-  
+
         <!-- <hr class="my-2"> -->
-  
+
         <div class="row my-2">
           <div class="col-md-3">
             <h3 class="text-dark">Education</h3>
@@ -45,9 +45,9 @@
             </div>
           </div>
         </div>
-  
+
         <!-- <hr class="my-2"> -->
-  
+
         <div class="row my-2" id="experiences-section">
           <div class="col-md-3">
             <h3 class="text-dark">Experience</h3>
@@ -56,7 +56,7 @@
             <div *ngFor="let experience of experiences.controls">
               <h4 class="text-secondary">{{ experience.value.jobTitle }}, {{
                 experience.value.employer }}</h4>
-              <p class="text-secondary">{{ experience.value.startDate }} - 
+              <p class="text-secondary">{{ experience.value.startDate }} -
                 <span *ngIf="experience.value.enddate == null">Present</span>
                 <span *ngIf="experience.value.enddate">{{ experience.value.enddate }}</span>
               </p>
@@ -64,9 +64,9 @@
             </div>
           </div>
         </div>
-  
+
         <!-- <hr class="my-2"> -->
-  
+
         <div class="row my-2" id="extra-curricular-activities-section">
           <div class="col-md-3">
             <h3 class="text-dark">Extra-curricular Activities</h3>
@@ -75,7 +75,7 @@
             <div *ngFor="let extraCurricularActivity of extraCurricularActivities.controls">
               <h4 class="text-secondary">{{ extraCurricularActivity.value.function }}, {{
                 extraCurricularActivity.value.employer }}</h4>
-              <p class="text-secondary">{{ extraCurricularActivity.value.startDate }} - 
+              <p class="text-secondary">{{ extraCurricularActivity.value.startDate }} -
                 <span *ngIf="extraCurricularActivity.value.enddate == null">Present</span>
                 <span *ngIf="extraCurricularActivity.value.enddate">{{ extraCurricularActivity.value.enddate }}</span>
               </p>
@@ -83,9 +83,9 @@
             </div>
           </div>
         </div>
-  
+
         <!-- <hr class="my-2"> -->
-  
+
         <div class="row my-2">
           <div class="col-md-3">
             <h3 class="text-dark">Skills</h3>
@@ -98,9 +98,9 @@
             </ul>
           </div>
         </div>
-  
+
         <!-- <hr class="my-2"> -->
-  <!--
+        <!--
         <div class="row my-2">
           <div class="col-md-3">
             <h3 class="text-dark">Web and Social Links</h3>
@@ -115,7 +115,7 @@
         </div>
   -->
         <!-- <hr class="my-2"> -->
-  
+
       </div>
     </div>
   </div>
