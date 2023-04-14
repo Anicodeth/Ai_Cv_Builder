@@ -6,13 +6,14 @@ import { ResumeService } from 'src/app/services/resume.service';
 import { PdfService } from 'src/app/services/pdf.service';
 import { DatePipe } from '@angular/common';
 
+
 @Component({
-  selector: 'app-generic-template',
-  templateUrl: './generic-template.component.html',
-  styleUrls: ['./generic-template.component.css'],
+  selector: 'app-modern-template',
+  templateUrl: './modern-template.component.html',
+  styleUrls: ['./modern-template.component.css']
 })
-export class GenericTemplateComponent implements OnInit {
-  
+export class ModernTemplateComponent implements OnInit{
+ 
   public personalDetails: FormGroup;
   public professionalSummary: FormGroup;
   public references: FormArray;
@@ -53,3 +54,5 @@ export class GenericTemplateComponent implements OnInit {
     });
   }
 }
+
+

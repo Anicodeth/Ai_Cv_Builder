@@ -36,6 +36,8 @@ import { TemplatesChooserComponent } from './templates-chooser/templates-chooser
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { AiService } from './ai.service';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { ModernTemplateComponent } from './modern-template/modern-template.component';
+import { TemplatePreviewWindowComponent } from './template-preview-window/template-preview-window.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,6 +60,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     SkillsComponent,
     GenericTemplateComponent,
     TemplatesChooserComponent,
+    ModernTemplateComponent,
+    TemplatePreviewWindowComponent,
 
   ],
   imports: [

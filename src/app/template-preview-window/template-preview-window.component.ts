@@ -7,12 +7,11 @@ import { PdfService } from 'src/app/services/pdf.service';
 import { DatePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-generic-template',
-  templateUrl: './generic-template.component.html',
-  styleUrls: ['./generic-template.component.css'],
+  selector: 'app-template-preview-window',
+  templateUrl: './template-preview-window.component.html',
+  styleUrls: ['./template-preview-window.component.css']
 })
-export class GenericTemplateComponent implements OnInit {
-  
+export class TemplatePreviewWindowComponent implements OnInit {
   public personalDetails: FormGroup;
   public professionalSummary: FormGroup;
   public references: FormArray;
