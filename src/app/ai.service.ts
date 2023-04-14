@@ -12,8 +12,8 @@ export class AiService {
 
 
   sendRequest(value: string) {
-    const skillUrl = `https://airesponseparser-production.up.railway.app/api/skills/${value}`;
-    const paragraphUrl = `https://airesponseparser-production.up.railway.app/api/paragraph/${value}`;
+    const skillUrl = `https://ai-response-parser-git-main-anicodeth.vercel.app/api/skills/${value}`;
+    const paragraphUrl = `https://ai-response-parser-git-main-anicodeth.vercel.app/api/paragraph/${value}`;
 
 
     this.http.get(paragraphUrl).subscribe(response => {
