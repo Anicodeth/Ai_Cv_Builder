@@ -6,11 +6,19 @@
               personalDetails.value.lastName }}</h2>
             <h4>{{personalDetails.value.jobTitle}}</h4>
             <p class="m-0 text-secondary">{{ personalDetails.value.address }},
-              {{personalDetails.value.city}}, {{ personalDetails.value.country }}</p>
+              {{personalDetails.value.city}} {{ personalDetails.value.country }} </p>
+            <p class="m-0 text-secondary"> {{ personalDetails.value.postalCode }}</p>
             <p class="m-0 text-secondary">{{ personalDetails.value.email }}</p>
             <p class="m-0 text-secondary">(+251) {{ personalDetails.value.phone }}</p>
+            <p class="m-0 text-secondary">DOB: {{ personalDetails.value.dob }}</p>
+            <p class="m-0 text-secondary">POB: {{ personalDetails.value.pob }}</p>
+            <p class="m-0 text-secondary">Nationality: {{ personalDetails.value.nationality }}</p>
           </div>
-          <div class="col-md-3 m-auto">
+
+
+
+
+          <div class="image col-md-3 m-auto">
             <img *ngIf="!imageData" src="https://via.placeholder.com/150" alt="John Doe" class="img-fluid rounded">
             <img *ngIf="imageData" [src]="imageData" alt="Uploaded image" class="rounded" height="100rem">
           </div>

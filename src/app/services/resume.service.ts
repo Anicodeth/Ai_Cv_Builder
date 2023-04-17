@@ -72,7 +72,7 @@ export class ResumeService {
       languages: this.fb.array([])
     });
     this.customSectionsForm = this.fb.group({
-      customSections: this.fb.array([])
+      customSections: [null, Validators.required]
     });
   }
 
@@ -177,7 +177,7 @@ export class ResumeService {
   }
 
   getCustomeSectionsForm(): FormGroup {
-    return this.personalSummaryForm;
+    return this.customSectionsForm;
   }
 
   get customSections(): FormControl {

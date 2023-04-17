@@ -1,0 +1,108 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+    color: #333;
+}
+h2{
+	font-weight: bolder;
+}
+body {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+
+}
+
+.header {
+	background-color: #007bff;
+	color: #fff;
+	padding: 40px;
+	text-align: center;
+}
+
+.header h1 {
+	font-size: 3em;
+	margin: 0;
+}
+
+.header p {
+	font-size: 1.5em;
+	margin: 0;
+}
+
+.main {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.left {
+	flex: 1;
+	background-color: #fff;
+	padding: 20px;
+}
+
+.right {
+	flex: 2;
+	background-color: #f9f9f9;
+	padding: 20px;
+}
+
+.left h2,
+.right h2 {
+	font-size: 1.5em;
+	margin-top: 0;
+}
+
+.left ul,
+.right ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.left li,
+.right li {
+	padding: 5px 0;
+}
+
+.left li i,
+.right li i {
+	margin-right: 5px;
+	color: #007bff;
+}
+
+.right h3 {
+	font-size: 1.25em;
+	margin-top: 0;
+}
+
+.right p {
+	margin-top: 0;
+}
+
+.footer {
+	background-color: #007bff;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+}
+
+.footer label {
+	background-color: #fff;
+	color: #007bff;
+	padding: 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	display: inline-block;
+}
+
+.footer input[type="file"] {
+	display: none;
+}
+
+.image{
+	display:inline-block;
+	border-radius: 100rem;
+	
+}

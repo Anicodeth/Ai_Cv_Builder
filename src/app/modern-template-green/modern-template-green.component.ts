@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormGroup } from '@angular/forms';
+import { FormArray, FormControl, FormGroup } from '@angular/forms';
 import { ImageService } from 'src/app/services/image.service';
 import { TemplateService } from 'src/app/services/template.service';
 import { ResumeService } from 'src/app/services/resume.service';
 import { PdfService } from 'src/app/services/pdf.service';
 import { DatePipe } from '@angular/common';
 
-
 @Component({
-  selector: 'app-modern-template',
-  templateUrl: './modern-template.component.html',
-  styleUrls: ['./modern-template.component.css']
+  selector: 'app-modern-template-green',
+  templateUrl: './modern-template-green.component.html',
+  styleUrls: ['./modern-template-green.component.css']
 })
-export class ModernTemplateComponent implements OnInit{
- 
+export class ModernTemplateGreenComponent implements OnInit {
+
   public personalDetails: FormGroup;
   public professionalSummary: FormGroup;
   public references: FormArray;
@@ -21,6 +20,13 @@ export class ModernTemplateComponent implements OnInit{
   public educations: FormArray;
   public webAndSocialLinks: FormArray;
   public skills: FormArray;
+  public hobby: FormControl;
+  public language: FormArray;
+  public custom: FormControl;
+  public intership: FormArray;
+  public courses:FormArray;
+
+
 
   public extraCurricularActivities: FormArray;
   public imageData: string | undefined;
@@ -40,6 +46,13 @@ export class ModernTemplateComponent implements OnInit{
     this.educations = this.resumeService.educations;
     this.webAndSocialLinks = this.resumeService.webAndSocialLinks;
     this.skills = this.resumeService.skills;
+
+    this.courses = this.resumeService.courses;
+    this.intership = this.resumeService.internships;
+    this.custom = this.resumeService.customSections;
+    this.language = this.resumeService.languages;
+    this.hobby = this.resumeService.hobbies;
+
   }
 
   toPdf() {
@@ -54,5 +67,3 @@ export class ModernTemplateComponent implements OnInit{
     });
   }
 }
-
-

@@ -36,8 +36,9 @@ import { TemplatesChooserComponent } from './templates-chooser/templates-chooser
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { AiService } from './ai.service';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { ModernTemplateComponent } from './modern-template/modern-template.component';
+import { ModernTemplateComponent } from './resume-templates/modern-template/modern-template.component';
 import { TemplatePreviewWindowComponent } from './template-preview-window/template-preview-window.component';
+import { ModernTemplateGreenComponent } from './modern-template-green/modern-template-green.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,6 +63,7 @@ import { TemplatePreviewWindowComponent } from './template-preview-window/templa
     TemplatesChooserComponent,
     ModernTemplateComponent,
     TemplatePreviewWindowComponent,
+    ModernTemplateGreenComponent,
 
   ],
   imports: [
