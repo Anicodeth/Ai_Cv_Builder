@@ -20,7 +20,6 @@ export class PlainTemplateComponent implements OnInit, OnChanges {
     private resumeService: ResumeService,
     ) {
       this.personalDetails = this.resumeService.getPersonalDetailsForm();
-      console.log(this.personalDetails);
       this.references = this.resumeService.references;
       this.experiences = this.resumeService.experiences;
       this.educations = this.resumeService.educations;
@@ -53,6 +52,5 @@ export class PlainTemplateComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     // this.referencesForm = this.resumeService.getReferencesForm();
     this.references = this.resumeService.references;
-    console.log(this.personalDetails);
   }
 }

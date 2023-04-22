@@ -4,15 +4,15 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class TemplateService {
-  private templateIndex: number = 0;
+  public template: string = 'modern-template';
 
   constructor() { }
 
-  get chosenTemplateIndex(): number {
-    return this.templateIndex;
+  get chosenTemplate(): string {
+    return this.template;
   }
 
-  setTemplateIndex(index: number): void {
-    this.templateIndex = index;
+  setTemplate(templateName: string): void {
+    this.template = templateName;
   }
 }

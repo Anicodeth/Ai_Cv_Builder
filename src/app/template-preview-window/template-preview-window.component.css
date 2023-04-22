@@ -1,5 +1,5 @@
 #preview-area {
-    height:38rem;
+    height:85vh;
   overflow-y: scroll;
    }
 
@@ -7,7 +7,7 @@
   position: sticky;
   top: 0px;
   width:100%;
-
+  margin: 0;
 }
 
 .preview-container {

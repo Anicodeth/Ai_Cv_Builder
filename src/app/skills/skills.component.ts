@@ -74,14 +74,12 @@ export class SkillsComponent implements OnInit {
   increasePercentage(): void {
     if (this.skills.length <= 5) {
       this.completenessService.increasePercentageCompleteness(this.WEIGHTOFSKILL);
-      console.log(this.completenessService.getPercentageCompleteness());
     }
   }
   
   decreasePercentage(): void {
     if (this.skills.length < 5) {
       this.completenessService.decreasePercentageCompleteness(this.WEIGHTOFSKILL);
-      console.log(this.completenessService.getPercentageCompleteness());
     }
   }
 

@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef  } from '@angular/core';
 import { FormArray, FormGroup } from '@angular/forms';
 import { ImageService } from 'src/app/services/image.service';
 import { TemplateService } from 'src/app/services/template.service';
 import { ResumeService } from 'src/app/services/resume.service';
 import { PdfService } from 'src/app/services/pdf.service';
-import { DatePipe } from '@angular/common';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { TemplatesChooserComponent } from '../templates-chooser/templates-chooser.component';
 
 @Component({
   selector: 'app-template-preview-window',
@@ -25,14 +26,15 @@ export class TemplatePreviewWindowComponent implements OnInit {
 
   constructor(
     private resumeService: ResumeService,
-    private templateService: TemplateService,
+    public templateService: TemplateService,
     private imageService: ImageService,
-    private pdfService: PdfService
+    private pdfService: PdfService,
+    private dialog: MatDialog,
   ) {
     this.personalDetails = this.resumeService.getPersonalDetailsForm();
     this.professionalSummary = this.resumeService.getPersonalSummaryForm();
     this.extraCurricularActivities =
-      this.resumeService.extraCurricularActivities;
+    this.resumeService.extraCurricularActivities;
     this.references = this.resumeService.references;
     this.experiences = this.resumeService.experiences;
     this.educations = this.resumeService.educations;
@@ -49,6 +51,19 @@ export class TemplatePreviewWindowComponent implements OnInit {
   ngOnInit(): void {
     this.imageService.getImageData().subscribe((data) => {
       this.imageData = data;
+    });
+  }
+
+  chooseTemplate(): void {
+    const dialogConfig = new MatDialogConfig();
+    
+    dialogConfig.data = {
+      dialogRef: this.dialog
+    };
+
+    const dialogRef = this.dialog.open(TemplatesChooserComponent, dialogConfig);
+
+    dialogRef.afterClosed().subscribe(result => {
     });
   }
 }

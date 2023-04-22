@@ -10,17 +10,13 @@
             <p class="m-0 text-secondary"> {{ personalDetails.value.postalCode }}</p>
             <p class="m-0 text-secondary">{{ personalDetails.value.email }}</p>
             <p class="m-0 text-secondary">(+251) {{ personalDetails.value.phone }}</p>
-            <p class="m-0 text-secondary">DOB: {{ personalDetails.value.dob }}</p>
+            <p class="m-0 text-secondary">DOB: {{ personalDetails.value.dob | date:'MMMM d, y' }}</p>
             <p class="m-0 text-secondary">POB: {{ personalDetails.value.pob }}</p>
             <p class="m-0 text-secondary">Nationality: {{ personalDetails.value.nationality }}</p>
           </div>
-
-
-
-
-          <div class="image col-md-3 m-auto">
+          <div class="image col-md-3 mx-auto">
             <img *ngIf="!imageData" src="https://via.placeholder.com/150" alt="John Doe" class="img-fluid rounded">
-            <img *ngIf="imageData" [src]="imageData" alt="Uploaded image" class="rounded" height="100rem">
+            <img *ngIf="imageData" [src]="imageData" alt="Uploaded image" class="rounded" width="100%">
           </div>
         </div>
 
@@ -73,7 +69,7 @@
 
         <!-- <hr class="my-2"> -->
 
-        <div class="row my-2" id="extra-curricular-activities-section">
+        <div *ngIf="extraCurricularActivities.touched" class="row my-2" id="extra-curricular-activities-section">
           <div class="col-md-3">
             <h3 class="text-dark">Extra-curricular Activities</h3>
           </div>

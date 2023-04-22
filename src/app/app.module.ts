@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule} from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatIcon, MatIconModule } from '@angular/material/icon'
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -64,7 +65,6 @@ import { ModernTemplateGreenComponent } from './modern-template-green/modern-tem
     ModernTemplateComponent,
     TemplatePreviewWindowComponent,
     ModernTemplateGreenComponent,
-
   ],
   imports: [
     FormsModule,
@@ -74,7 +74,8 @@ import { ModernTemplateGreenComponent } from './modern-template-green/modern-tem
     ReactiveFormsModule,
     HttpClientModule,
     MatDialogModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    MatIconModule,
   ],
   providers: [
     ResumeService,

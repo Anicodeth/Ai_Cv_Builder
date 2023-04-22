@@ -30,7 +30,6 @@ export class PdfService {
     // const numPages = Math.ceil(htmlHeight / a4Height);
 
     // Log the number of pages needed to the console
-    // console.log(`HTML content requires ${numPages} A4 pages to display`);
 
     // Convert the HTML content to PDF using html2pdf
     // html2pdf().from(htmlContent).set(options).outputPdf().then((pdf: any) => {

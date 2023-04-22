@@ -17,4 +17,9 @@ export class TemplatesChooserComponent {
   closeDialog() {
     this.dialogRef.close();
   }
+
+  setTemplate(templateName: string) {
+    this.templateService.setTemplate(templateName);    
+    this.closeDialog();
+  }
 }
