@@ -7,7 +7,7 @@ import { SessionService } from './session.service';
 export class SectionsService {
 
   public referencesAdded: boolean;
-  public extraCurricularActivitiesAdded: boolean;
+  public certificationsAdded: boolean;
   public hobbiesAdded: boolean;
   public coursesAdded: boolean;
   public internshipsAdded: boolean;
@@ -18,7 +18,7 @@ export class SectionsService {
     private sessionService: SessionService
   ) {
     this.referencesAdded = Boolean(this.sessionService.getItem('references'));
-    this.extraCurricularActivitiesAdded = Boolean(this.sessionService.getItem('extraCurricularActivities'));
+    this.certificationsAdded = Boolean(this.sessionService.getItem('certifications'));
     this.hobbiesAdded = Boolean(this.sessionService.getItem('hobbies'));
     this.coursesAdded = Boolean(this.sessionService.getItem('courses'));
     this.internshipsAdded = Boolean(this.sessionService.getItem('internships'));
@@ -30,8 +30,8 @@ export class SectionsService {
     return this.referencesAdded;
   }
 
-  getExtraCurricularActivitiesAdded(): boolean {
-    return this.extraCurricularActivitiesAdded;
+  getCertificationsAdded(): boolean {
+    return this.certificationsAdded;
   }
 
   getHobbiesAdded(): boolean {

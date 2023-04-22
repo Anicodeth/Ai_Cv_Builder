@@ -8,11 +8,13 @@
         <div *ngSwitchCase="'generic-template'">
           <app-generic-template></app-generic-template>
         </div>
+        <div *ngSwitchCase="'modern-green-template'">
+          <app-modern-template-green></app-modern-template-green>
+        </div>
         <div *ngSwitchDefault>
-          <app-modern-template></app-modern-template>
+          <app-modern-template-green></app-modern-template-green>
         </div>
       </div>
-      
     </div>
   </div>
   <div class="button w-50 my-0 mx-auto p-0 row">
@@ -20,8 +22,7 @@
       <button class="btn btn-primary" (click)="toPdf()">Download</button>
     </div>
     <div class="col-lg-6">
-      <button class="btn btn-light" (click)="chooseTemplate()">Change Template</button>
+      <button class="btn btn-primary" (click)="chooseTemplate()">Change Template</button>
     </div>
   </div>
 </div>
-

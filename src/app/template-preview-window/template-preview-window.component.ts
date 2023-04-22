@@ -21,7 +21,7 @@ export class TemplatePreviewWindowComponent implements OnInit {
   public webAndSocialLinks: FormArray;
   public skills: FormArray;
 
-  public extraCurricularActivities: FormArray;
+  public certifications: FormArray;
   public imageData: string | undefined;
 
   constructor(
@@ -33,8 +33,8 @@ export class TemplatePreviewWindowComponent implements OnInit {
   ) {
     this.personalDetails = this.resumeService.getPersonalDetailsForm();
     this.professionalSummary = this.resumeService.getPersonalSummaryForm();
-    this.extraCurricularActivities =
-    this.resumeService.extraCurricularActivities;
+    this.certifications =
+    this.resumeService.certifications;
     this.references = this.resumeService.references;
     this.experiences = this.resumeService.experiences;
     this.educations = this.resumeService.educations;

@@ -24,8 +24,8 @@ export class AppComponent {
     return this.sectionsService.getReferenceAdded();
   }
 
-  extraCurricularActivitiesSection(): boolean {
-    return this.sectionsService.getExtraCurricularActivitiesAdded();
+  certificationsSection(): boolean {
+    return this.sectionsService.getCertificationsAdded();
   }
 
   hobbiesSection(): boolean {

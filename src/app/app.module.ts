@@ -18,7 +18,6 @@ import { ReferencesComponent } from './references/references.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { AddSectionsComponent } from './add-sections/add-sections.component';
 import { SectionsService } from './services/sections.service';
-import { ExtraCurricularActivitiesComponent } from './extra-curricular-activities/extra-curricular-activities.component';
 import { EducationsComponent } from './educations/educations.component';
 import { CoursesComponent } from './courses/courses.component';
 import { LanguagesComponent } from './languages/languages.component';
@@ -39,7 +38,9 @@ import { AiService } from './ai.service';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ModernTemplateComponent } from './resume-templates/modern-template/modern-template.component';
 import { TemplatePreviewWindowComponent } from './template-preview-window/template-preview-window.component';
-import { ModernTemplateGreenComponent } from './modern-template-green/modern-template-green.component';
+import { ModernTemplateGreenComponent } from './resume-templates/modern-template-green/modern-template-green.component';
+import { CertificationsComponent } from './certifications/certifications.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +53,7 @@ import { ModernTemplateGreenComponent } from './modern-template-green/modern-tem
     ReferencesComponent,
     ExperienceComponent,
     AddSectionsComponent,
-    ExtraCurricularActivitiesComponent,
+    CertificationsComponent,
     EducationsComponent,
     CoursesComponent,
     LanguagesComponent,

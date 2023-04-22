@@ -92,20 +92,20 @@
 				</div>
 
 
-				<div *ngIf="extraCurricularActivities.controls[0]">
+				<div *ngIf="certifications.controls[0]">
 					<div>
-						<h2>Extra-curricular Activities</h2>
+						<h2>Certification</h2>
 					</div>
 					<div>
-						<div *ngFor="let extraCurricularActivity of extraCurricularActivities.controls">
-							<h5>{{ extraCurricularActivity.value.function }}, {{
-								extraCurricularActivity.value.employer }}</h5>
-							<p>{{ extraCurricularActivity.value.startDate }} -
-								<span *ngIf="!extraCurricularActivity.value.endDate">Present</span>
-								<span *ngIf="extraCurricularActivity.value.endDate">{{
-									extraCurricularActivity.value.endDate }}</span>
+						<div *ngFor="let certification of certifications.controls">
+							<h5>{{ certification.value.function }}, {{
+								certification.value.employer }}</h5>
+							<p>{{ certification.value.startDate }} -
+								<span *ngIf="!certification.value.endDate">Present</span>
+								<span *ngIf="certification.value.endDate">{{
+									certification.value.endDate }}</span>
 							</p>
-							<p class="justify-content text-justify"> {{ extraCurricularActivity.value.description }}
+							<p class="justify-content text-justify"> {{ certification.value.description }}
 							</p>
 							<br>
 						</div>

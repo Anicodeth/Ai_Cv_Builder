@@ -9,7 +9,7 @@ export class ResumeService {
   private referencesForm: FormGroup;
   private experiencesForm: FormGroup;
   private educationsForm: FormGroup;
-  private extraCurricularActivitiesForm: FormGroup;
+  private certificationsForm: FormGroup;
   private personalDetailsForm: FormGroup;
   private personalSummaryForm: FormGroup;
   private webAndSocialLinksForm: FormGroup;
@@ -28,8 +28,8 @@ export class ResumeService {
       photo: [null, Validators.required],
       firstName: [null, Validators.required],
       lastName: [null, Validators.required],
-      email: [null, Validators.required],
-      phone: [null, Validators.required],
+      email: [null, [Validators.required, Validators.email]],
+      phone: [null, [Validators.required, Validators.pattern(/^(\+?\d{1,3}[- ]?)?\d{10}$/)]],
       country: [null, Validators.required],
       city: [null, Validators.required],
       address: [null, Validators.required],
@@ -38,6 +38,7 @@ export class ResumeService {
       pob: [null, Validators.required],
       dob: [null, Validators.required],
     });
+    
     this.hobbiesForm = this.fb.group({
       hobbies: [null, Validators.required],
     });
@@ -53,8 +54,8 @@ export class ResumeService {
     this.educationsForm = this.fb.group({
       educations: this.fb.array([])
     });
-    this.extraCurricularActivitiesForm = this.fb.group({
-      extraCurricularActivities: this.fb.array([])
+    this.certificationsForm = this.fb.group({
+      certifications: this.fb.array([])
     });
     this.webAndSocialLinksForm = this.fb.group({
       webAndSocialLinks: this.fb.array([])
@@ -104,12 +105,12 @@ export class ResumeService {
     return this.educationsForm.get('educations') as FormArray;
   }
 
-  getExtraCurricularActivitiesForm(): FormGroup {
-    return this.extraCurricularActivitiesForm;
+  getCertificationsForm(): FormGroup {
+    return this.certificationsForm;
   }
 
-  get extraCurricularActivities(): FormArray {
-    return this.extraCurricularActivitiesForm.get('extraCurricularActivities') as FormArray;
+  get certifications(): FormArray {
+    return this.certificationsForm.get('certifications') as FormArray;
   }
 
   getWebAndSocialLinksForm(): FormGroup {

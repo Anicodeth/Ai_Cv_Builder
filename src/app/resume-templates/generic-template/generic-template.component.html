@@ -69,19 +69,19 @@
 
         <!-- <hr class="my-2"> -->
 
-        <div *ngIf="extraCurricularActivities.touched" class="row my-2" id="extra-curricular-activities-section">
+        <div *ngIf="certifications.touched" class="row my-2" id="extra-curricular-activities-section">
           <div class="col-md-3">
-            <h3 class="text-dark">Extra-curricular Activities</h3>
+            <h3 class="text-dark">Certification</h3>
           </div>
           <div class="col-md-9 pl-5 m-auto">
-            <div *ngFor="let extraCurricularActivity of extraCurricularActivities.controls">
-              <h4 class="text-secondary">{{ extraCurricularActivity.value.function }}, {{
-                extraCurricularActivity.value.employer }}</h4>
-              <p class="text-secondary">{{ extraCurricularActivity.value.startDate }} -
-                <span *ngIf="!extraCurricularActivity.value.endDate">Present</span>
-                <span *ngIf="extraCurricularActivity.value.endDate">{{ extraCurricularActivity.value.endDate }}</span>
+            <div *ngFor="let certification of certifications.controls">
+              <h4 class="text-secondary">{{ certification.value.function }}, {{
+                certification.value.employer }}</h4>
+              <p class="text-secondary">{{ certification.value.startDate }} -
+                <span *ngIf="!certification.value.endDate">Present</span>
+                <span *ngIf="certification.value.endDate">{{ certification.value.endDate }}</span>
               </p>
-              <p class="justify-content text-justify"> {{ extraCurricularActivity.value.description }} </p>
+              <p class="justify-content text-justify"> {{ certification.value.description }} </p>
             </div>
           </div>
         </div>

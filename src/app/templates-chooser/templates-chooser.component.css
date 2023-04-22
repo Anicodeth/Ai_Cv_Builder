@@ -2,11 +2,12 @@
     background-color: #081e3e;
     padding: 0px;
     margin: 0px;
+    height: 90vh;
+    width: 80vw;
 }
 
 .row {
-    height: 90vh;
-    width: 80vw;
+    background-color: #081e3e;
     padding: 0px;
     margin: 0px;
 }
