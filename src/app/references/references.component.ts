@@ -43,7 +43,7 @@ export class ReferencesComponent implements OnInit {
         name: [null, Validators.required],
         company: [null, Validators.required],
         phone: [null, Validators.required],
-        email: [null, Validators.required],
+        email: [null, [Validators.required, Validators.email]],
       })
     );
 
@@ -51,6 +51,10 @@ export class ReferencesComponent implements OnInit {
 
   removeReference(index: number) {
     this.references.removeAt(index);
+  }
+
+  capitalize(formControlName: string, index: number) {
+    this.resumeService.capitalize(this.references.at(index), formControlName);
   }
 
 }

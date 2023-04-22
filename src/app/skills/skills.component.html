@@ -20,7 +20,8 @@
                         <label for="skillName">Skill</label>
                         <input class="form-control" 
                         type="text" id="skillName" placeholder="Name of Skill"
-                            formControlName="skillName" />
+                            formControlName="skillName"
+                            (keyup)="capitalize('skillName', i)">
                     </div>
                     <div class="unit">
                         <label for="proficiency">Experience Level</label>

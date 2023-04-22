@@ -85,6 +85,9 @@ export class SkillsComponent implements OnInit {
 
   refresh(){
     this.relevantSkills = this.aiService.skills;
+  }
 
+  capitalize(formControlName: string, index: number) {
+    this.resumeService.capitalize(this.skills.at(index), formControlName);
   }
 }

@@ -185,5 +185,14 @@ export class ResumeService {
     return this.customSectionsForm.get('customSections') as FormControl;
   }
 
+  capitalize(formGroup: FormGroup | any, formControlName: string) {
+    if (formGroup != null && formControlName != null) {
+      const words = formGroup.get(formControlName).value.split(' ');
+      const capitalizedWords = words.map((word: string) => word.charAt(0).toUpperCase() + word.slice(1));
+      const capitalizedString = capitalizedWords.join(' ');
+      formGroup.get(formControlName).setValue(capitalizedString);
+    }
+  }
+
 }
 

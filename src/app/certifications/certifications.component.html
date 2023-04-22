@@ -9,12 +9,14 @@
                     <div class="unit ">
                         <label for="certificationEmployer">Certifier</label>
                         <input type="text" class="form-control" id="certificationEmployer"
-                            placeholder="e.g. Dereja" formControlName="employer" />
+                            placeholder="e.g. Dereja" formControlName="employer"
+                            (keyup)="capitalize('employer', i)">
                     </div>
                     <div class="unit">
                         <label for="certificationJobTitle">Function</label>
                         <input type="text" class="form-control" id="certificationJobTitle"
-                            placeholder="e.g. Marketing Bootcamp" formControlName="function">
+                            placeholder="e.g. Marketing Bootcamp" formControlName="function"
+                            (keyup)="capitalize('function', i)">
                     </div>
                 </div>
 
@@ -38,7 +40,8 @@
                     <div class="unit">
                         <label for="certificationCity">City</label>
                         <input type="text" class="form-control" id="certificationCity"
-                            placeholder="e.g. Bahirdar" formControlName="city">
+                            placeholder="e.g. Bahirdar" formControlName="city"
+                            (keyup)="capitalize('city', i)">
                     </div>
 
                 </div>

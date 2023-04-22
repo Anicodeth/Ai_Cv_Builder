@@ -8,12 +8,14 @@
           <div class="unit">
             <label for="educationSchool">School</label>
             <input type="text" class="form-control" id="educationSchool" placeholder="e.g. University of Gondar"
-              formControlName="school" />
+              formControlName="school"
+              (keyup)="capitalize('shcool', i)">
           </div>
           <div class="unit">
             <label for="educationDegree">Degree</label>
             <input type="text" class="form-control" id="educationDegree" placeholder="e.g. M.Sc. in Computer Science"
-              formControlName="degree" />
+              formControlName="degree"
+              (keyup)="capitalize('degree', i)">
           </div>
         </div>
 
@@ -32,7 +34,8 @@
           <div class="unit">
             <label for="educationCity">City</label>
             <input type="text" class="form-control" id="educationCity" placeholder="e.g. Jimma"
-              formControlName="city" />
+              formControlName="city"
+              (keyup)="capitalize('city', i)">
           </div>
         </div>
 

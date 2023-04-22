@@ -55,4 +55,8 @@ export class CertificationsComponent implements OnInit {
   removeExtraCurricularActivity(index: number) {
     this.certifications.removeAt(index);
   }
+
+  capitalize(formControlName: string, index: number) {
+    this.resumeService.capitalize(this.certifications.at(index), formControlName);
+  }
 }

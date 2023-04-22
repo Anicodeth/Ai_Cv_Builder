@@ -2,41 +2,41 @@
 <div>
     <form [formGroup]="referencesForm">
         <div formArrayName="references">
-            <div class = "add-reference" *ngFor="let reference of references.controls;
-             let i = index" [formGroupName]="i"
-                class="notable-people">
+            <div class="add-reference" *ngFor="let reference of references.controls;
+             let i = index" [formGroupName]="i" class="notable-people">
                 <div class="input-row">
-                        <div class="unit">
-                            <label for="referenceName">Name</label>
-                            <input class = "form-control" type="text" id="referenceName"
-                             placeholder="e.g. Natnael Abayneh" formControlName="name">
-                        </div>
-                        <div class="unit">
-                            <label for = "referenceCompany">Company</label>
-                            <input class = "form-control" type="text" id="referenceCompany"
-                             placeholder="e.g. Pearson P.L.C." formControlName="company">
-                        </div>
-                </div>
-                
-            <div class="input-row">
-                <div class="unit">
-                    <label for="referencePhone">Phone</label>
-                    <input class = "form-control" type="number" id="referencePhone"
-                     placeholder="e.g. +251999999999" formControlName="phone">
+                    <div class="unit">
+                        <label for="referenceName">Name</label>
+                        <input class="form-control" type="text" id="referenceName" placeholder="e.g. Natnael Abayneh"
+                            formControlName="name" (keyup)="capitalize('name', i)">
+                    </div>
+                    <div class="unit">
+                        <label for="referenceCompany">Company</label>
+                        <input class="form-control" type="text" id="referenceCompany" placeholder="e.g. Pearson P.L.C."
+                            formControlName="company" (keyup)="capitalize('company', i)">
+                    </div>
                 </div>
 
-                <div class="unit">
-                    <label for="referenceEmail">Email</label>
-                    <input class = "form-control" type="email" id="referenceEmail"
-                     placeholder="Natnaelabayneh@gmail.com" formControlName="email">
+                <div class="input-row">
+                    <div class="unit">
+                        <label for="referencePhone">Phone</label>
+                        <input class="form-control" type="number" id="referencePhone" placeholder="e.g. +251999999999"
+                            formControlName="phone">
+                    </div>
+
+                    <div class="unit">
+                        <label for="referenceEmail">Email</label>
+                        <input class="form-control" type="email" id="referenceEmail"
+                            placeholder="Natnaelabayneh@gmail.com" formControlName="email">
+                            {{ referencesForm.at(i) }}
+                    </div>
                 </div>
-            </div>
-                <button class = "btn btn-outline-danger" type="button" (click)="removeReference(i)">
+                <button class="btn btn-outline-danger" type="button" (click)="removeReference(i)">
                     Remove Referenece
                 </button>
             </div>
         </div>
-        <button class = "btn btn-outline-primary" type="button" (click)="addReference()">
+        <button class="btn btn-outline-primary" type="button" (click)="addReference()">
             Add one more reference
         </button>
     </form>

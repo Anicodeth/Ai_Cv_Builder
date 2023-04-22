@@ -50,4 +50,8 @@ export class LanguagesComponent implements OnInit {
   removeLanguage(index: number) {
     this.languages.removeAt(index);
   }
+
+  capitalize(formControlName: string, index: number) {
+    this.resumeService.capitalize(this.languages.at(index), formControlName);
+  }
 }

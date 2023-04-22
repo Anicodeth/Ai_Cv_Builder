@@ -55,4 +55,8 @@ export class ExperienceComponent implements OnInit {
   removeExperience(index: number) {
     this.experiences.removeAt(index);
   }
+
+  capitalize(formControlName: string, index: number) {
+    this.resumeService.capitalize(this.experiences.at(index), formControlName);
+  }
 }

@@ -9,7 +9,8 @@
                 <label for="jobTitle">Job Title</label><br>
                 <input type="text" placeholder="e.g. Computer Scientist"
                     class="form-control" id="jobTitle"
-                    formControlName="jobTitle" (blur)="requestData()">
+                    formControlName="jobTitle" (blur)="requestData()"
+                    (keyup)="capitalize('jobTitle')">
             </div>
             <div class="unit">
                 <div class="photo-upload "> 
@@ -35,11 +36,11 @@
             <div class="unit">
                 <label for="firstname">First Name</label><br>
                 <input type="text" class="form-control" placeholder="e.g. Abebe"
-                    formControlName="firstName">
+                    formControlName="firstName" (keyup)="capitalize('firstName')">
             </div>
             <div class="unit">
                 <label for="lastname">Last Name</label><br>
-                <input type="text" class="form-control" placeholder="e.g. Kebede" formControlName="lastName">
+                <input type="text" class="form-control" placeholder="e.g. Kebede" formControlName="lastName" (keyup)="capitalize('lastName')">
             </div>
         </div>
 
@@ -49,10 +50,10 @@
                 <input type="email" class="form-control" placeholder="e.g. Abebekebede@gmail.com"
                     formControlName="email">
                 <div *ngIf="personalDetailsForm.get('email').invalid && personalDetailsForm.get('email').touched">
-                    <div *ngIf="personalDetailsForm.get('email').errors.required">
+                    <div class="text-danger py-2" *ngIf="personalDetailsForm.get('email').errors.required">
                         Email is required.
                     </div>
-                    <div *ngIf="personalDetailsForm.get('email').errors.email">
+                    <div class="text-danger py-2" *ngIf="personalDetailsForm.get('email').errors.email">
                         Email must be a valid email address.
                     </div>
                 </div>
@@ -61,10 +62,10 @@
                 <label for="phone">Phone</label><br>
                 <input type="text" class="form-control" placeholder="e.g. +251911555555" formControlName="phone">
                 <div *ngIf="personalDetailsForm.get('phone').invalid && personalDetailsForm.get('phone').touched">
-                    <div class="text-danger p-2" *ngIf="personalDetailsForm.get('phone').errors.required">
+                    <div class="text-danger py-2" *ngIf="personalDetailsForm.get('phone').errors.required">
                         Phone is required.
                     </div>
-                    <div class="text-danger p-2" *ngIf="personalDetailsForm.get('phone').errors.pattern">
+                    <div class="text-danger py-2" *ngIf="personalDetailsForm.get('phone').errors.pattern">
                         Phone must be a valid phone number in international format (e.g. +251911555555).
                     </div>
                 </div>
@@ -75,11 +76,11 @@
         <div class="personal-row">
             <div class="unit">
                 <label for="country">Country</label><br>
-                <input type="text" class="form-control" placeholder="e.g. Ethiopia" formControlName="country">
+                <input type="text" class="form-control" placeholder="e.g. Ethiopia" formControlName="country" (keyup)="capitalize('country')">
             </div>
             <div class="unit">
                 <label for="city">City</label><br>
-                <input type="text" class="form-control" placeholder="e.g. Addis Ababa" formControlName="city">
+                <input type="text" class="form-control" placeholder="e.g. Addis Ababa" formControlName="city" (keyup)="capitalize('city')">
             </div>
         </div>
 
@@ -100,11 +101,11 @@
             <div class="personal-row">
                 <div class="unit">
                     <label for="nationality">Nationality</label><br>
-                    <input type="text" class="form-control" placeholder="e.g. Ethiopian" formControlName="nationality">
+                    <input type="text" class="form-control" placeholder="e.g. Ethiopian" formControlName="nationality" (keyup)="capitalize('nationality')">
                 </div>
                 <div class="unit">
                     <label for="pob">Place of birth</label><br>
-                    <input type="text" class="form-control" placeholder="e.g. Hawassa" formControlName="pob">
+                    <input type="text" class="form-control" placeholder="e.g. Hawassa" formControlName="pob" (keyup)="capitalize('pob')">
                 </div>
             </div>
 

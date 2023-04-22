@@ -13,12 +13,14 @@
                     <div class="unit">
                         <label for="experienceEmployer">Employer</label>
                         <input type="text" class="form-control" id="experienceEmployer" placeholder="e.g Yenetta Code"
-                            formControlName="employer" />
+                            formControlName="employer"
+                            (keyup)="capitalize('employer', i)">
                     </div>
                     <div class="unit">
                         <label for="experienceJobTitle">Job Title</label>
                         <input type="text" class="form-control" id="experienceJobTitle"
-                            placeholder="e.g. Software Engineer" formControlName="jobTitle" />
+                            placeholder="e.g. Software Engineer" formControlName="jobTitle"
+                            (keyup)="capitalize('jobTitle', i)">
                     </div>
                 </div>
 
@@ -39,7 +41,8 @@
                     <div class="unit">
                         <label for="experienceCity">City</label>
                         <input type="text" class="form-control" id="experienceCity" placeholder="e.g. Addis Ababa"
-                            formControlName="city" />
+                            formControlName="city"
+                            (keyup)="capitalize('city', i)">
                     </div>
                 </div>
                 <div class="description-box">

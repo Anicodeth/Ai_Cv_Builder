@@ -10,13 +10,15 @@
                         <label for="internshipEmployer">Employer</label>
                         <input type="text" class = "form-control" 
                         id="internshipEmployer" placeholder="e.g. BGI Ethiopia" 
-                        formControlName="employer"/>
+                        formControlName="employer"
+                        (keyup)="capitalize('employer', i)">
                     </div>
                     <div class = "unit">
                         <label for="internshipJobTitle">Job Title</label>
                         <input type="text" class = "form-control" 
                         id="internshipJobTitle" placeholder="e.g. Intern Industrial Electrician" 
-                        formControlName="jobTitle">
+                        formControlName="jobTitle"
+                        (keyup)="capitalize('jobTitle', i)">
                     </div>
             </div>
 
@@ -41,7 +43,8 @@
                 <div class="unit">
                     <label for="internshipCity">City</label>
                     <input type="text"  class = "form-control"  
-                    id="internshipCity" placeholder="e.g. Harar" formControlName="city">
+                    id="internshipCity" placeholder="e.g. Harar" formControlName="city"
+                    (keyup)="capitalize('city', i)">
                 </div>
 
             </div>
