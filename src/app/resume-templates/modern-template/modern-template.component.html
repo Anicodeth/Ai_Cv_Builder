@@ -37,7 +37,7 @@
 
 				<ul>
 					<li *ngFor="let skill of skills.controls">
-						{{ skill.value.skillName }} - {{ skill.value.experienceLevel }}/5
+						{{ skill.value.skillName }}<span *ngIf="skill.value.experienceLevel"> - {{ skill.value.experienceLevel }}/5</span>
 					</li>
 				</ul>
 			</div>

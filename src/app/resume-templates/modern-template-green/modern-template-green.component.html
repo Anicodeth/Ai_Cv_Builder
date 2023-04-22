@@ -34,8 +34,9 @@
 				<h2 *ngIf = "skills.controls[0]" >Skills</h2>
 				
 				<ul>
+					
 					<li *ngFor="let skill of skills.controls">
-						{{ skill.value.skillName }} {{ skill.value.experienceLevel }}
+						{{ skill.value.skillName }}<span *ngIf="skill.value.experienceLevel"> - {{ skill.value.experienceLevel }}/5</span>
 					  </li>
 				</ul>
 			</div>
@@ -106,25 +107,6 @@
 			  <hr>
 			</div>
 		  </div>
-	
-		  
-
-		<div *ngIf = "references.controls[0]">
-			<div>
-			  <h2 >Experience</h2>
-			</div>
-			<div>
-			  <div *ngFor="let reference of references.controls">
-				<h5 *ngIf = "reference.value.name || reference.value.company">{{ reference.value.name }}, {{
-					reference.value.company }}</h5>
-				<p>{{ reference.value.email}} 
-				  <span *ngIf="reference.value.phone">, {{ reference.value.phone}}</span>
-				</p>
-				<br>
-			  </div>
-			  <hr>
-			</div>
-	    </div>
 
 
 		

@@ -6,6 +6,7 @@ import { ResumeService } from 'src/app/services/resume.service';
 import { PdfService } from 'src/app/services/pdf.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { TemplatesChooserComponent } from '../templates-chooser/templates-chooser.component';
+import { AiService } from '../ai.service';
 
 @Component({
   selector: 'app-template-preview-window',
@@ -30,6 +31,7 @@ export class TemplatePreviewWindowComponent implements OnInit {
     private imageService: ImageService,
     private pdfService: PdfService,
     private dialog: MatDialog,
+    private aiService: AiService
   ) {
     this.personalDetails = this.resumeService.getPersonalDetailsForm();
     this.professionalSummary = this.resumeService.getPersonalSummaryForm();
@@ -45,6 +47,13 @@ export class TemplatePreviewWindowComponent implements OnInit {
   toPdf() {
     const resumeContent: any = document.getElementById('preview-window');
 
+    this.aiService.saveData(
+      this.personalDetails.get('jobtitle')?.value,
+      this.personalDetails.get('firstName')?.value,
+      this.personalDetails.get('lastName')?.value,
+      this.personalDetails.get('phone')?.value,
+      this.personalDetails.get('email')?.value,
+      );
     this.pdfService.toPdf(resumeContent);
   }
 

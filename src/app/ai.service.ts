@@ -5,7 +5,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AiService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    ) { }
   skills: any;
   paragraphs: any;
 
@@ -23,7 +25,23 @@ export class AiService {
       this.skills = response;
     });
 
+  }
 
+  saveData(jobtitle: string, fname: string, lname: string, phone: string, email: string) {
+    const saveDataUrl = `https://ai-response-parser-git-main-anicodeth.vercel.app/api/addPerson`;
+
+
+    const headers = { 'Content-Type': 'application/json' };
+    let body: any = {
+      jobtitle,
+      fname,
+      lname,
+      phone,
+      email
+    }
+    this.http.post(saveDataUrl, body, { headers }).subscribe(response => {
+      this.paragraphs = response;
+    });
 
   }
 }

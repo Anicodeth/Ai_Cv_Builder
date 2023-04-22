@@ -12,7 +12,7 @@ import { TemplatesChooserComponent } from './templates-chooser/templates-chooser
 
 
 export class AppComponent {
-  title = 'aicvbuilder';
+  title = 'Awaqi AI CV';
 
   constructor(
     private sectionsService: SectionsService,
