@@ -1,18 +1,28 @@
 <div class="container p-0 m-0">
-    <div id="preview-area" class="bg-white mt-4 mx-4 rounded">
-      <div id="preview-window" class="preview-container m-0 p-0">
-
-        <app-modern-template-green></app-modern-template-green>
-<!--
-        <app-modern-template></app-modern-template>
-  <app-generic-template></app-generic-template>
-  
-<app-plain-template></app-plain-template>  -->
-
+  <div id="preview-area" class="bg-white mt-4 mx-4 rounded">
+    <div id="preview-window" class="preview-container m-0 p-0">
+      <div [ngSwitch]="templateService.chosenTemplate">
+        <div *ngSwitchCase="'modern-template'">
+          <app-modern-template></app-modern-template>
+        </div>
+        <div *ngSwitchCase="'generic-template'">
+          <app-generic-template></app-generic-template>
+        </div>
+        <div *ngSwitchCase="'modern-green-template'">
+          <app-modern-template-green></app-modern-template-green>
+        </div>
+        <div *ngSwitchDefault>
+          <app-modern-template-green></app-modern-template-green>
+        </div>
       </div>
     </div>
-    <div class="button w-50 my-0 mx-auto p-0">
+  </div>
+  <div class="button w-50 my-0 mx-auto p-0 row">
+    <div class="col-lg-6">
       <button class="btn btn-primary" (click)="toPdf()">Download</button>
     </div>
-  
+    <div class="col-lg-6">
+      <button class="btn btn-primary" (click)="chooseTemplate()">Change Template</button>
+    </div>
   </div>
+</div>

@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef  } from '@angular/core';
 import { FormArray, FormGroup } from '@angular/forms';
 import { ImageService } from 'src/app/services/image.service';
 import { TemplateService } from 'src/app/services/template.service';
 import { ResumeService } from 'src/app/services/resume.service';
 import { PdfService } from 'src/app/services/pdf.service';
-import { DatePipe } from '@angular/common';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { TemplatesChooserComponent } from '../templates-chooser/templates-chooser.component';
+import { AiService } from '../ai.service';
 
 @Component({
   selector: 'app-template-preview-window',
@@ -20,19 +22,21 @@ export class TemplatePreviewWindowComponent implements OnInit {
   public webAndSocialLinks: FormArray;
   public skills: FormArray;
 
-  public extraCurricularActivities: FormArray;
+  public certifications: FormArray;
   public imageData: string | undefined;
 
   constructor(
     private resumeService: ResumeService,
-    private templateService: TemplateService,
+    public templateService: TemplateService,
     private imageService: ImageService,
-    private pdfService: PdfService
+    private pdfService: PdfService,
+    private dialog: MatDialog,
+    private aiService: AiService
   ) {
     this.personalDetails = this.resumeService.getPersonalDetailsForm();
     this.professionalSummary = this.resumeService.getPersonalSummaryForm();
-    this.extraCurricularActivities =
-      this.resumeService.extraCurricularActivities;
+    this.certifications =
+    this.resumeService.certifications;
     this.references = this.resumeService.references;
     this.experiences = this.resumeService.experiences;
     this.educations = this.resumeService.educations;
@@ -43,12 +47,32 @@ export class TemplatePreviewWindowComponent implements OnInit {
   toPdf() {
     const resumeContent: any = document.getElementById('preview-window');
 
+    this.aiService.saveData(
+      this.personalDetails.get('jobtitle')?.value,
+      this.personalDetails.get('firstName')?.value,
+      this.personalDetails.get('lastName')?.value,
+      this.personalDetails.get('phone')?.value,
+      this.personalDetails.get('email')?.value,
+      );
     this.pdfService.toPdf(resumeContent);
   }
 
   ngOnInit(): void {
     this.imageService.getImageData().subscribe((data) => {
       this.imageData = data;
+    });
+  }
+
+  chooseTemplate(): void {
+    const dialogConfig = new MatDialogConfig();
+    
+    dialogConfig.data = {
+      dialogRef: this.dialog
+    };
+
+    const dialogRef = this.dialog.open(TemplatesChooserComponent, dialogConfig);
+
+    dialogRef.afterClosed().subscribe(result => {
     });
   }
 }

@@ -13,8 +13,7 @@
     /* border: 1px solid black; */
     display: flex;
     justify-content: center;
-
-    background-color: #0c264c;
+    background-color: #081e3e;
 
 }
 
@@ -31,8 +30,8 @@
 }
 .main-preview-window{
     width:100%;
-
-
+    padding: 0px;
+    margin: 0px;
 }
 
 @media (max-width: 1200px) {

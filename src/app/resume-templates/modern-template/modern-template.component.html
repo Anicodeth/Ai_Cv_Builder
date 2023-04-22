@@ -1,246 +1,253 @@
-
 <body>
 	<div class="container">
 		<div class="header">
-			<h1>{{personalDetails.value.firstName}} 
+			<h1>{{personalDetails.value.firstName}}
 				{{personalDetails.value.lastName}}</h1>
 			<p>{{personalDetails.value.jobTitle}}</p>
 			<div class="col-md-3 m-auto">
-				<img  *ngIf="!imageData" src="https://via.placeholder.com/150" alt="John Doe" class="img-fluid rounded image">
-				<img  *ngIf="imageData" [src]="imageData" alt="Uploaded image" class=" image" height="100rem">
-			  </div>
+				<img *ngIf="!imageData" src="https://via.placeholder.com/150" alt="John Doe"
+					class="img-fluid rounded image">
+				<img *ngIf="imageData" [src]="imageData" alt="Uploaded image" class=" image" height="100rem">
+			</div>
 		</div>
 		<div class="main">
 			<div class="left">
 				<h2 *ngIf="personalDetails.value.address || personalDetails.value.city || personalDetails.value.country
-				|| personalDetails.value.email || personalDetails.value.phone || personalDetails.value.postalCode"
-				>Contact Information</h2>
+				|| personalDetails.value.email || personalDetails.value.phone || personalDetails.value.postalCode">Contact
+					Information</h2>
 				<ul>
-					<li *ngIf="personalDetails.value.address || personalDetails.value.city || personalDetails.value.country">
+					<li
+						*ngIf="personalDetails.value.address || personalDetails.value.city || personalDetails.value.country">
 						{{personalDetails.value.address}}
 						{{personalDetails.value.city}}
 						{{personalDetails.value.country}}</li>
-					<li *ngIf = "personalDetails.value.phone">(+251) {{personalDetails.value.phone}}</li>
-					<li *ngIf = "personalDetails.value.email">{{personalDetails.value.email}}</li>
-					<li *ngIf = "personalDetails.value.postalCode">Postal: {{personalDetails.value.postalCode}}</li>
-					<h2 *ngIf = "personalDetails.value.pob 
+					<li *ngIf="personalDetails.value.phone">(+251) {{personalDetails.value.phone}}</li>
+					<li *ngIf="personalDetails.value.email">{{personalDetails.value.email}}</li>
+					<li *ngIf="personalDetails.value.postalCode">Postal: {{personalDetails.value.postalCode}}</li>
+					<h2 *ngIf="personalDetails.value.pob 
 					|| personalDetails.value.dob 
 					|| personalDetails.value.nationality">Personal Information</h2>
-					<li *ngIf = "personalDetails.value.nationality">Nationality: {{personalDetails.value.nationality}}</li>
-					<li *ngIf = "personalDetails.value.dob">Dob: {{personalDetails.value.dob}}</li>
-					<li *ngIf = "personalDetails.value.pob">Pob: {{personalDetails.value.pob}}</li>
+					<li *ngIf="personalDetails.value.nationality">Nationality: {{personalDetails.value.nationality}}
+					</li>
+					<li *ngIf="personalDetails.value.dob">Dob: {{personalDetails.value.dob}}</li>
+					<li *ngIf="personalDetails.value.pob">Pob: {{personalDetails.value.pob}}</li>
 
 				</ul>
-				<h2 *ngIf = "skills.controls[0]" >Skills</h2>
-				
+				<h2 *ngIf="skills.controls[0]">Skills</h2>
+
 				<ul>
 					<li *ngFor="let skill of skills.controls">
-						{{ skill.value.skillName }} {{ skill.value.experienceLevel }}
-					  </li>
+						{{ skill.value.skillName }}<span *ngIf="skill.value.experienceLevel"> - {{ skill.value.experienceLevel }}/5</span>
+					</li>
 				</ul>
 			</div>
 			<div class="right">
-				<div *ngIf = "this.professionalSummary.value.personalSummary">
+				<div *ngIf="this.professionalSummary.value.personalSummary">
 					<div>
-					<h2 >Summary</h2>
-				  </div>
-				  <div>
-					<p class="justify-content text-justify"> {{ this.professionalSummary.value.personalSummary }} </p><br>
-				</div>
-				</div>
-
-
-
-			<div *ngIf = "educations.controls[0]">
-				  <div>
-					<h2 >Education</h2>
-				  </div>
-				  <div>
-					<div *ngFor="let education of educations.controls; let i= index">
-					  <h5 *ngIf ="education.value.school" >{{ education.value.degree}} at {{
-						education.value.school }}, {{ education.value.city }}</h5>
-					  <p *ngIf = "education.value.endDate">Graduated: {{ education.value.endDate }}</p>
-					  <p class="justify-content text-justify">{{ education.value.description}}</p>
-					  <hr>
+						<h2>Summary</h2>
 					</div>
-					<br>
-				  </div>
-			</div>
-
-
-		<div *ngIf = "experiences.controls[0]">
-			  <div>
-				<h2 >Experience</h2>
-			  </div>
-			  <div>
-				<div *ngFor="let experience of experiences.controls">
-				  <h5 *ngIf = "experience.value.jobTitle">{{ experience.value.jobTitle }}, {{
-					experience.value.employer }}</h5>
-				  <p >{{ experience.value.startDate | date:'MMMM, y' }} -
-					<span *ngIf="!experience.value.endDate">Present</span>
-					<span *ngIf="experience.value.endDate">{{ experience.value.endDate | date:'MMMM, y' }}</span>
-				  </p>
-				  <p class="justify-content text-justify"> {{ experience.value.description }} </p>
-				  <br>
+					<div>
+						<p class="justify-content text-justify"> {{ this.professionalSummary.value.personalSummary }}
+						</p><br>
+					</div>
 				</div>
-				<hr>
-			  </div>
-		</div>
-
-
-		<div *ngIf="extraCurricularActivities.controls[0]">
-			<div>
-			  <h2 >Extra-curricular Activities</h2>
-			</div>
-			<div>
-			  <div *ngFor="let extraCurricularActivity of extraCurricularActivities.controls">
-				<h5>{{ extraCurricularActivity.value.function }}, {{
-				  extraCurricularActivity.value.employer }}</h5>
-				<p>{{ extraCurricularActivity.value.startDate }} -
-				  <span *ngIf="!extraCurricularActivity.value.endDate">Present</span>
-				  <span *ngIf="extraCurricularActivity.value.endDate">{{ extraCurricularActivity.value.endDate }}</span>
-				</p>
-				<p class="justify-content text-justify"> {{ extraCurricularActivity.value.description }} </p>
-				<br>
-			  </div>
-			  <hr>
-			</div>
-		  </div>
-	
-		  
-
-		<div *ngIf = "references.controls[0]">
-			<div>
-			  <h2 >Experience</h2>
-			</div>
-			<div>
-			  <div *ngFor="let reference of references.controls">
-				<h5 *ngIf = "reference.value.name || reference.value.company">{{ reference.value.name }}, {{
-					reference.value.company }}</h5>
-				<p>{{ reference.value.email}} 
-				  <span *ngIf="reference.value.phone">, {{ reference.value.phone}}</span>
-				</p>
-				<br>
-			  </div>
-			  <hr>
-			</div>
-	    </div>
-
-
-		
-		<div *ngIf = "references.controls[0]">
-			<div>
-			  <h2 >References</h2>
-			</div>
-			<div>
-			  <div *ngFor="let reference of references.controls">
-				<h5 *ngIf = "reference.value.name || reference.value.company">{{ reference.value.name }}, {{
-					reference.value.company }}</h5>
-				<p>{{ reference.value.email}} 
-				  <span *ngIf="reference.value.phone">, {{ reference.value.phone}}</span>
-				</p>
-				<br>
-			  </div>
-			  <hr>
-			</div>
-	    </div>
-
-		<div *ngIf = "intership.controls[0]">
-			<div>
-			  <h2 >Interships</h2>
-			</div>
-			<div>
-			  <div *ngFor="let intership of intership.controls">
-				<h5 *ngIf = "intership.value.employer|| intership.value.jobTitle">{{ intership.value.employer }}, {{
-					intership.value.jobTitle }}</h5>
-				<p>{{ intership.value.startDate}} 
-				  <span *ngIf="intership.value.endDate">- {{intership.value.endDate}}</span>
-				  <span *ngIf="!intership.value.endDate">- Present</span>
-
-				</p>
-				
-				<p>{{intership.value.city}}</p>
-				
-				<p class="justify-content text-justify"> {{ intership.value.description }} </p>
 
 
 
-				<br>
-			  </div>
-			  <hr>
-			</div>
-	    </div>
+				<div *ngIf="educations.controls[0]">
+					<div>
+						<h2>Education</h2>
+					</div>
+					<div>
+						<div *ngFor="let education of educations.controls; let i= index">
+							<h5 *ngIf="education.value.school">{{ education.value.degree}} at {{
+								education.value.school }}, {{ education.value.city }}</h5>
+							<p *ngIf="education.value.endDate">Graduated: {{ education.value.endDate }}</p>
+							<p class="justify-content text-justify">{{ education.value.description}}</p>
+							<hr>
+						</div>
+						<br>
+					</div>
+				</div>
+
+
+				<div *ngIf="experiences.controls[0]">
+					<div>
+						<h2>Experience</h2>
+					</div>
+					<div>
+						<div *ngFor="let experience of experiences.controls">
+							<h5 *ngIf="experience.value.jobTitle">{{ experience.value.jobTitle }}, {{
+								experience.value.employer }}</h5>
+							<p>{{ experience.value.startDate | date:'MMMM, y' }} -
+								<span *ngIf="!experience.value.endDate">Present</span>
+								<span *ngIf="experience.value.endDate">{{ experience.value.endDate | date:'MMMM, y'
+									}}</span>
+							</p>
+							<p class="justify-content text-justify"> {{ experience.value.description }} </p>
+							<br>
+						</div>
+						<hr>
+					</div>
+				</div>
+
+
+				<div *ngIf="certifications.controls[0]">
+					<div>
+						<h2>Certification</h2>
+					</div>
+					<div>
+						<div *ngFor="let certification of certifications.controls">
+							<h5>{{ certification.value.function }}, {{
+								certification.value.employer }}</h5>
+							<p>{{ certification.value.startDate }} -
+								<span *ngIf="!certification.value.endDate">Present</span>
+								<span *ngIf="certification.value.endDate">{{
+									certification.value.endDate }}</span>
+							</p>
+							<p class="justify-content text-justify"> {{ certification.value.description }}
+							</p>
+							<br>
+						</div>
+						<hr>
+					</div>
+				</div>
 
 
 
-		<div *ngIf = "courses.controls[0]">
-			<div>
-			  <h2 >Courses</h2>
-			</div>
-			<div>
-			  <div *ngFor="let course of courses.controls">
-				<h5 *ngIf = "course.value.institution|| course.value.title">{{ course.value.title }}, {{
-					course.value.institution}}</h5>
-				<p>{{ course.value.startDate}} 
-				  <span *ngIf="course.value.endDate">- {{course.value.endDate}}</span>
-				  <span *ngIf="!course.value.endDate">- Present</span>
-
-				</p>
-
-				<br>
-			  </div>
-			  <hr>
-			</div>
-	    </div>
+				<div *ngIf="references.controls[0]">
+					<div>
+						<h2>Experience</h2>
+					</div>
+					<div>
+						<div *ngFor="let reference of references.controls">
+							<h5 *ngIf="reference.value.name || reference.value.company">{{ reference.value.name }}, {{
+								reference.value.company }}</h5>
+							<p>{{ reference.value.email}}
+								<span *ngIf="reference.value.phone">, {{ reference.value.phone}}</span>
+							</p>
+							<br>
+						</div>
+						<hr>
+					</div>
+				</div>
 
 
 
+				<div *ngIf="references.controls[0]">
+					<div>
+						<h2>References</h2>
+					</div>
+					<div>
+						<div *ngFor="let reference of references.controls">
+							<h5 *ngIf="reference.value.name || reference.value.company">{{ reference.value.name }}, {{
+								reference.value.company }}</h5>
+							<p>{{ reference.value.email}}
+								<span *ngIf="reference.value.phone">, {{ reference.value.phone}}</span>
+							</p>
+							<br>
+						</div>
+						<hr>
+					</div>
+				</div>
+
+				<div *ngIf="intership.controls[0]">
+					<div>
+						<h2>Interships</h2>
+					</div>
+					<div>
+						<div *ngFor="let intership of intership.controls">
+							<h5 *ngIf="intership.value.employer|| intership.value.jobTitle">{{ intership.value.employer
+								}}, {{
+								intership.value.jobTitle }}</h5>
+							<p>{{ intership.value.startDate}}
+								<span *ngIf="intership.value.endDate">- {{intership.value.endDate}}</span>
+								<span *ngIf="!intership.value.endDate">- Present</span>
+
+							</p>
+
+							<p>{{intership.value.city}}</p>
+
+							<p class="justify-content text-justify"> {{ intership.value.description }} </p>
+
+
+
+							<br>
+						</div>
+						<hr>
+					</div>
+				</div>
+
+
+
+				<div *ngIf="courses.controls[0]">
+					<div>
+						<h2>Courses</h2>
+					</div>
+					<div>
+						<div *ngFor="let course of courses.controls">
+							<h5 *ngIf="course.value.institution|| course.value.title">{{ course.value.title }}, {{
+								course.value.institution}}</h5>
+							<p>{{ course.value.startDate}}
+								<span *ngIf="course.value.endDate">- {{course.value.endDate}}</span>
+								<span *ngIf="!course.value.endDate">- Present</span>
+
+							</p>
+
+							<br>
+						</div>
+						<hr>
+					</div>
+				</div>
 
 
 
 
 
-		<div *ngIf = "hobby.value">
-			<div>
-			  <h2 >Hobbies</h2>
-			</div>
-			<div>
-				<p>{{hobby.value}}</p> <br>
-			</div>
-			  <hr>
-	    </div>
-
-
-		<div *ngIf = "language.controls[0]">
-			<div>
-			  <h2 >Language</h2>
-			</div>
-			<div>
-			  <div *ngFor="let lang of language.controls">
-				<h5 *ngIf = "lang.value.institution|| lang.value.title">{{ lang.value.title }}, {{
-					lang.value.institution}}</h5>
-				<p>{{ lang.value.languageName}} 
-				  <span *ngIf="lang.value.proficiency"> - {{lang.value.proficiency}}</span>
-				</p>
-
-
-			  </div>
-			  <br>
-			  <hr>
-			</div>
-	    </div>
 
 
 
-		<div *ngIf = "custom.value">
-			<div>
-				<h2>Additionals</h2>
-			</div>
-			<div>
-				<p>{{custom.value}}</p> <br>
-			</div>
-			  <hr>
-	    </div>
+				<div *ngIf="hobby.value">
+					<div>
+						<h2>Hobbies</h2>
+					</div>
+					<div>
+						<p>{{hobby.value}}</p> <br>
+					</div>
+					<hr>
+				</div>
+
+
+				<div *ngIf="language.controls[0]">
+					<div>
+						<h2>Language</h2>
+					</div>
+					<div>
+						<div *ngFor="let lang of language.controls">
+							<h5 *ngIf="lang.value.institution|| lang.value.title">{{ lang.value.title }}, {{
+								lang.value.institution}}</h5>
+							<p>{{ lang.value.languageName}}
+								<span *ngIf="lang.value.proficiency"> - {{lang.value.proficiency}}</span>
+							</p>
+
+
+						</div>
+						<br>
+						<hr>
+					</div>
+				</div>
+
+
+
+				<div *ngIf="custom.value">
+					<div>
+						<h2>Additionals</h2>
+					</div>
+					<div>
+						<p>{{custom.value}}</p> <br>
+					</div>
+					<hr>
+				</div>
 
 			</div>
 		</div>

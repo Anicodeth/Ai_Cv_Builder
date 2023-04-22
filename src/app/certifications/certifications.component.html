@@ -1,0 +1,64 @@
+<h4>Certifications</h4>
+<div>
+    <form [formGroup]="certificationsForm">
+        <div formArrayName="certifications">
+            <div class="add-certification" *ngFor="let certifications of certifications.controls;
+             let i = index" [formGroupName]="i">
+
+                <div class="personal-row">
+                    <div class="unit ">
+                        <label for="certificationEmployer">Certifier</label>
+                        <input type="text" class="form-control" id="certificationEmployer"
+                            placeholder="e.g. Dereja" formControlName="employer"
+                            (keyup)="capitalize('employer', i)">
+                    </div>
+                    <div class="unit">
+                        <label for="certificationJobTitle">Function</label>
+                        <input type="text" class="form-control" id="certificationJobTitle"
+                            placeholder="e.g. Marketing Bootcamp" formControlName="function"
+                            (keyup)="capitalize('function', i)">
+                    </div>
+                </div>
+
+
+                <div class="personal-row">
+
+                    <div class="unit">
+                        <div>
+                            <label for="certificationStartDate">Start Date</label>
+                            <input type="date" class="form-control" id="certificationStartDate"
+                                placeholder="Certification Start Date" formControlName="startDate">
+                        </div>
+                        <div>
+                            <label for="certificationEndDate">End Date</label>
+                            <input type="date" class="form-control" id="certificationEndDate"
+                                placeholder="Certification End Date" formControlName="endDate">
+                        </div>
+                    </div>
+
+
+                    <div class="unit">
+                        <label for="certificationCity">City</label>
+                        <input type="text" class="form-control" id="certificationCity"
+                            placeholder="e.g. Bahirdar" formControlName="city"
+                            (keyup)="capitalize('city', i)">
+                    </div>
+
+                </div>
+
+                <div>
+                    <label for="certificationDescription">Description</label>
+                    <textarea type="text" class="form-control " id="certificationDescription"
+                        placeholder="Certification Description" formControlName="description"
+                        rows="5"></textarea>
+                </div>
+                <button class="btn btn-outline-danger" type="button" (click)="removeExtraCurricularActivity(i)">
+                    Remove Certification
+                </button>
+            </div>
+        </div>
+        <button type="button" class="btn btn-outline-primary" (click)="addExtraCurricularActivity()">
+            Add Certification
+        </button>
+    </form>
+</div>

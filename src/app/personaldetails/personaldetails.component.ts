@@ -104,4 +104,9 @@ export class PersonaldetailsComponent implements OnInit, OnChanges {
     reader.readAsDataURL(file);
   }
 
+  capitalize(formControlName: string) {
+    this.resumeService.capitalize(this.personalDetailsForm, formControlName);
+  }
+  
+
 }

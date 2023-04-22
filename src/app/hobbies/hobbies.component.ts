@@ -29,4 +29,9 @@ export class HobbiesComponent implements OnInit {
       this.sessionService.setItem('hobbies', this.hobbiesForm.value);
     });    
   }
+
+
+  capitalize() {
+    this.resumeService.capitalize(this.hobbiesForm, 'hobbies');
+  }
 }

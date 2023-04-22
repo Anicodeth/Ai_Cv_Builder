@@ -19,12 +19,12 @@ export class AddSectionsComponent {
     return this.sectionsService.referencesAdded;
   }
 
-  onAddExtraCurricularActivities(): void {
-    this.sectionsService.extraCurricularActivitiesAdded = true;
+  onAddCertifications(): void {
+    this.sectionsService.certificationsAdded = true;
   }
 
-  get extraCurricularActivitiesAdded(): boolean {
-    return this.sectionsService.extraCurricularActivitiesAdded;
+  get certificationsAdded(): boolean {
+    return this.sectionsService.certificationsAdded;
   }
 
   onAddHobbies(): void {

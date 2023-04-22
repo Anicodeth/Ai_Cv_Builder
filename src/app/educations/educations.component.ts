@@ -64,4 +64,8 @@ export class EducationsComponent implements OnInit {
 
     this.completenessService.decreasePercentageCompleteness(this.WEIGHTOFEDUCATION);
   }
+
+  capitalize(formControlName: string, index: number) {
+    this.resumeService.capitalize(this.educations.at(index), formControlName);
+  }
 }

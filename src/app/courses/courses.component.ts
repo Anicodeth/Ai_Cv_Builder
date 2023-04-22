@@ -52,4 +52,8 @@ export class CoursesComponent implements OnInit {
   removeCourse(index: number) {
     this.courses.removeAt(index);
   }
+
+  capitalize(formControlName: string, index: number) {
+    this.resumeService.capitalize(this.courses.at(index), formControlName);
+  }
 }

@@ -1,0 +1,36 @@
+.template-chooser-container {
+    background-color: #081e3e;
+    padding: 0px;
+    margin: 0px;
+    height: 90vh;
+    width: 80vw;
+}
+
+.row {
+    background-color: #081e3e;
+    padding: 0px;
+    margin: 0px;
+}
+
+.close-button {
+    text-align: right;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+button img {
+    max-width: 100%;
+}

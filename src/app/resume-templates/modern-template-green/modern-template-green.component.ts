@@ -28,7 +28,7 @@ export class ModernTemplateGreenComponent implements OnInit {
 
 
 
-  public extraCurricularActivities: FormArray;
+  public certifications: FormArray;
   public imageData: string | undefined;
 
   constructor(
@@ -39,8 +39,8 @@ export class ModernTemplateGreenComponent implements OnInit {
   ) {
     this.personalDetails = this.resumeService.getPersonalDetailsForm();
     this.professionalSummary = this.resumeService.getPersonalSummaryForm();
-    this.extraCurricularActivities =
-      this.resumeService.extraCurricularActivities;
+    this.certifications =
+      this.resumeService.certifications;
     this.references = this.resumeService.references;
     this.experiences = this.resumeService.experiences;
     this.educations = this.resumeService.educations;

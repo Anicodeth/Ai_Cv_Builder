@@ -1,2 +1,19 @@
-show something here
-<button (click)="closeDialog()" ></button>
+<div class="template-chooser-container">
+    <div class="row">
+        <div class="col-6 h-full">
+            <button (click)="setTemplate('modern-template')">
+                <img class="template-image" src="./assets/modern-template.jpg" alt="modern-template-image">
+            </button>
+        </div>
+        <div class="col-6 h-full">
+            <button (click)="setTemplate('generic-template')">
+                <img class="template-image" src="./assets/generic-template.jpg" alt="generic-template-image">
+            </button>
+        </div>
+        <div class="col-6 h-full">
+            <button (click)="setTemplate('modern-green-template')">
+                <img class="template-image" src="./assets/modern-green-template.jpg" alt="modern-green-template-image">
+            </button>
+        </div>
+    </div>
+</div>

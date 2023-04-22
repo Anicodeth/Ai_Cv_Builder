@@ -5,11 +5,11 @@ import { SessionService } from '../services/session.service';
 
 @Component({
   selector: 'app-extra-curricular-activities',
-  templateUrl: './extra-curricular-activities.component.html',
-  styleUrls: ['./extra-curricular-activities.component.css']
+  templateUrl: './certifications.component.html',
+  styleUrls: ['./certifications.component.css']
 })
-export class ExtraCurricularActivitiesComponent implements OnInit {
-  public extraCurricularActivitiesForm: FormGroup | any;
+export class CertificationsComponent implements OnInit {
+  public certificationsForm: FormGroup | any;
 
   constructor(
     private fb: FormBuilder,
@@ -19,28 +19,28 @@ export class ExtraCurricularActivitiesComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    this.extraCurricularActivitiesForm = this.resumeService.getExtraCurricularActivitiesForm();
+    this.certificationsForm = this.resumeService.getCertificationsForm();
     
-    const storedOnSession = this.sessionService.getItem('extraCurricularActivities');
+    const storedOnSession = this.sessionService.getItem('certifications');
     if (storedOnSession) {
       storedOnSession.forEach((item: any) => {
-        this.extraCurricularActivities.push(
+        this.certifications.push(
           this.fb.group(item)
         )
       });
     }
 
-    this.extraCurricularActivitiesForm.valueChanges.subscribe(() => {
-      this.sessionService.setItem('extraCurricularActivities', this.extraCurricularActivities.value);
+    this.certificationsForm.valueChanges.subscribe(() => {
+      this.sessionService.setItem('certifications', this.certifications.value);
     });
   }
 
-  get extraCurricularActivities(): FormArray {
-    return this.extraCurricularActivitiesForm.get('extraCurricularActivities') as FormArray;
+  get certifications(): FormArray {
+    return this.certificationsForm.get('certifications') as FormArray;
   }
 
   addExtraCurricularActivity() {
-    this.extraCurricularActivities.push(
+    this.certifications.push(
       this.fb.group({
         employer: [null, Validators.required],
         function: [null, Validators.required],
@@ -53,6 +53,10 @@ export class ExtraCurricularActivitiesComponent implements OnInit {
   }
 
   removeExtraCurricularActivity(index: number) {
-    this.extraCurricularActivities.removeAt(index);
+    this.certifications.removeAt(index);
+  }
+
+  capitalize(formControlName: string, index: number) {
+    this.resumeService.capitalize(this.certifications.at(index), formControlName);
   }
 }

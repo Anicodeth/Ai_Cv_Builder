@@ -7,25 +7,22 @@
             <app-experience></app-experience>
             <app-education></app-education>
             <app-skills></app-skills>
-           <!-- <app-website-links></app-website-links>-->
             <app-hobbies *ngIf="hobbiesSection()"></app-hobbies>
             <app-languages *ngIf="languagesSection()"></app-languages>
             <app-internships *ngIf="internshipsSection()"></app-internships>
             <app-references *ngIf="referencesSection()"></app-references>
             <app-courses *ngIf="coursesSection()"></app-courses>
-            <app-extra-curricular-activities *ngIf="extraCurricularActivitiesSection()"></app-extra-curricular-activities>
+            <app-extra-curricular-activities *ngIf="certificationsSection()"></app-extra-curricular-activities>
             <app-custom-section *ngIf="customSection()"></app-custom-section>
             <app-add-sections></app-add-sections>
-            <button class="btn btn-primary" onclick="window.location.href='https://jami.bio/ffekirnew';"
-            onclick="window.location.href='https://jami.bio/ananya';"  >
+            <button class="btn btn-primary" onclick="window.open('https://linktr.ee/ananya_code', '_blank');" >
                Tip The Engineers</button>
         </div>
     </div> 
     
-    <div class="right-segment p-0 ">
+    <div class="right-segment p-0">
         <div class="main-preview-window">
             <app-template-preview-window> </app-template-preview-window>
-
             </div>
         </div>
     </div>

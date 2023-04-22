@@ -12,7 +12,7 @@ import { TemplatesChooserComponent } from './templates-chooser/templates-chooser
 
 
 export class AppComponent {
-  title = 'aicvbuilder';
+  title = 'CV';
 
   constructor(
     private sectionsService: SectionsService,
@@ -20,26 +20,12 @@ export class AppComponent {
   ) {
   }
 
-  chooseTemplate(): void {
-    const dialogConfig = new MatDialogConfig();
-    
-    dialogConfig.data = {
-      dialogRef: this.dialog
-    };
-
-    const dialogRef = this.dialog.open(TemplatesChooserComponent, dialogConfig);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
-
   referencesSection(): boolean {
     return this.sectionsService.getReferenceAdded();
   }
 
-  extraCurricularActivitiesSection(): boolean {
-    return this.sectionsService.getExtraCurricularActivitiesAdded();
+  certificationsSection(): boolean {
+    return this.sectionsService.getCertificationsAdded();
   }
 
   hobbiesSection(): boolean {

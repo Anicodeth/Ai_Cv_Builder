@@ -74,19 +74,20 @@ export class SkillsComponent implements OnInit {
   increasePercentage(): void {
     if (this.skills.length <= 5) {
       this.completenessService.increasePercentageCompleteness(this.WEIGHTOFSKILL);
-      console.log(this.completenessService.getPercentageCompleteness());
     }
   }
   
   decreasePercentage(): void {
     if (this.skills.length < 5) {
       this.completenessService.decreasePercentageCompleteness(this.WEIGHTOFSKILL);
-      console.log(this.completenessService.getPercentageCompleteness());
     }
   }
 
   refresh(){
     this.relevantSkills = this.aiService.skills;
+  }
 
+  capitalize(formControlName: string, index: number) {
+    this.resumeService.capitalize(this.skills.at(index), formControlName);
   }
 }

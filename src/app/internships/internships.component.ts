@@ -54,4 +54,8 @@ export class InternshipsComponent implements OnInit {
   removeExperience(index: number) {
     this.internships.removeAt(index);
   }
+
+  capitalize(formControlName: string, index: number) {
+    this.resumeService.capitalize(this.internships.at(index), formControlName);
+  }
 }

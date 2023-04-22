@@ -27,8 +27,6 @@ export class WebsiteLinksComponent {
         link: [null, Validators.required],
       })
     );
-
-    console.log(this.resumeService.getlinkForm());
   }
 
   removelink(index: number) {
