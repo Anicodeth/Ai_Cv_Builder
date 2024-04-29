@@ -14,8 +14,12 @@ export class AiService {
 
 
   sendRequest(value: string) {
-    const skillUrl = `https://ai-response-parser-git-main-anicodeth.vercel.app/api/skills/${value}`;
-    const paragraphUrl = `https://ai-response-parser-git-main-anicodeth.vercel.app/api/paragraph/${value}`;
+   const skillUrl = `https://ai-response-parser-git-main-anicodeth.vercel.app/api/skills/${value}`;
+   const paragraphUrl = `https://ai-response-parser-git-main-anicodeth.vercel.app/api/paragraph/${value}`;
+    
+  //  const skillUrl = `http://localhost:4000/api/skills/${value}`;
+  //  const paragraphUrl = `http://localhost:4000/api/paragraph/${value}`;
+
 
 
     this.http.get(paragraphUrl).subscribe(response => {
@@ -36,7 +40,7 @@ export class AiService {
       jobtitle,
       fname,
       lname,
-      phone,
+      phone,  
       email
     }
     this.http.post(saveDataUrl, body, { headers }).subscribe(response => {
